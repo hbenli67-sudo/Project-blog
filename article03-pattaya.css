@@ -1,0 +1,81 @@
+.pattaya-graphs {
+  padding: 64px 24px 80px;
+  background-color: var(--color-white);
+}
+
+.pattaya-graphs__container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.pattaya-graphs__intro,
+.pattaya-graphs__description,
+.pattaya-graphs__outro {
+  color: var(--color-text-dark);
+  font-family: "Palanquin", sans-serif;
+  font-size: 24px;
+  line-height: 120%;
+}
+
+.pattaya-graphs__intro p + p,
+.pattaya-graphs__description p + p,
+.pattaya-graphs__outro p + p {
+}
+
+.pattaya-graphs__title {
+  color: var(--color-text-brown);
+  font-family: "Arima", serif;
+  font-size: 32px;
+  font-weight: 400;
+  font-weight: 600;
+  line-height: 120%;
+  text-align: center;
+}
+
+.pattaya-graphs__rain {
+  margin-top: 64px;
+}
+
+.pattaya-graphs__rain-figure {
+  width: min(100%, 540px);
+  margin: 24px auto 0;
+}
+
+.pattaya-graphs__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pattaya-graphs__description {
+  margin-top: 64px;
+}
+
+.pattaya-graphs__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 64px;
+  margin-top: 64px;
+}
+
+.pattaya-graphs__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 64px;
+  margin-top: 64px;
+}
+
+.pattaya-graphs__card-text {
+  margin-top: 24px;
+  color: var(--color-text-dark);
+  font-family: "Palanquin", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.pattaya-graphs__card-figure {
+  width: 100%;
+  margin: 32px auto 0;
+}
