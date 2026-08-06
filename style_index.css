@@ -53,6 +53,11 @@ body {
 
 }
 
+.navbar__nav a:active,
+.navbar__nav a:visited {
+  color: #F1C953;
+}
+
 .navbar__nav-item {
   position: relative;
   transition: transform 0.2s ease;
@@ -84,3 +89,4 @@ body {
 .navbar__nav-item a:visited ~ .navbar__nav-underline {
   opacity: 1;
 }
+
