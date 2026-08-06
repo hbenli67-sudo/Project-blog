@@ -15,31 +15,32 @@
   color: var(--color-text-dark);
   font-family: "Palanquin", sans-serif;
   font-size: 24px;
+  font-weight: 400;
   line-height: 120%;
-}
-
-.pattaya-graphs__intro p + p,
-.pattaya-graphs__description p + p,
-.pattaya-graphs__outro p + p {
 }
 
 .pattaya-graphs__title {
   color: var(--color-text-brown);
   font-family: "Arima", serif;
   font-size: 32px;
-  font-weight: 400;
   font-weight: 600;
   line-height: 120%;
   text-align: center;
 }
+
+/* Oberer Rain-Graph */
 
 .pattaya-graphs__rain {
   margin-top: 64px;
 }
 
 .pattaya-graphs__rain-figure {
-  width: min(100%, 540px);
+  width: min(100%, 640px);
   margin: 24px auto 0;
+  overflow: hidden;
+  background-color: var(--color-white);
+  border-radius: 53px;
+  box-shadow: -2px 4px 11.6px 0 rgb(0 0 0 / 25%);
 }
 
 .pattaya-graphs__image {
@@ -52,21 +53,28 @@
   margin-top: 64px;
 }
 
-.pattaya-graphs__grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 64px;
-  margin-top: 64px;
-}
+/* Zweispaltiger Bereich */
 
 .pattaya-graphs__grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 64px;
-  margin-top: 64px;
+  grid-template-columns: repeat(2, 519px);
+  gap: 80px;
+  width: 1118px;
+  margin: 88px auto 0;
+}
+
+/*
+  Kein 1fr mehr:
+  Beide Karten laufen normal von oben nach unten.
+*/
+.pattaya-graphs__card {
+  display: flex;
+  flex-direction: column;
+  width: 519px;
 }
 
 .pattaya-graphs__card-text {
+  min-height: 173px;
   margin-top: 24px;
   color: var(--color-text-dark);
   font-family: "Palanquin", sans-serif;
@@ -75,7 +83,34 @@
   line-height: 120%;
 }
 
+/* Gleich große weiße Boxen */
+
 .pattaya-graphs__card-figure {
+  display: grid;
+  width: 519px;
+  height: 471px;
+  margin: 24px 0 0;
+  place-items: center;
+  overflow: hidden;
+  background-color: var(--color-white);
+  border-radius: 53px;
+  box-shadow: -2px 4px 11.6px 0 rgb(0 0 0 / 25%);
+}
+
+/*
+  Die PNG bleibt proportional und wird mittig
+  innerhalb der 519 × 471 px großen Box angezeigt.
+*/
+.pattaya-graphs__card-figure .pattaya-graphs__image {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.pattaya-graphs__outro {
   width: 100%;
-  margin: 32px auto 0;
+  margin-top: 88px;
 }
