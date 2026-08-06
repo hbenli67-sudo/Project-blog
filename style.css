@@ -12,3 +12,14 @@
 margin: 0;
 box-sizing: border-box;
 }
+
+:root {
+  --color-green: #4ea487;
+  --color-yellow: #f1c953;
+
+  --color-text-brown: #54370d;
+  --color-text-dark: #3d3d3d;
+
+  --color-navbar: #F8F5EB;
+  --color-white: #ffffff;
+}
