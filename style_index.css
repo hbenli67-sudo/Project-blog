@@ -36,6 +36,7 @@ body {
 }
 
 .navbar__nav a {
+  display: inline-block;
   color: #ffffff;
   text-decoration: none;
   font-family: 'Arima', sans-serif;
@@ -48,22 +49,35 @@ body {
 .navbar__nav a:hover,
 .navbar__nav a:visited {
   text-decoration: none;
-  color: #f1c953;
   outline: none;
+
 }
 
 .navbar__nav-item {
   position: relative;
+  transition: transform 0.2s ease;
+}
+
+.navbar__nav-item:nth-child(1):hover {
+  transform: translate(2px, 0);
+}
+
+.navbar__nav-item:nth-child(2):hover {
+  transform: translate(2px, 2px);
+}
+
+.navbar__nav-item:nth-child(3):hover {
+  transform: translate(2px, -2px);
 }
 
 .navbar__nav-underline {
   position: absolute;
   left: -5%;      /* links größe */
-  bottom: 5px;    /* abstand */
+  bottom: 15px;    /* abstand */
   width: 115%;    /* länge linie */
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.7s ease;
 }
 
 .navbar__nav-item a:hover ~ .navbar__nav-underline,
