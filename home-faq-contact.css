@@ -1,0 +1,139 @@
+/* FAQ */
+
+.faq {
+  padding: 96px 24px 88px;
+  background-color: var(--color-white);
+}
+
+.faq__container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.faq__heading {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.faq__title {
+  color: var(--color-green);
+  font-family: "Arima", serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.faq__list {
+  display: grid;
+  gap: 24px;
+}
+
+.faq__item {
+  overflow: hidden;
+  background-color: var(--color-yellow);
+  border-radius: 12px;
+}
+
+.faq__toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  clip-path: inset(50%);
+}
+
+.faq__question {
+  display: flex;
+  min-height: 56px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 16px;
+  color: var(--color-text-brown);
+  cursor: pointer;
+  font-family: "Palanquin", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.faq__arrow {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-right: 2px solid var(--color-text-brown);
+  border-bottom: 2px solid var(--color-text-brown);
+  transform: rotate(45deg);
+  transition: transform 300ms ease;
+}
+
+.faq__answer {
+  display: grid;
+  width: 100%;
+  grid-template-rows: 0fr;
+
+  transition:
+    grid-template-rows 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.faq__answer-inner {
+  min-height: 0;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(-5px);
+
+  transition:
+    opacity 550ms ease,
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.faq__answer p {
+  margin: 0 16px 16px;
+  padding: 8px 10px;
+
+  background-color: var(--color-white);
+  border-radius: 4px;
+
+  color: var(--color-text-dark);
+  font-family: "Palanquin", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+/* Antwort öffnen */
+
+.faq__toggle:checked
+  + .faq__question
+  + .faq__answer {
+  grid-template-rows: 1fr;
+}
+
+.faq__toggle:checked
+  + .faq__question
+  + .faq__answer
+  .faq__answer-inner {
+  opacity: 1;
+  transform: translateY(0);
+
+  transition-delay: 80ms;
+}
+
+/* Pfeil nach oben drehen */
+
+.faq__toggle:checked
+  + .faq__question
+  .faq__arrow {
+  transform: rotate(225deg);
+}
+
+/* Sichtbare Tastatursteuerung */
+
+.faq__toggle:focus-visible
+  + .faq__question {
+  outline: 3px solid var(--color-green);
+  outline-offset: 3px;
+}
