@@ -82,6 +82,9 @@ box-sizing: border-box;
 
   --color-navbar: #F8F5EB;
   --color-white: #ffffff;
+  --color-send-button-text: #737373;
+  --color-send-button-border: rgb(48 48 48 / 50%);
+;
 }
 
 html {
