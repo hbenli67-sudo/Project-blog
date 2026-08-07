@@ -1,3 +1,9 @@
+*{
+margin: 0;
+box-sizing: border-box;
+}
+
+
 .pattaya-graphs {
   padding: 64px 24px 80px;
   background-color: var(--color-white);
