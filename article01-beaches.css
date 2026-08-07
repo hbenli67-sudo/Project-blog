@@ -1,12 +1,121 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.pattaya-graphs {
+  padding: 64px 24px 80px;
+  background-color: var(--color-white);
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+.pattaya-graphs__container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
 }
+
+.pattaya-graphs__intro,
+.pattaya-graphs__description,
+.pattaya-graphs__outro {
+  color: var(--color-text-dark);
+  font-family: "Palanquin", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.pattaya-graphs__title {
+  color: var(--color-text-brown);
+  font-family: "Arima", serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 120%;
+  text-align: center;
+}
+
+/* Oberer Rain-Graph */
+
+.pattaya-graphs__rain {
+  margin-top: 64px;
+}
+
+.pattaya-graphs__rain-figure {
+  width: min(100%, 640px);
+  margin: 24px auto 0;
+  overflow: hidden;
+  background-color: var(--color-white);
+  border-radius: 53px;
+  box-shadow: -2px 4px 11.6px 0 rgb(0 0 0 / 25%);
+}
+
+.pattaya-graphs__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pattaya-graphs__description {
+  margin-top: 64px;
+}
+
+/* Zweispaltiger Bereich */
+
+.pattaya-graphs__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 519px);
+  gap: 80px;
+  width: 1118px;
+  margin: 88px auto 0;
+}
+
+/*
+  Kein 1fr mehr:
+  Beide Karten laufen normal von oben nach unten.
+*/
+.pattaya-graphs__card {
+  display: flex;
+  flex-direction: column;
+  width: 519px;
+}
+
+.pattaya-graphs__card-text {
+  min-height: 173px;
+  margin-top: 24px;
+  color: var(--color-text-dark);
+  font-family: "Palanquin", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+/* Gleich große weiße Boxen */
+
+.pattaya-graphs__card-figure {
+  display: grid;
+  width: 519px;
+  height: 471px;
+  margin: 24px 0 0;
+  place-items: center;
+  overflow: hidden;
+  background-color: var(--color-white);
+  border-radius: 53px;
+  box-shadow: -2px 4px 11.6px 0 rgb(0 0 0 / 25%);
+}
+
+/*
+  Die PNG bleibt proportional und wird mittig
+  innerhalb der 519 × 471 px großen Box angezeigt.
+*/
+.pattaya-graphs__card-figure .pattaya-graphs__image {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.pattaya-graphs__outro {
+  width: 100%;
+  margin-top: 88px;
+}
+
+/* Aus article01-beaches.css übernommen: Navbar, Footer, Share */
 
 .navbar {
   background-color: #4ea988;
@@ -90,16 +199,6 @@ body {
   opacity: 1;
 }
 
-
-@font-face {
-  
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Palanquin';
-  font-style: normal;
-  font-weight: 400;
-  src: url('./assets/fonts/palanquin-v17-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-
 .footer {
   background-color: #4ea988;
   height: 128px;
@@ -141,8 +240,6 @@ align-items: center;
 gap: 16px;
 
 }
-
-
 
 .share {
 padding-bottom: 88px;
@@ -244,7 +341,7 @@ cursor: pointer;
     width: 32px;
     height: 32px;
     display: flex;
-   
+
 
 }
 
@@ -253,6 +350,6 @@ cursor: pointer;
     width: 106.9px;
   position: absolute;
   right: 100%;
-  transform: translate(-85px, -1px);
+  transform: translate(-80px, -15px);
 
 }
