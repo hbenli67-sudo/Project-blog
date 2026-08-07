@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Travel Blog</title>
-    <link rel="icon" type="image/x-icon" href="/assets/icons/logo.ico">
+  <link rel="icon" type="image/x-icon" href="/assets/icons/logo.ico">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arima:wght@700&display=swap" rel="stylesheet">
-   <!-- Gemeinsame Grundlagen -->
-    <link rel="stylesheet" href="style.css">
-    
+  <!-- Gemeinsame Grundlagen -->
+  <link rel="stylesheet" href="style.css">
+
   <!-- Gemeinsamer Header und Footer -->
   <link rel="stylesheet" href="header-footer.css">
 
@@ -19,10 +20,11 @@
   <link rel="stylesheet" href="home-hero.css">
   <link rel="stylesheet" href="home-slider.css">
   <link rel="stylesheet" href="home-faq-contact.css">
- </head>
+</head>
+
 <body>
 
-<!-- Navbar start -->
+  <!-- Navbar start -->
   <nav class="navbar">
     <div class="navbar__inner">
       <div class="navbar__logo">
@@ -46,179 +48,240 @@
       </nav>
     </div>
   </nav>
-<!-- Navbar End -->
+  <!-- Navbar End -->
 
-<!-- FAQ START -->
+  <!-- FAQ START -->
 
-<section class="faq" id="faq">
-  <div class="faq__container">
+  <section class="faq" id="faq">
+    <div class="faq__container">
 
-    <div class="faq__heading">
-  <img
-    class="faq__icon"
-    src="assets/icons/faq-yellow.svg"
-    alt=""
-  >
+      <div class="faq__heading">
+        <img class="faq__icon" src="assets/icons/faq-yellow.svg" alt="FAQ Icon">
 
-  <h2 class="faq__title">FAQ</h2>
-</div>
+        <h2 class="faq__title">FAQ</h2>
+      </div>
 
-    <div class="faq__list">
-<div class="faq__item">
+      <div class="faq__list">
+        <div class="faq__item">
+          <input class="faq__toggle" type="checkbox" id="faq-question-1">
+
+          <label class="faq__question" for="faq-question-1">
+            <span>What’s the story behind my travel blog?</span>
+
+            <span class="faq__arrow" aria-hidden="true"></span>
+          </label>
+
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore et dolore magna aliquyam erat, sed diam voluptua.
+                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                sanctus est Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="faq__item">
+          <input class="faq__toggle" type="checkbox" id="faq-question-2">
+
+          <label class="faq__question" for="faq-question-2">
+            <span>How do I plan, document, and share my travels?</span>
+
+            <span class="faq__arrow" aria-hidden="true"></span>
+          </label>
+
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore et dolore magna aliquyam erat, sed diam voluptua.
+                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                sanctus est Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="faq__item">
+          <input class="faq__toggle" type="checkbox" id="faq-question-3">
+
+          <label class="faq__question" for="faq-question-3">
+            <span>How can brands, companies, or fellow creators collaborate with me or get in touch?</span>
+
+            <span class="faq__arrow" aria-hidden="true"></span>
+          </label>
+
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore et dolore magna aliquyam erat, sed diam voluptua.
+                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                sanctus est Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="faq__item">
+          <input class="faq__toggle" type="checkbox" id="faq-question-4">
+
+          <label class="faq__question" for="faq-question-4">
+            <span>How can readers support this blog and the work behind it?</span>
+
+            <span class="faq__arrow" aria-hidden="true"></span>
+          </label>
+
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore et dolore magna aliquyam erat, sed diam voluptua.
+                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                sanctus est Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ END -->
+
+  <!-- Contact form START -->
+
+  <section class="contact" id="contact">
+    <div class="contact__container">
+
+      <div class="contact__heading">
+        <img class="contact__icon" src="assets/icons/contact-yellow.svg" alt="Contact Form Icon">
+
+        <h2 class="contact__title">Contact form</h2>
+      </div>
+
+      <div class="contact__intro">
+        <p>
+          Have a question or an idea to collaborate?
+        </p>
+        <p>
+          Get in touch—I’d love to hear from you and explore how we can work together.
+        </p>
+        </div>
+
+<form class="contact__form">
+
+  <div class="contact__row">
+
+    <div class="contact__field">
+      <label class="contact__label" for="contact-name">
+        What’s your name?
+      </label>
+
+      <input
+        class="contact__input"
+        type="text"
+        id="contact-name"
+        name="name"
+      >
+    </div>
+
+    <div class="contact__field">
+      <label class="contact__label" for="contact-email">
+        What’s your email?
+      </label>
+
+      <input
+        class="contact__input"
+        type="email"
+        id="contact-email"
+        name="email"
+      >
+    </div>
+
+  </div>
+
+  <div class="contact__field contact__field--message">
+    <label class="contact__label" for="contact-message">
+      How can I help?
+    </label>
+
+    <textarea
+      class="contact__textarea"
+      id="contact-message"
+      name="message"
+    ></textarea>
+  </div>
+
+<div class="contact__privacy">
+
   <input
-    class="faq__toggle"
+    class="contact__checkbox"
     type="checkbox"
-    id="faq-question-1"
+    id="contact-privacy"
+    aria-label="Agree to privacy policy"
   >
 
-  <label class="faq__question" for="faq-question-1">
-    <span>What’s the story behind my travel blog?</span>
+  <span class="contact__privacy-label">
+    I've read the
+    <a class="contact__privacy-link" href="#">privacy policy</a>
+    and agree to the processing of my data as outlined.
+  </span>
 
-    <span class="faq__arrow" aria-hidden="true"></span>
-  </label>
-
-  <div class="faq__answer">
-    <div class="faq__answer-inner">
-      <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-      </p>
-    </div>
-  </div>
 </div>
 
+<button class="contact__button" type="button">
+  Send
+</button>
 
+</form>
 
-<div class="faq__item">
-  <input
-    class="faq__toggle"
-    type="checkbox"
-    id="faq-question-2"
-  >
-
-  <label class="faq__question" for="faq-question-2">
-    <span>How do I plan, document, and share my travels?</span>
-
-    <span class="faq__arrow" aria-hidden="true"></span>
-  </label>
-
-  <div class="faq__answer">
-    <div class="faq__answer-inner">
-      <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-      </p>
-    </div>
-  </div>
-</div>
+  </section>
 
 
 
+  <!-- Contact form END -->
 
-<div class="faq__item">
-  <input
-    class="faq__toggle"
-    type="checkbox"
-    id="faq-question-3"
-  >
+  <!-- Footer Start -->
+  <footer class="footer">
+    <div class="footer_inner">
 
-  <label class="faq__question" for="faq-question-3">
-    <span>How can brands, companies, or fellow creators collaborate with me or get in touch?</span>
-
-    <span class="faq__arrow" aria-hidden="true"></span>
-  </label>
-
-  <div class="faq__answer">
-    <div class="faq__answer-inner">
-      <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-      </p>
-    </div>
-  </div>
-</div>
-
-
-
-
-<div class="faq__item">
-  <input
-    class="faq__toggle"
-    type="checkbox"
-    id="faq-question-4"
-  >
-
-  <label class="faq__question" for="faq-question-4">
-    <span>How can readers support this blog and the work behind it?</span>
-
-    <span class="faq__arrow" aria-hidden="true"></span>
-  </label>
-
-  <div class="faq__answer">
-    <div class="faq__answer-inner">
-      <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-      </p>
-    </div>
-  </div>
-</div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- FAQ END -->
-
-<!-- Contact form START -->
-
-<section class="faq" id="faq">
-  <div class="faq__container">
-
-    <div class="faq__heading">
-  <img
-    class="faq__icon"
-    src="assets/icons/contact-yellow.svg"
-    alt=""
-  >
-
-  <h2 class="faq__title">Contact form</h2>
-</div>
-
-</section>
-
-
-
-<!-- Contact form END -->
-
-<!-- Footer Start -->
-<footer class="footer">
-<div class="footer_inner">
-
-<div class="footer_log">
+      <div class="footer_log">
         <img src="/assets/icons/footer-copyright.svg" alt="Copyright" class="footer-logo">
-      <span class="footer-title">Travel Blog 2026</span>
-      <span class="footer-title">Imprint</span>
-      <span class="footer-title">Cookie Preferences</span>
+        <span class="footer-title">Travel Blog 2026</span>
+        <span class="footer-title">Imprint</span>
+        <span class="footer-title">Cookie Preferences</span>
+      </div>
+
+      <div class="footer_icons">
+
+        <img src="/assets/icons/footer-tiktok.svg" alt="tiktok_logo">
+        <img src="/assets/icons/footer-youtube.svg" alt="youtube_logo">
+        <img src="/assets/icons/footer-facebook.svg" alt="facebook_logo">
+        <img src="/assets/icons/footer-instagram.svg" alt="instagram_logo">
+
+      </div>
+
     </div>
 
-<div class="footer_icons">
-
-<img src="/assets/icons/footer-tiktok.svg" alt="tiktok_logo">
-<img src="/assets/icons/footer-youtube.svg" alt="youtube_logo">
-<img src="/assets/icons/footer-facebook.svg" alt="facebook_logo">
-<img src="/assets/icons/footer-instagram.svg" alt="instagram_logo">
-
-</div>
-
-</div>
-
-</footer>
+  </footer>
 
 
-<!-- Footer END -->
+  <!-- Footer END -->
 
 
 </body>
+
 </html>
