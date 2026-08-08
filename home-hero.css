@@ -1,0 +1,27 @@
+
+.hero_section {
+   display: flex;
+   width: 100%;
+}
+
+.hero  {
+    display: flex;
+
+    background-image: url(./assets/images/landing-header-turkey.png);
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+      
+}
+
+.hero > img {
+    width: 50%;
+    height: 110%;
+    object-fit: cover;
+}
+
+.hero > table {
+    text-align: left;
+    
+}
