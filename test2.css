@@ -1,0 +1,236 @@
+body{
+
+margin: 0px;
+}
+.navbar {
+  background-color: #4ea988;
+  height: 128px;
+}
+
+.navbar__inner {
+  width: 1440px;
+  max-width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  padding: 0 40px;
+}
+
+.navbar__logo img {
+  width: 72px;
+  height: 72px;
+}
+
+.navbar__nav ul {
+  list-style: none;
+  display: flex;
+  gap: 72px;
+}
+
+.navbar__nav a {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Arima', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+
+.navbar__nav a:hover,
+.navbar__nav a:visited {
+  text-decoration: none;
+  outline: none;
+
+}
+
+.navbar__nav a:active,
+.navbar__nav a:visited {
+  color: #F1C953;
+}
+
+.navbar__nav-item {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.navbar__nav-item:nth-child(1):hover {
+  transform: translate(2px, 0);
+}
+
+.navbar__nav-item:nth-child(2):hover {
+  transform: translate(2px, 2px);
+}
+
+.navbar__nav-item:nth-child(3):hover {
+  transform: translate(2px, -2px);
+}
+
+.navbar__nav-underline {
+  position: absolute;
+  left: -5%;      /* links größe */
+  bottom: 15px;    /* abstand */
+  width: 115%;    /* länge linie */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.7s ease;
+}
+
+.navbar__nav-item a:hover ~ .navbar__nav-underline,
+.navbar__nav-item a:visited ~ .navbar__nav-underline {
+  opacity: 1;
+}
+
+.hero{
+position: relative;
+width: 100%;
+height: 550px;
+overflow: hidden;
+
+}
+
+
+.hero_landing_yellow {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 515px;
+
+background-color: #F1C953;
+z-index: 2;
+
+animation: heroYellowFadeOut 0.6s ease-in-out 1s forwards; /*zeit -hero_landing_yellow*/
+
+}
+
+@keyframes heroYellowFadeOut {
+  0% {
+    background-color: rgba(241, 201, 83, 1);
+  }
+  100% {
+    background-color: rgba(241, 201, 83, 0);
+  }
+}
+
+.hero__inner {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+width: 1440px;
+max-width: 100%;
+height: 100%;
+margin: 0 auto;
+z-index: 3;
+
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.landing_picture_clip {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 515px;
+overflow: hidden;
+transform-origin: top ;
+}
+
+/*foto-landing*/
+.landing_picture{
+position: absolute;
+top: -40px;
+bottom: 100px;
+left: 0;
+width: 1070px;
+height: 515px;
+transform-origin: bottom left;
+
+transform: perspective(250px) translateX(490px) translateY(40px) scaleY(1);
+animation: landingPictureZoom 1.2s ease-in-out 2s forwards; /*zeit - landing_pictur*/
+}
+
+@keyframes landingPictureZoom {
+  0% {
+    transform: perspective(600px) translateX(490px) translateY(40px) scaleY(1);
+  }
+  50% {
+    transform: perspective(600px) translateX(490px) translateY(40px) scaleY(1.05);
+  }
+  100% {
+    transform: perspective(600px) translateX(490px) translateY(40px) scaleY(1.019);
+  }
+}
+/* animation: unten hero-title*/
+.einblend-title-hero {
+  animation: 0.5s slideIn ease-out forwards;
+  
+  font-family: 'Arima';
+  font-style: normal;
+  font-weight: bold;
+  font-weight: 700;
+  font-size: 60px;
+  color: #54370d;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.erscheinen-text-hero {
+  animation: fadeInEffect 1s ease-in-out forwards;
+
+  font-family: 'Palanquin';
+  font-style: normal;
+  font-weight: normal;
+  font-weight: 500;
+  font-size: 24px;
+  color: #54370d; 
+}
+
+@keyframes fadeInEffect {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.landin_graohic_2 {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+width: 1440px;
+height: 515px;
+
+
+transform: perspective(250px) translateX(930px)  scale(1);
+animation: landinGraphic2SlideLeft 1s ease-in-out 1s forwards;
+
+
+}
+
+@keyframes landinGraphic2SlideLeft {
+  0% {
+    transform: perspective(250px) translateX(930px) scale(1);
+  }
+  100% {
+    transform: perspective(250px) translateX(-500px) scale(1);
+  }
+}

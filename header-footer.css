@@ -47,9 +47,11 @@ header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-start;
   gap: 24px;
   margin-top: 8px;
   list-style: none;
+  text-align: left;
 }
 
 .article-header__meta-item {

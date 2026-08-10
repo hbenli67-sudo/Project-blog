@@ -1,0 +1,310 @@
+body {
+    margin: 0px;
+    padding: 0px;
+   
+}
+
+
+
+.navbar {
+  background-color: #4ea988;
+  height: 128px;
+}
+
+.navbar__inner {
+  width: 1440px;
+  max-width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  padding: 0 40px;
+}
+
+.navbar__logo img {
+  width: 72px;
+  height: 72px;
+}
+
+.navbar__nav ul {
+  list-style: none;
+  display: flex;
+  gap: 72px;
+}
+
+.navbar__nav a {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Arima', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+
+.navbar__nav a:hover,
+.navbar__nav a:visited {
+  text-decoration: none;
+  outline: none;
+
+}
+
+.navbar__nav a:active,
+.navbar__nav a:visited {
+  color: #F1C953;
+}
+
+.navbar__nav-item {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.navbar__nav-item:nth-child(1):hover {
+  transform: translate(2px, 0);
+}
+
+.navbar__nav-item:nth-child(2):hover {
+  transform: translate(2px, 2px);
+}
+
+.navbar__nav-item:nth-child(3):hover {
+  transform: translate(2px, -2px);
+}
+
+.navbar__nav-underline {
+  position: absolute;
+  left: -5%;      /* links größe */
+  bottom: 15px;    /* abstand */
+  width: 115%;    /* länge linie */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.7s ease;
+}
+
+.navbar__nav-item a:hover ~ .navbar__nav-underline,
+.navbar__nav-item a:visited ~ .navbar__nav-underline {
+  opacity: 1;
+}
+
+/*Hero-Section START*/
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  /* Fallback-Fläche: verhindert weißes Aufblitzen zwischen den Grafik-Übergängen */
+  }
+
+
+
+/* Foto: füllt die ganze Sektion im Hintergrund */
+.hero__background {
+  position: absolute;
+  inset: 0;
+  width: 80%;
+  height: 515px;
+  object-fit: cover;
+  transform: perspective(250px)  translateX(310px);
+  z-index: 1;
+
+}
+.hero__graphic{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 515px;
+  width: auto;
+  object-fit: contain;
+  object-position: left top;
+  z-index: 1;
+  opacity: 0;
+}
+
+
+
+/* Gelbe Grafik: liegt im Vordergrund über dem Foto, füllt die ganze Breite/Höhe */
+
+.hero__graphic_2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 515px;
+  width: auto;
+  object-fit: contain;
+  object-position: left top;
+  z-index: 2;
+  opacity: 0;
+}
+
+.hero__graphic_3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 550px;
+  width: auto;
+  object-fit: contain;
+  object-position: left top;
+  z-index: 3;
+  opacity: 0;
+}
+
+
+/* Text ganz oben */
+.hero__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: white;
+  animation: heroContentShift 0.6s ease-in-out 0.8s forwards;
+}
+
+@keyframes heroContentShift {
+  from {
+    top: 50%;
+    left: 50%;
+  }
+  to {
+    top: 48%;
+    left: 22%;
+  }
+}
+
+/* Rotierendes "Cappadocia · Turkey"-Badge */
+.hero__badge {
+  position: absolute;
+  left: 35%;
+  top: 60%;
+  width: 110px;
+  height: 100px;
+  z-index: 4;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.6);
+  animation: heroBadgeIn 0.5s ease-out 1.6s forwards;
+}
+
+@keyframes heroBadgeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.hero__badge-bg,
+.hero__badge-text {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__badge-text {
+  animation: heroBadgeSpin 8s linear infinite;
+}
+
+@keyframes heroBadgeSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero__badge-flag {
+  position: absolute;
+  width: 34%;
+  height: 34%;
+  top: 33%;
+  left: 33%;
+  border-radius: 50%;
+}
+
+
+/* animation: unten hero-title*/
+.einblend-title-hero {
+  animation: 0.5s slideIn ease-out forwards;
+  
+  font-family: 'Arima';
+  font-style: normal;
+  font-weight: bold;
+  font-weight: 700;
+  font-size: 60px;
+  color: #54370d;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.erscheinen-text-hero {
+  animation: fadeInEffect 1s ease-in-out forwards;
+
+  font-family: 'Palanquin';
+  font-style: normal;
+  font-weight: normal;
+  font-weight: 500;
+  font-size: 24px;
+  color: #54370d; 
+}
+
+@keyframes fadeInEffect {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+.hero__graphic_2 {
+  /* Blendet ein, sobald hero__graphic verschwindet, blendet danach wieder aus zu graphic_3 */
+  animation: heroGraphic2FadeInOut 1.6s ease-in-out 0.8s forwards;
+}
+
+@keyframes heroGraphic2FadeInOut {
+  0% {
+    opacity: 0;
+  }
+  37.5% {
+    opacity: 1;
+  }
+  62.5% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.hero__graphic_3 {
+  /* Blendet ein, sobald hero__graphic_2 verschwindet, und bleibt als Endzustand stehen */
+  animation: heroGraphicFadeIn 0.6s ease-in-out 1.8s forwards;
+}
+
+@keyframes heroGraphicFadeIn {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
