@@ -1,0 +1,33 @@
+
+
+
+.hero  {
+   
+
+    background-image: url(./assets/images/landing-header-turkey.png);
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+      
+}
+
+.hero_image_container {
+    
+    
+    width: 50%;
+}
+
+.hero_image_container img {
+   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero__text_overlay {
+     position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-150%, -50%);
+}
