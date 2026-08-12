@@ -103,54 +103,60 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar {
-  background-color: #4ea988;
-  height: 128px;
+body {
+  margin: 0;
 }
 
+/* Gesamte Monitorbreite */
+.navbar {
+  width: 100%;
+  height: 128px;
+  background-color: #4ea988;
+}
+
+/* Zentrierter Inhalt: maximal 1440px */
 .navbar__inner {
-  width: 1440px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1440px;
   height: 100%;
   margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+
   display: flex;
   align-items: center;
   gap: 100px;
-  padding: 0 40px;
 }
 
 .navbar__logo img {
+  display: block;
   width: 72px;
   height: 72px;
 }
 
 .navbar__nav ul {
-  list-style: none;
   display: flex;
   gap: 72px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .navbar__nav a {
   display: inline-block;
+  padding-bottom: 10px;
   color: #ffffff;
-  text-decoration: none;
-  font-family: 'Arima', sans-serif;
+  font-family: "Arima", sans-serif;
+  font-size: 24px;
   font-weight: 700;
   font-style: normal;
-  font-size: 24px;
-  padding-bottom: 10px;
+  text-decoration: none;
 }
 
 .navbar__nav a:hover,
-.navbar__nav a:visited {
-  text-decoration: none;
+.navbar__nav a:focus {
+  color: #f1c953;
   outline: none;
-
-}
-
-.navbar__nav a:active,
-.navbar__nav a:visited {
-  color: #F1C953;
 }
 
 .navbar__nav-item {
@@ -172,47 +178,37 @@ body {
 
 .navbar__nav-underline {
   position: absolute;
-  left: -5%;      /* links größe */
-  bottom: 15px;    /* abstand */
-  width: 115%;    /* länge linie */
+  bottom: 15px;
+  left: -5%;
+  width: 115%;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.7s ease;
 }
 
-.navbar__nav-item a:hover ~ .navbar__nav-underline,
-.navbar__nav-item a:visited ~ .navbar__nav-underline {
+.navbar__nav-item:hover .navbar__nav-underline {
   opacity: 1;
 }
 
-
-@font-face {
-
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Palanquin';
-  font-style: normal;
-  font-weight: 400;
-  src: url('./assets/fonts/palanquin-v17-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-
 .footer {
-  background-color: #4ea988;
+  width: 100%;
   height: 128px;
-  font-family: 'Palanquin', sans-serif;
-  color:#ffffff;
-
+  background-color: #4ea988;
+  color: #ffffff;
+  font-family: "Palanquin", sans-serif;
 }
-
 
 .footer_inner {
-  width: 1440px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1440px;
   height: 100%;
   margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
 }
 
 .footer_log {
@@ -231,8 +227,13 @@ body {
 }
 
 .footer_icons {
-display: flex;
-align-items: center;
-gap: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 
+.footer_icons img {
+  display: block;
+  width: 32px;
+  height: 32px;
 }
