@@ -176,7 +176,7 @@ animation: landingPictureZoom 1.2s ease-in-out 2s forwards; /*zeit - landing_pic
   font-weight: bold;
   font-weight: 700;
   font-size: 60px;
-  color: #54370d;
+  color: #54370D;
 }
 
 @keyframes slideIn {
