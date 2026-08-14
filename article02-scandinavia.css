@@ -1,22 +1,17 @@
-*{
-margin: 0;
-box-sizing: border-box;
-}
-
-.pattaya-graphs {
+.scandinavia{
   padding: 64px 24px 80px;
   background-color: var(--color-white);
 }
 
-.pattaya-graphs__container {
+.scandinavia_main_container{
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
 }
 
-.pattaya-graphs__intro,
-.pattaya-graphs__description,
-.pattaya-graphs__outro {
+.scandinavia-video_attrape__intro,
+.scandinavia-video_attrape__description,
+.scandinavian__last_discription {
   color: var(--color-text-dark);
   font-family: "Palanquin", sans-serif;
   font-size: 24px;
@@ -24,101 +19,154 @@ box-sizing: border-box;
   line-height: 120%;
 }
 
-.pattaya-graphs__title {
-  color: var(--color-text-brown);
-  font-family: "Arima", serif;
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 120%;
-  text-align: center;
-}
+
 
 /* Oberer Rain-Graph */
 
-.pattaya-graphs__rain {
+.scandinavia_video_attrappe{
   margin-top: 64px;
 }
 
-.pattaya-graphs__rain-figure {
+.scandinavia_video_attrappe_container {
   width: min(100%, 640px);
   margin: 24px auto 0;
   overflow: hidden;
-  background-color: var(--color-white);
+  
   border-radius: 53px;
-  box-shadow: -2px 4px 11.6px 0 rgb(0 0 0 / 25%);
+  
 }
 
-.pattaya-graphs__image {
+.scandinavia_video_attrappe__image{
   display: block;
   width: 100%;
-  height: auto;
+ 
 }
 
-.pattaya-graphs__description {
+.scandinavia-video_attrape__description{
   margin-top: 64px;
 }
 
-/* Zweispaltiger Bereich */
 
-.pattaya-graphs__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 519px);
-  gap: 80px;
-  width: 1118px;
-  margin: 88px auto 0;
-}
 
-/*
-  Kein 1fr mehr:
-  Beide Karten laufen normal von oben nach unten.
-*/
-.pattaya-graphs__card {
-  display: flex;
-  flex-direction: column;
-  width: 519px;
-}
 
-.pattaya-graphs__card-text {
-  min-height: 173px;
-  margin-top: 24px;
-  color: var(--color-text-dark);
-  font-family: "Palanquin", sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 120%;
-}
 
-/* Gleich große weiße Boxen */
-
-.pattaya-graphs__card-figure {
-  display: grid;
-  width: 519px;
-  height: 471px;
-  margin: 24px 0 0;
-  place-items: center;
-  overflow: hidden;
-  background-color: var(--color-white);
-  border-radius: 53px;
-  box-shadow: -2px 4px 11.6px 0 rgb(0 0 0 / 25%);
-}
-
-/*
-  Die PNG bleibt proportional und wird mittig
-  innerhalb der 519 × 471 px großen Box angezeigt.
-*/
-.pattaya-graphs__card-figure .pattaya-graphs__image {
+.viedeo_unorded_list{
   display: block;
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: 100%;
-  object-fit: contain;
+  width: min(100%, 1040px);
+  margin: 0 auto 64px;
+  margin-top: 64px;
+  color: #3d3d3d;
+  font-family: 'Palanquin', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: left;
 }
 
-.pattaya-graphs__outro {
+.viedeo_unorded_list p {
+  margin-bottom: 16px;
+}
+
+.viedeo_unorded_list ul {
+  padding-left: 24px;
+}
+
+.viedeo_unorded_list li {
+  padding-left: 8px;
+  
+}
+
+.viedeo_unorded_list li::marker {
+  font-weight: 400;
+}
+
+
+.scandinavian__last_discription{
   width: 100%;
   margin-top: 88px;
 }
+
+/* Pro Tip übernommen */
+
+.pro-tip {
+  width: 1440px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 48px 40px 96px;
+  box-sizing: border-box;
+}
+
+.pro-tip__box {
+  position: relative;
+  width: 1083px;
+  max-width: 100%;
+  min-height: 195px;
+  margin: 65px auto 0;
+  padding: 26px 16px 24px 16px;
+  background: #4EA48733;
+  border-radius: 30px;
+  opacity: 1;
+  box-sizing: border-box;
+}
+
+.pro-tip__badge {
+  position: absolute;
+  top: -38px;
+  left: -45px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #4EA487;
+  color: #F1C953;
+  padding: 8px 20px;
+  border-radius: 50px;
+  white-space: nowrap;
+  transform: rotate(-13.67deg);
+  box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
+
+  font-family: 'Palanquin', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+
+.pro-tip__badge-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.pro-tip__list {
+  padding-left: 24px;
+  color: #3d3d3d;
+}
+
+.pro-tip__list li {
+  font-family: 'Palanquin', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+
+.pro-tip__list li + li {
+  margin-top: 4px;
+}
+
+.pro-tip__link {
+  color: #4EA487;
+  font-family: 'Palanquin', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+
 
 /* Aus article01-beaches.css übernommen: Navbar, Footer, Share */
 

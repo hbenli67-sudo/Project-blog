@@ -45,6 +45,9 @@ body{
     position: absolute;
     display: flex;
 
+    left:0;
+    
+
     
 }
 
@@ -93,17 +96,18 @@ body{
 }
 
 .slider_a input[value="one"]:checked~.slider_a_wrapper{
-    transform: translateX(calc( 100%/4));
-}
-
-.slider_a input[value="two"]:checked~.slider_a_wrapper{
     transform: translateX(0);
 }
 
+.slider_a input[value="two"]:checked~.slider_a_wrapper{
+    transform: translateX(calc(-100%/4));
+}
+
 .slider_a input[value="three"]:checked~.slider_a_wrapper{
-    transform: translateX(calc(-100% /4));
+    transform: translateX(calc(-200% /4));
 }
 
 .slider_a input[value="four"]:checked~.slider_a_wrapper{
-    transform: translateX(calc(-100% /4));
+    transform: translateX(calc(-300% /4));
 }
+
