@@ -12,13 +12,13 @@
       
 }
 
-.hero_image_container {
-    
-    
+.hero__image_container {
+    position: relative;
+
     width: 50%;
 }
 
-.hero_image_container img {
+.hero__image_container img {
    position: absolute;
   top: 50%;
   left: 50%;
