@@ -128,7 +128,7 @@ body {
 
 .hero_landing__images {
   display: flex;
-  height: 545px;
+  height: 546px;
   width: 400%;
   position: relative;
   z-index: 2;
@@ -142,7 +142,7 @@ body {
   }
 
   to {
-    transform: translateX(-800px);
+    transform: translateX(-1300px);
   }
 }
 
@@ -153,7 +153,7 @@ body {
   top: 50%;
   left: 50%;
   z-index: 3;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -60%);
   text-align: left;
   color: white;
   animation: heroContentShift 0.6s ease-in-out 0.8s forwards;
