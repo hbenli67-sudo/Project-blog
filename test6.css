@@ -1,0 +1,63 @@
+
+body {
+    margin: 0 auto;
+width: 1900px;
+}
+
+.hero_landing {
+display: flex;
+width: 1400px;
+margin: 0 auto;
+position: relative;
+
+}
+
+.hero_landing__images {
+display: flex;
+height: 515px;
+width: 700px;
+
+  position: relative;
+  z-index: 2;
+  opacity: 1;
+
+animation: yellow ease-in-out 2s forwards;
+}
+
+@keyframes yellow {
+from{
+transform:  translateX(0);
+
+}
+to {
+    transform: translateX(350px);
+}
+
+}
+
+.hero_background {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 515px;
+  object-fit: cover;
+  animation: zoomImage 5s cubic-bezier(.17, .67, .83, .67) forwards;
+
+  z-index: 1;
+  opacity: 1;
+}
+
+@keyframes zoomImage {
+  33% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.15)
+  }
+}

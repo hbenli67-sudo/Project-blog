@@ -1,0 +1,176 @@
+* {
+    margin: 0px;
+    max-width: 1900px;
+   
+
+}
+
+section {
+    position: relative;
+    width: 1440px;
+    height: 540px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.hero_landing {
+    width: 1440px;
+    height: 540px;
+
+    display: flex;
+    justify-content: flex-end;
+
+    overflow: hidden;
+}
+
+.landing_picture_hero {
+    width: 1440px;
+    height: 540px;
+
+    object-fit: cover;
+    object-position: right center;
+
+    position: absolute;
+    z-index: 2;
+
+    transform-origin: bottom left;
+    animation: zoomImage 6s cubic-bezier(.17,.67,.83,.67) forwards;
+}
+
+@keyframes zoomImage {
+    33% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1.1)
+    }
+     100% {
+        transform: scale(1.2)
+    }
+}
+
+.yellow-landig {
+width: 100%;
+height: auto;
+
+position: absolute;
+  z-index: 10;
+
+}
+
+
+
+.hero__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+  transform: translate(-20%, -40%);
+  text-align: left;
+  color: white;
+  animation: heroContentShift 1s ease-in-out 1.6s forwards;
+}
+
+@keyframes heroContentShift {
+  from {
+    top: 50%;
+    left: 50%;
+  }
+  to {
+    top: 48%;
+    left: 10%;
+  }
+}
+
+
+
+
+/* animation: unten hero-title*/
+.einblend-title-hero {
+  animation: 0.5s slideIn ease-out forwards;
+  
+  font-family: 'Arima';
+  font-style: normal;
+  font-weight: bold;
+  font-weight: 700;
+  font-size: 60px;
+  color: #54370d;
+  padding-bottom: 32px;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.erscheinen-text-hero {
+  animation: fadeInEffect 1s ease-in-out forwards;
+
+  font-family: 'Palanquin';
+  font-style: normal;
+  font-weight: normal;
+  font-weight: 500;
+  font-size: 24px;
+  color: #54370d; 
+}
+
+@keyframes fadeInEffect {
+  0% {
+    opacity: 0;
+  }
+ 
+  100% {
+    opacity: 1;
+  }
+}
+
+.hero__graphic_3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  width: 1440px;
+  height: 540px;
+  object-fit: cover;
+
+  opacity: 0;
+  transform: translateX(300px);
+
+  animation: graphic3Move 3s ease-in-out 2.6s forwards;
+}
+
+@keyframes graphic3Move {
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+
+  25% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+}
