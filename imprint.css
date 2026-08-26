@@ -1,17 +1,17 @@
 
 
 
-.sektion_impresum{
+.impresum_container {
+    font-family: 'Arima';
+ max-width: 800px;
+ margin: 40px auto;
+}
+
+h1{
     font-family: 'Arima';
      font-size: 20px;
-     
 }
-
-.sektion_impresum >p{
     
-
-}
-
 .footer a {
 text-decoration: none;
 color: white;
@@ -21,3 +21,4 @@ color: white;
     text-decoration: underline;
     text-underline-offset: 4px;
     color: #F1C953;
+}
