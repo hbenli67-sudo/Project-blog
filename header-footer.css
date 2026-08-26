@@ -12,6 +12,7 @@ header {
 
 .article-header__content {
   flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -45,7 +46,7 @@ header {
 
 .article-header__meta {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: flex-start;
   gap: 24px;

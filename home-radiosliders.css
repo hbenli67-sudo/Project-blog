@@ -140,8 +140,10 @@
 }
 
 .slider_a_element_element_one {
+  display: block;
   width: 72%;
   color: white;
+  text-decoration: none;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
 
@@ -178,8 +180,10 @@
 }
 
 .slider_a_element_element_two {
+  display: block;
   width: 75%;
   color: white;
+  text-decoration: none;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
 
@@ -216,8 +220,10 @@
 }
 
 .slider_a_element_element_three {
+  display: block;
   width: 75%;
   color: white;
+  text-decoration: none;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
 
