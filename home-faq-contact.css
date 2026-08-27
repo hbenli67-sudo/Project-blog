@@ -39,7 +39,7 @@
 
 .faq__list {
   display: grid;
-  gap: 24px;
+  gap: 32px;
 }
 
 .faq__item {
@@ -175,7 +175,7 @@
 }
 
 .contact__title {
-  margin: 0;
+  margin: 0 0 24px 0;
   color: var(--color-green);
   font-family: "Arima", serif;
   font-size: 52px;
@@ -352,7 +352,7 @@
   display: block;
   width: 139px;
   height: 48px;
-  margin: 32px auto 0;
+  margin: 75px auto 0;
   padding: 0 24px;
   gap: 10px;
 
