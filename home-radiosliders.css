@@ -16,6 +16,16 @@
   src: url("../assets/fonts/palanquin-dark-v17-latin-regular.woff2")
     format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
+/* palanquin-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Palanquin';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../assets/fonts/palanquin-v17-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
 /* palanquin-dark-600 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -29,6 +39,49 @@
   box-sizing: border-box;
   margin: 0;
 }
+
+/* highlights stylen start*/
+
+
+.highlights_heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
+  margin: 72px 0px 40px 0px;
+}
+
+.highlights_title {
+  margin: 0;
+  color: var(--color-green);
+  font-family: "Arima", serif;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.highlights_icon {
+  display: block;
+  width: auto;
+  height: 41.2px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.highlights_intro {
+  margin-top: 0;
+  text-align: center;
+  color: var(--color-text-brown);
+  font-family: "Palanquin", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  font-style: medium;
+  line-height: 110%;
+  margin: 0px 00px 72px 0px;
+}
+
+/* highlights stylen end*/
+
 
 .slider_a {
   position: relative;
