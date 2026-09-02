@@ -7,3 +7,10 @@
 h1 {
   font-family: "Arima";
 }
+
+.footer-imprint {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'palanquin regular', sans-serif;
+  margin-left: 40px;
+}

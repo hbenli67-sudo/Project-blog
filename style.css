@@ -124,7 +124,7 @@ body {
   height: 128px;
   background-color: #4ea988;
   color: #ffffff;
-  font-family: "Palanquin", sans-serif;
+  font-family: 'Palanquin regular', sans-serif;
 }
 
 .footer_inner {
@@ -146,9 +146,17 @@ body {
   gap: 4px;
 }
 
-.footer-title + .footer-title {
+.footer-title {
   margin-left: 40px;
 }
+
+.footer-imprint {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Palanquin regular', sans-serif;
+  margin-left: 40px;
+}
+
 
 .footer-logo {
   width: 24px;
