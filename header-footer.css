@@ -45,11 +45,12 @@ header {
 }
 
 .article-header__meta {
+  padding: 0;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: flex-start;
-  gap: 24px;
+  gap: 32px;
   margin-top: 8px;
   list-style: none;
   text-align: left;
@@ -110,4 +111,151 @@ header {
   font-size: 16px;
   line-height: 150%;
   text-align: left;
+}
+/* ===== Navbar + Footer: gemeinsame Basis fuer alle Seiten =====
+   Einzige Quelle fuer diese Regeln - nicht in style.css oder den
+   article*.css duplizieren, sonst laufen die Seiten wieder auseinander. */
+
+.navbar {
+  background-color: #4ea988;
+  height: 128px;
+}
+
+.navbar__inner {
+  width: 1440px;
+  max-width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  padding: 0 40px;
+}
+
+.navbar__logo img {
+  width: 72px;
+  height: 72px;
+}
+
+.navbar__nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 72px;
+}
+
+.navbar__nav a {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Arima', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+
+.navbar__nav a:hover,
+.navbar__nav a:visited {
+  text-decoration: none;
+  outline: none;
+
+}
+
+.navbar__nav a:active,
+.navbar__nav a:visited {
+  color: #F1C953;
+}
+
+.navbar__nav-item {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.navbar__nav-item:nth-child(1):hover {
+  transform: translate(2px, 0);
+}
+
+.navbar__nav-item:nth-child(2):hover {
+  transform: translate(2px, 2px);
+}
+
+.navbar__nav-item:nth-child(3):hover {
+  transform: translate(2px, -2px);
+}
+
+.navbar__nav-underline {
+  position: absolute;
+  left: -5%;      /* links größe */
+  bottom: 15px;    /* abstand */
+  width: 115%;    /* länge linie */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.7s ease;
+}
+
+.navbar__nav-item a:hover ~ .navbar__nav-underline,
+.navbar__nav-item a:visited ~ .navbar__nav-underline {
+  opacity: 1;
+}
+
+.footer {
+  width: 100%;
+  height: 128px;
+  background-color: #4ea988;
+  color: #ffffff;
+  font-family: "Palanquin", sans-serif;
+}
+
+.footer_inner {
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer_log {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.footer-title + .footer-title {
+  /* 4px gap aus .footer_log + 71px = 75px Abstand */
+  margin-left: 71px;
+}
+
+.footer-logo {
+  width: 24px;
+  height: 24px;
+}
+
+.footer_icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer_icons img {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: #F1C953;
 }

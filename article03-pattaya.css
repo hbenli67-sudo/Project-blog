@@ -115,131 +115,8 @@
   margin-top: 88px;
 }
 
-/* Aus article01-beaches.css übernommen: Navbar, Footer, Share */
+/* Aus article01-beaches.css übernommen: Share */
 
-.navbar {
-  background-color: #4ea988;
-  height: 128px;
-}
-
-.navbar__inner {
-  width: 1440px;
-  max-width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 100px;
-  padding: 0 40px;
-}
-
-.navbar__logo img {
-  width: 72px;
-  height: 72px;
-}
-
-.navbar__nav ul {
-  list-style: none;
-  display: flex;
-  gap: 72px;
-}
-
-.navbar__nav a {
-  display: inline-block;
-  color: #ffffff;
-  text-decoration: none;
-  font-family: 'Arima', sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 24px;
-  padding-bottom: 10px;
-}
-
-.navbar__nav a:hover,
-.navbar__nav a:visited {
-  text-decoration: none;
-  outline: none;
-
-}
-
-.navbar__nav a:active,
-.navbar__nav a:visited {
-  color: #F1C953;
-}
-
-.navbar__nav-item {
-  position: relative;
-  transition: transform 0.2s ease;
-}
-
-.navbar__nav-item:nth-child(1):hover {
-  transform: translate(2px, 0);
-}
-
-.navbar__nav-item:nth-child(2):hover {
-  transform: translate(2px, 2px);
-}
-
-.navbar__nav-item:nth-child(3):hover {
-  transform: translate(2px, -2px);
-}
-
-.navbar__nav-underline {
-  position: absolute;
-  left: -5%;      /* links größe */
-  bottom: 15px;    /* abstand */
-  width: 115%;    /* länge linie */
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.7s ease;
-}
-
-.navbar__nav-item a:hover ~ .navbar__nav-underline,
-.navbar__nav-item a:visited ~ .navbar__nav-underline {
-  opacity: 1;
-}
-
-.footer {
-  background-color: #4ea988;
-  height: 128px;
-  font-family: 'Palanquin', sans-serif;
-  color:#ffffff;
-
-}
-
-
-.footer_inner {
-  width: 1440px;
-  max-width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-}
-
-.footer_log {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.footer-title + .footer-title {
-  margin-left: 40px;
-}
-
-.footer-logo {
-  width: 24px;
-  height: 24px;
-}
-
-.footer_icons {
-display: flex;
-align-items: center;
-gap: 16px;
-
-}
 
 .share {
 padding-bottom: 88px;
@@ -263,6 +140,7 @@ padding-top: 88px;
   font-style:normal;
   font-weight: 500;
   font-size: 24px;
+  color: #54370D;
 
 }
 
@@ -286,6 +164,8 @@ cursor: pointer;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0.05em;
 
   display: flex;
   align-items: center;
@@ -338,8 +218,8 @@ cursor: pointer;
 }
 
 .share_icon {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 27px;
     display: flex;
 
 

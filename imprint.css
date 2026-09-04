@@ -12,12 +12,3 @@
 
 }
 
-.footer a {
-text-decoration: none;
-color: white;
-}
-
-.footer a:hover{
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    color: #F1C953;

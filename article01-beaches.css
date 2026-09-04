@@ -33,40 +33,56 @@ box-sizing: border-box;
   justify-content: center;
   align-items: center;
   padding: 48px 40px;
+  /* Fluchtpunkt fuer die 3D-Neigung der Karten */
+  perspective: 1400px;
 }
 
 .beach-carousel__card {
-  --r: 0deg;
-  --y: 0px;
   flex: 0 0 auto;
-  width: 300px;
+  width: 380px;
   height: 440px;
   border-radius: 28px;
   overflow: hidden;
   background-color: #ffffff;
-  box-shadow: 0 16px 32px rgb(0 0 0 / 25%);
-  transform: rotate(var(--r)) translateY(var(--y));
+  box-shadow: 0 24px 48px rgb(0 0 0 / 28%);
+  /* Alle Karten gleich geneigt: die linke Kante kippt zum Betrachter */
+  transform: rotateY(30deg);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   cursor: pointer;
-  z-index: 1;
 }
 
 .beach-carousel__card + .beach-carousel__card {
-  margin-left: -70px;
+  margin-left: -170px;
 }
 
-.beach-carousel__card:nth-child(1) { --r: -9deg; --y: 20px; }
-.beach-carousel__card:nth-child(2) { --r: -4.5deg; --y: 6px; }
-.beach-carousel__card:nth-child(3) { --r: 0deg; --y: 0px; }
-.beach-carousel__card:nth-child(4) { --r: 4.5deg; --y: 6px; }
-.beach-carousel__card:nth-child(5) { --r: 9deg; --y: 20px; }
+/* Jede Karte liegt ueber ihrer linken Nachbarin */
+.beach-carousel__card:nth-child(1) { z-index: 1; }
+.beach-carousel__card:nth-child(2) { z-index: 2; }
+.beach-carousel__card:nth-child(3) { z-index: 3; }
+.beach-carousel__card:nth-child(4) { z-index: 4; }
+.beach-carousel__card:nth-child(5) { z-index: 5; }
 
+/* Hover: die Karte richtet sich auf und kommt nach vorne.
+   Kein translateY - im Entwurf bleibt sie auf gleicher Hoehe,
+   scaleX(0.866) = cos(30deg): macht die Verbreiterung durch das
+   Aufrichten wieder rueckgaengig. Nur scaleY laesst die Karte wachsen. */
 .beach-carousel__card:hover {
-  --r: 0deg;
-  --y: -28px;
-  transform: rotate(var(--r)) translateY(var(--y)) scale(1.12);
-  box-shadow: 0 28px 48px rgb(0 0 0 / 35%);
+  transform: rotateY(0deg) scaleX(0.866) scaleY(1.08);
+  box-shadow: 0 32px 60px rgb(0 0 0 / 38%);
   z-index: 10;
+}
+
+/* Die Karten links der gehoverten ruecken nach links weg und geben sie frei.
+   :has(~ ...) waehlt alle Karten, nach denen eine gehoverte Karte folgt.
+   142px statt 164px, weil hier die schmalere ferne Kante anliegt. */
+.beach-carousel__card:has(~ .beach-carousel__card:hover) {
+  transform: translateX(-142px) rotateY(30deg);
+}
+
+/* Die Karten rechts davon ruecken nach rechts - untereinander
+   behalten sie ihre Ueberlappung, weil alle gleich weit wandern. */
+.beach-carousel__card:hover ~ .beach-carousel__card {
+  transform: translateX(164px) rotateY(30deg);
 }
 
 .beach-carousel__image {
@@ -78,7 +94,7 @@ box-sizing: border-box;
 
 .beach-carousel_text {
   display: block;
-  width: min(100%, 1040px);
+  width: min(100%, 1240px);
   margin: 0 auto 24px;
   background-color: #ffffff;
   color: #3d3d3d;
@@ -121,10 +137,6 @@ box-sizing: border-box;
   font-weight: 400;
 }
 
-.beach_list li:nth-child(4)::marker {
-  font-weight: 700;
-}
-
 /* Pro Tip */
 
 .pro-tip {
@@ -137,7 +149,7 @@ box-sizing: border-box;
 
 .pro-tip__box {
   position: relative;
-  width: 1083px;
+  width: 1240px;
   max-width: 100%;
   min-height: 195px;
   margin: 65px auto 0;
@@ -322,131 +334,8 @@ box-sizing: border-box;
   margin-top: 88px;
 }
 
-/* Aus article01-beaches.css übernommen: Navbar, Footer, Share */
+/* Aus article01-beaches.css übernommen: Share */
 
-.navbar {
-  background-color: #4ea988;
-  height: 128px;
-}
-
-.navbar__inner {
-  width: 1440px;
-  max-width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 100px;
-  padding: 0 40px;
-}
-
-.navbar__logo img {
-  width: 72px;
-  height: 72px;
-}
-
-.navbar__nav ul {
-  list-style: none;
-  display: flex;
-  gap: 72px;
-}
-
-.navbar__nav a {
-  display: inline-block;
-  color: #ffffff;
-  text-decoration: none;
-  font-family: 'Arima', sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 24px;
-  padding-bottom: 10px;
-}
-
-.navbar__nav a:hover,
-.navbar__nav a:visited {
-  text-decoration: none;
-  outline: none;
-
-}
-
-.navbar__nav a:active,
-.navbar__nav a:visited {
-  color: #F1C953;
-}
-
-.navbar__nav-item {
-  position: relative;
-  transition: transform 0.2s ease;
-}
-
-.navbar__nav-item:nth-child(1):hover {
-  transform: translate(2px, 0);
-}
-
-.navbar__nav-item:nth-child(2):hover {
-  transform: translate(2px, 2px);
-}
-
-.navbar__nav-item:nth-child(3):hover {
-  transform: translate(2px, -2px);
-}
-
-.navbar__nav-underline {
-  position: absolute;
-  left: -5%;      /* links größe */
-  bottom: 15px;    /* abstand */
-  width: 115%;    /* länge linie */
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.7s ease;
-}
-
-.navbar__nav-item a:hover ~ .navbar__nav-underline,
-.navbar__nav-item a:visited ~ .navbar__nav-underline {
-  opacity: 1;
-}
-
-.footer {
-  background-color: #4ea988;
-  height: 128px;
-  font-family: 'Palanquin', sans-serif;
-  color:#ffffff;
-
-}
-
-
-.footer_inner {
-  width: 1440px;
-  max-width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-}
-
-.footer_log {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.footer-title + .footer-title {
-  margin-left: 40px;
-}
-
-.footer-logo {
-  width: 24px;
-  height: 24px;
-}
-
-.footer_icons {
-display: flex;
-align-items: center;
-gap: 16px;
-
-}
 
 .share {
 padding-bottom: 88px;
@@ -470,6 +359,7 @@ padding-top: 88px;
   font-style:normal;
   font-weight: 500;
   font-size: 24px;
+  color: #54370D;
 
 }
 
@@ -493,6 +383,8 @@ cursor: pointer;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0.05em;
 
   display: flex;
   align-items: center;
@@ -545,8 +437,8 @@ cursor: pointer;
 }
 
 .share_icon {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 27px;
     display: flex;
 
 
