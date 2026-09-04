@@ -227,9 +227,20 @@ header {
   gap: 4px;
 }
 
-.footer-title + .footer-title {
-  /* 4px gap aus .footer_log + 71px = 75px Abstand */
+/* 75px zwischen den drei Footer-Texten: 4px gap aus .footer_log + 71px.
+   Deckt beide Klassen ab, seit der Imprint-Link .footer-imprint heisst. */
+.footer-title + .footer-title,
+.footer-title + .footer-imprint,
+.footer-imprint + .footer-title {
   margin-left: 71px;
+}
+
+.footer-imprint {
+  color: #ffffff;
+  text-decoration: none;
+  /* neutralisiert das 'palanquin regular' aus imprint.css - diese
+     Schriftfamilie ist in styles/font.css gar nicht definiert. */
+  font-family: inherit;
 }
 
 .footer-logo {
