@@ -1,14 +1,19 @@
-
-
-
-.sektion_impresum{
-    font-family: 'Arima';
-     font-size: 20px;
-     
+.impresum_container {
+  font-family: "Arima";
+  max-width: 800px;
+  margin: 3.3% auto;
 }
 
-.sektion_impresum >p{
-    
-
+h1 {
+  font-family: "Arima";
 }
 
+<<<<<<< HEAD
+=======
+.footer-imprint {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'palanquin regular', sans-serif;
+  margin-left: 40px;
+}
+>>>>>>> ae4791712dad0727be0da3f3b95a5108e5b8f653
