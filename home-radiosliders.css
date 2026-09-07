@@ -140,7 +140,12 @@
   left: 0;
 }
 
+
+
+
 .slider_a_element {
+  display: block;
+  text-decoration: none;
   width: calc(100% / 4);
   height: 100%;
 }
