@@ -427,3 +427,32 @@
     display: none;
   }
 }
+
+/* ===== Tablet: 377-1439px =====
+   Der Slider selbst hat schon max-width: 100% und Prozentbreiten,
+   laeuft also nicht ueber. Angepasst werden nur die Schriftgroessen,
+   die sonst in den schmalen Textboxen umbrechen. */
+
+@media (min-width: 377px) and (max-width: 1439px) {
+  .highlights_title {
+    font-size: clamp(34px, 4vw, 52px);
+  }
+
+  .highlights_intro {
+    font-size: clamp(16px, 2vw, 24px);
+  }
+
+  .slider_a_element_element_one > h3,
+  .slider_a_element_element_two > h3,
+  .slider_a_element_element_three > h3,
+  .slider_a_element_element_four > h3 {
+    font-size: clamp(24px, 3.5vw, 48px);
+  }
+
+  .slider_a_element_element_one > p,
+  .slider_a_element_element_two > p,
+  .slider_a_element_element_three > p,
+  .slider_a_element_element_four > p {
+    font-size: clamp(16px, 2vw, 28px);
+  }
+}

@@ -794,3 +794,75 @@ cursor: pointer;
 .share_button picture {
   display: contents;
 }
+
+/* ===== Tablet: 377-1439px =====
+   Untergrenze schliesst an den Handy-Block (bis 376px) an,
+   Obergrenze ist die Breite, ab der das Desktop-Layout passt.
+   Beide Grenzen stehen ausdruecklich da, damit dieser Block den
+   375px-Entwurf nicht beeinflussen kann. */
+
+@media (min-width: 377px) and (max-width: 1439px) {
+  /* Der Faecher braucht am Desktop 1380px:
+     380 Karte + 4 x 210 Versatz + 2 x 40 Track- + 2 x 40 Sektionspolster.
+     Alle sechs Werte als Anteil davon in vw umgerechnet, dadurch
+     bleibt die Faecher-Optik ueber den ganzen Bereich erhalten und
+     die Summe bleibt immer unter 100vw:
+       380/1380 = 27.5   170/1380 = 12.3   40/1380 = 2.9   48/1380 = 3.5
+     Danach alles mit 0.96 skaliert: style.css setzt
+     scrollbar-gutter: stable, die Scrollleiste belegt also dauerhaft
+     rund 15px - und 100vw rechnet sie mit. Bei voller Ausnutzung
+     waere der Faecher damit breiter als der sichtbare Bereich. */
+  .beach-carousel {
+    padding: 48px 2.8vw 64px;
+  }
+
+  .beach-carousel__track {
+    padding: 3.4vw 2.8vw;
+  }
+
+  .beach-carousel__card {
+    width: 26.4vw;
+    height: 30.6vw;
+    border-radius: 1.9vw;
+  }
+
+  .beach-carousel__card + .beach-carousel__card {
+    margin-left: -11.8vw;
+  }
+
+  /* Die Verschiebungen der Hover-Regeln haengen an der Kartenbreite
+     und muessen mitskalieren: 142/1380 = 10.3, 164/1380 = 11.9. */
+  .beach-carousel__card:has(~ .beach-carousel__card:hover) {
+    transform: translateX(-9.9vw) rotateY(30deg);
+  }
+
+  .beach-carousel__card:hover ~ .beach-carousel__card {
+    transform: translateX(11.4vw) rotateY(30deg);
+  }
+
+  .beach-carousel__title {
+    font-size: clamp(22px, 2.5vw, 32px);
+  }
+
+  /* Beide Textbloecke haben kein Seitenpolster - ohne das klebt der
+     Text an den Bildschirmkanten. */
+  .beach-carousel_text,
+  .beach_list {
+    padding: 0 24px;
+  }
+
+  /* Die Badge haengt mit left: -45px aus dem Kasten. Bei den 40px
+     Sektionspolster des Desktops ragte sie 5px ueber den Rand -
+     48px geben ihr die noetigen 3px Luft. */
+  .pro-tip {
+    padding: 48px 48px 96px;
+  }
+
+  /* Desktop: 106.9px breit, right: 100% und dann nochmal 80px nach
+     links. Bei mittigem 140px-Button liegt die linke Kante bei
+     Breite/2 - 256.9 - der Pfeil ist also erst ab 514px im Bild.
+     8px statt 80px halten ihn ueber den ganzen Bereich sichtbar. */
+  .share_pfeil {
+    transform: translate(-8px, -15px);
+  }
+}

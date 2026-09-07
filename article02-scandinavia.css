@@ -465,3 +465,50 @@ cursor: pointer;
     transform: translateX(-44px);
   }
 }
+
+/* ===== Tablet: 377-1439px =====
+   Grenzen wie in article01: die Untergrenze schliesst an den
+   Handy-Block an, die Obergrenze ist die Breite, ab der das
+   Desktop-Layout passt. */
+
+@media (min-width: 377px) and (max-width: 1439px) {
+  /* Desktop: padding 0 64px 24px 80px - das sind 144px, bei 377px
+     blieben davon nur 233px Inhaltsbreite uebrig. */
+  .scandinavia {
+    padding: 0 24px 24px;
+  }
+
+  /* Desktop-Abstaende von 64px und 88px auf einen Wert, der auch bei
+     kleinen Tabletbreiten nicht die halbe Seite fuellt. */
+  .scandinavia_video_attrappe {
+    padding: 48px 0 24px;
+  }
+
+  .scandinavia-video_attrape__description,
+  .viedeo_unorded_list {
+    margin-top: 48px;
+  }
+
+  .scandinavian__last_discription {
+    margin-top: 48px;
+  }
+
+  .scandinavia-video_attrape__intro,
+  .scandinavia-video_attrape__description,
+  .scandinavian__last_discription,
+  .viedeo_unorded_list {
+    font-size: clamp(18px, 2vw, 24px);
+  }
+
+  /* Badge haengt mit left: -45px aus dem Kasten - 40px Sektions-
+     polster reichten dafuer nicht. */
+  .pro-tip {
+    padding: 48px 48px 96px;
+  }
+
+  /* Pfeil waere mit dem Desktop-Versatz von 80px erst ab 514px
+     Bildschirmbreite im Bild. */
+  .share_pfeil {
+    transform: translate(-8px, -15px);
+  }
+}

@@ -373,3 +373,61 @@ cursor: pointer;
     transform: translateX(-44px);
   }
 }
+
+/* ===== Tablet: 377-1439px =====
+   Grenzen wie in article01 und article02. */
+
+@media (min-width: 377px) and (max-width: 1439px) {
+  .pattaya-graphs {
+    padding: 48px 24px 64px;
+  }
+
+  /* Das feste Raster aus 2 x 519px braucht 1118px. auto-fit legt so
+     viele Spalten nebeneinander wie hineinpassen: bis rund 950px
+     eine, darueber zwei. Damit gibt es keinen zweiten Umbruchpunkt. */
+  .pattaya-graphs__grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr));
+    gap: 48px;
+    width: 100%;
+    margin: 48px auto 0;
+  }
+
+  .pattaya-graphs__card {
+    width: 100%;
+  }
+
+  /* Feste 519x471 -> volle Spaltenbreite, Hoehe aus dem Bild. */
+  .pattaya-graphs__card-figure {
+    width: 100%;
+    height: auto;
+  }
+
+  /* min-height hielt am Desktop beide Spalten gleich hoch. Sobald
+     nur eine Spalte da ist, entstuenden darunter leere Flaechen. */
+  .pattaya-graphs__card-text {
+    min-height: 0;
+  }
+
+  .pattaya-graphs__intro,
+  .pattaya-graphs__description,
+  .pattaya-graphs__outro,
+  .pattaya-graphs__card-text {
+    font-size: clamp(18px, 2vw, 24px);
+  }
+
+  .pattaya-graphs__title {
+    font-size: clamp(22px, 2.5vw, 32px);
+  }
+
+  .pattaya-graphs__rain,
+  .pattaya-graphs__description,
+  .pattaya-graphs__outro {
+    margin-top: 48px;
+  }
+
+  /* Pfeil waere mit dem Desktop-Versatz von 80px erst ab 514px
+     Bildschirmbreite im Bild. */
+  .share_pfeil {
+    transform: translate(-8px, -15px);
+  }
+}

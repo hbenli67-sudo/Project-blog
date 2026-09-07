@@ -449,3 +449,35 @@
     padding-bottom: 32px;
   }
 }
+
+/* ===== Tablet: 377-1439px =====
+   Grenzen wie auf den Artikelseiten. */
+
+@media (min-width: 377px) and (max-width: 1439px) {
+  .faq,
+  .contact {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .faq__title,
+  .contact__title {
+    font-size: clamp(34px, 4vw, 52px);
+  }
+
+  .faq__question {
+    font-size: clamp(18px, 2vw, 24px);
+  }
+
+  .contact__intro {
+    font-size: clamp(18px, 2vw, 24px);
+  }
+
+  /* Zwei feste Spalten mit 48px gap ergaeben bei 377px je 140px.
+     auto-fit stellt Name und E-Mail untereinander, sobald weniger
+     als 260px pro Spalte bleiben - ohne zweiten Umbruchpunkt. */
+  .contact__row {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 32px;
+  }
+}

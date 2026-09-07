@@ -475,3 +475,133 @@ header {
     text-align: center;
   }
 }
+
+/* ===== Tablet: Artikel-Header =====
+   Bereich 377-1439px. Die Untergrenze schliesst direkt an den
+   Handy-Block (bis 376px) an, die Obergrenze ist die Breite, ab der
+   das Desktop-Layout wirklich passt: der nowrap-Titel braucht mit
+   Autorenbox rund 1424px.
+   Beide Grenzen stehen ausdruecklich da, damit dieser Block den
+   375px-Entwurf unter keinen Umstaenden beeinflussen kann - egal in
+   welcher Reihenfolge die Dateien geladen werden.
+   Statt eines festen Umbruchpunkts arbeitet der Block mit flex-wrap
+   und clamp(): der Header ist zweispaltig solange Platz ist und
+   klappt von selbst untereinander, wenn es eng wird. */
+
+@media (min-width: 377px) and (max-width: 1439px) {
+  .article-header {
+    flex-wrap: wrap;
+    gap: 32px;
+    padding: 48px 24px;
+  }
+
+  /* 340px ist die Breite, ab der die Autorenbox daneben passt.
+     Darunter rutscht sie automatisch in die naechste Zeile. */
+  .article-header__content {
+    flex: 1 1 340px;
+  }
+
+  /* Die eigentliche Sperre: ohne nowrap braucht der Titel keine
+     900px mehr in einer Zeile. clamp waechst mit der Breite mit -
+     32px unten, 64px (Desktop-Wert) als Deckel. */
+  .article-header__title {
+    white-space: normal;
+    font-size: clamp(32px, 5vw, 64px);
+  }
+
+  .article-header__description {
+    white-space: normal;
+    font-size: clamp(18px, 2.2vw, 28px);
+  }
+
+  .article-header__eyebrow {
+    font-size: clamp(22px, 3vw, 40px);
+  }
+
+  /* Vier Eintraege mit 32px gap passen erst ab rund 700px in eine
+     Zeile. */
+  .article-header__meta {
+    flex-wrap: wrap;
+    gap: 12px 24px;
+  }
+
+  /* margin-right: 100px vom Desktop wuerde die Box aus dem
+     Flex-Container schieben. */
+  .article-header__author {
+    flex: 1 1 280px;
+    max-width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* ===== Tablet: Navbar und Footer =====
+   Bereich 377-1439px, gilt auf allen Seiten.
+   Die Navbar braucht mit Desktop-Werten 656px, der Footer sogar
+   754px. Beide sind width: 100% (= Viewport), ihr Inhalt schiebt das
+   Dokument aber breiter - dadurch endet der gruene Streifen beim
+   Rechtsscrollen und es bleibt Weiss stehen.
+   Statt das Menue auszublenden wie am Handy skalieren hier alle
+   Abstaende und Schriftgroessen mit; die Desktop-Werte bleiben als
+   Obergrenze der clamp() erhalten. */
+
+@media (min-width: 377px) and (max-width: 1439px) {
+  .navbar__inner {
+    gap: clamp(16px, 4vw, 100px);
+    padding: 0 clamp(16px, 3vw, 40px);
+  }
+
+  .navbar__logo img {
+    width: clamp(48px, 6vw, 72px);
+    height: auto;
+  }
+
+  .navbar__nav ul {
+    gap: clamp(16px, 5vw, 72px);
+  }
+
+  .navbar__nav a {
+    font-size: clamp(16px, 2vw, 24px);
+  }
+
+  /* Die Unterstrich-Grafik ist an die Textbreite gekoppelt (115%),
+     skaliert also von selbst mit. */
+
+  /* Footer: feste Hoehe weg, damit die Icons in eine zweite Zeile
+     rutschen koennen, wenn der Textblock die Breite braucht. */
+  .footer {
+    height: auto;
+    padding: 24px 0;
+  }
+
+  .footer_inner {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 0 clamp(16px, 3vw, 40px);
+  }
+
+  .footer_log {
+    flex-wrap: wrap;
+  }
+
+  /* Die drei Texte standen mit 71px Abstand nebeneinander - das
+     allein sind 142px. */
+  .footer-title + .footer-title,
+  .footer-title + .footer-imprint,
+  .footer-imprint + .footer-title {
+    margin-left: clamp(8px, 2vw, 71px);
+  }
+
+  .footer-title,
+  .footer-imprint {
+    font-size: clamp(12px, 1.5vw, 16px);
+  }
+
+  .footer_icons {
+    gap: clamp(8px, 1.5vw, 16px);
+  }
+
+  .footer_icons img {
+    width: clamp(20px, 2.5vw, 32px);
+    height: auto;
+  }
+}
