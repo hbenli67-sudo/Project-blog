@@ -122,8 +122,13 @@
     <label for="mounten"></label>
 
     <div class="slider_a_wrapper">
-      <div class="slider_a_element element_one">
-        <a class="slider_a_element_element_one" href="article01-beaches.html">
+      <!-- Die ganze Kachel ist der Link, nicht nur die Textbox: das <a>
+           steht aussen und traegt die Kachelklassen, die Textbox darin
+           ist jetzt ein <div>. Ein ::after am inneren Element haette
+           nicht funktioniert, weil dessen backdrop-filter einen eigenen
+           Bezugsrahmen fuer absolut positionierte Nachfahren erzeugt. -->
+      <a class="slider_a_element element_one" href="article01-beaches.html">
+        <div class="slider_a_element_element_one">
           <h3>
             The World’s Most Breathtaking Beaches
           </h3>
@@ -132,10 +137,10 @@
             coastlines kissed by <br> turquoise waves,
             these beaches are more than destinations — they’re <br> feelings.
           </p>
-        </a>
-      </div>
-      <div class="slider_a_element element_two">
-        <a class="slider_a_element_element_two" href="article02-scandinavia.html">
+        </div>
+      </a>
+      <a class="slider_a_element element_two" href="article02-scandinavia.html">
+        <div class="slider_a_element_element_two">
           <h3>
             Copenhagen in 3 Days: Big <br> Experiences, Smart Spending
           </h3>
@@ -143,10 +148,10 @@
             Discover Copenhagen, where historic charm meets modern design,
             vibrant cycling culture and waterfront living.
           </p>
-        </a>
-      </div>
-      <div class="slider_a_element element_three">
-        <a class="slider_a_element_element_three" href="article03-pattaya.html">
+        </div>
+      </a>
+      <a class="slider_a_element element_three" href="article03-pattaya.html">
+        <div class="slider_a_element_element_three">
           <h3>
             Pattaya Pulse: <br> Food, Sun and Neon Nights
           </h3>
@@ -155,8 +160,10 @@
             the city offers an <br> energetic and diverse escape.
             Discover Pattaya City, with vibrant <br> nightlife and rich cultural landmarks.
           </p>
-        </a>
-      </div>
+        </div>
+      </a>
+      <!-- Kachel 4 bleibt ein <div>: zu Mountain Fuji gibt es keinen
+           Artikel, sie ist deshalb nicht verlinkt. -->
       <div class="slider_a_element element_four">
         <div class="slider_a_element_element_four">
           <h3>
@@ -354,6 +361,7 @@
         </button>
 
       </form>
+    </div>
 
   </section>
 
