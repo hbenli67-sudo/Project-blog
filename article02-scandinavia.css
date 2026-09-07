@@ -306,3 +306,162 @@ cursor: pointer;
   transform: translate(-80px, -15px);
 
 }
+/* ===== Mobile: Scandinavia-Inhalt =====
+   Aufgebaut wie article01-beaches: jeder Block traegt seinen Abstand
+   nur oben (32px), unten 0 - so kann sich ein Abstand nicht aus zwei
+   Werten summieren. Seitenpolster ueberall 16px.
+   Der Artikel-Header kommt aus header-footer.css und gilt bereits
+   fuer alle drei Artikelseiten. */
+
+@media (max-width: 376px) {
+  /* Desktop: padding 0 64px 24px 80px - davon blieben auf 375px nur
+     231px Inhaltsbreite uebrig. Das Seitenpolster kommt jetzt von
+     den einzelnen Bloecken. */
+  .scandinavia {
+    padding: 0;
+  }
+
+  /* Die vier Textbloecke auf 16px. Die Desktop-margins (64px bzw.
+     88px) muessen dafuer explizit auf 0, sonst summieren sie sich
+     mit dem padding-top. */
+  .scandinavia-video_attrape__intro,
+  .scandinavia-video_attrape__description,
+  .scandinavian__last_discription,
+  .viedeo_unorded_list {
+    font-size: 16px;
+    margin: 0 auto;
+    padding: 32px 16px 0;
+  }
+
+  /* Video-Standbild buendig zu den Textbloecken. Desktop: 88px 0 25px. */
+  .scandinavia_video_attrappe {
+    padding: 32px 16px 0;
+  }
+
+  /* Die <br> sind Desktop-Umbrueche und wuerden auf 375px mitten im
+     Satz zusaetzliche Zeilen erzwingen. */
+  .scandinavia br {
+    display: none;
+  }
+}
+
+/* ===== Mobile: Pro Tip =====
+   Gleiche Werte wie in article01-beaches.css. */
+
+@media (max-width: 376px) {
+  /* 64px = 32px sichtbarer Abstand + 32px, um die die Badge mit
+     top: -32px ueber die Kastenkante nach oben ragt. Sonst stoesst
+     die Badge direkt an den Text darueber, obwohl zwischen Text und
+     Kasten rechnerisch 32px liegen. */
+  .pro-tip {
+    padding: 64px 16px 0;
+  }
+
+  /* Der Kasten waechst 20px nach oben, der Text bleibt stehen:
+     margin-top 65 -> 0 zieht die Oberkante hoch, padding-top
+     26 -> 46 gibt die 20px innen wieder zurueck. */
+  .pro-tip__box {
+    margin-top: 0;
+    padding-top: 46px;
+  }
+
+  /* left: -45px vom Desktop ragte auf 375px ueber den Bildschirm.
+     top: -32px passt genau in den 32px-Abstand ueber dem Kasten. */
+  .pro-tip__badge {
+    font-size: 28px;
+    top: -32px;
+    left: -8px;
+  }
+
+  /* SVG ist natuerlich 43x42, wird also minimal breitgezogen. */
+  .pro-tip__badge-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .pro-tip__list li {
+    font-family: 'Palanquin', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: normal;
+  }
+
+  .pro-tip__link {
+    font-family: 'Palanquin', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: normal;
+  }
+
+  .pro-tip__list br {
+    display: none;
+  }
+}
+
+/* ===== Mobile: Share =====
+   Gleiche Werte wie in article01-beaches.css.
+   <picture> selbst soll keine Box erzeugen - das Bild darin ist
+   absolut positioniert. */
+
+.share_button picture {
+  display: contents;
+}
+
+@media (max-width: 376px) {
+  .share {
+    padding: 32px 0;
+  }
+
+  /* ACHTUNG: Arima 500 (Medium) liegt nicht in assets/fonts - nur
+     400, 600 und 700. Der Browser nimmt bei 500 den naechsten
+     kleineren Schnitt, hier also 400 Regular. */
+  .share_text {
+    font-family: 'Arima', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: normal;
+    text-align: center;
+  }
+
+  /* Figma: 50 x 30.415 um 100.35deg gedreht - genau dieses Ergebnis
+     liegt fertig als mobile-shareline.svg vor (32x53, Drehung schon
+     eingebaut). Deshalb KEIN rotate im CSS. */
+  .share_pfeil {
+    width: 32px;
+    height: 53px;
+    opacity: 1;
+    transform: translate(-64px, 0);
+  }
+
+  .share_btn {
+    width: 158px;
+    height: 48px;
+    gap: 10px;
+    border-radius: 40px;
+    opacity: 1;
+    font-size: 24px;
+    margin-top: 32px;
+  }
+
+  /* Das SVG ist natuerlich 24x27. Die Box ist 32x32 wie in Figma,
+     object-fit: contain haelt die Grafik darin proportional. */
+  .share_icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  /* Aufklapp-Animation faehrt 20px kuerzer. Beide Werte muessen um
+     denselben Betrag zurueck, sonst ueberlappen Button und Links. */
+  .share_toggle_input:checked ~ .share_btn {
+    transform: translateX(-52px);
+  }
+
+  .share_toggle_input:checked ~ .share_reveal {
+    transform: translateX(-44px);
+  }
+}
