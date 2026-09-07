@@ -338,8 +338,25 @@
     transform: none;
   }
 
+  /* Einleitungstext unter der Ueberschrift ausblenden - wie beim
+     Kontaktformular. Achtung: mit ihm faellt auch sein
+     margin-bottom: 72px weg, der Slider rueckt also naeher an die
+     Ueberschrift heran. */
   .highlights_intro {
-    font-size: 18px;
+    display: none;
+  }
+
+  /* 32px zwischen Ueberschrift und Slider. Zwei Dinge bestimmen den
+     Abstand: das margin-bottom der Ueberschrift (Desktop: 40px) und
+     das top: 24px, mit dem der Desktop den Slider zusaetzlich nach
+     unten schiebt. Letzteres wird hier aufgehoben, sonst waeren es
+     32 + 24 = 56px. */
+  .highlights_heading {
+    margin-bottom: 32px;
+  }
+
+  .slider_a {
+    top: 0;
   }
 
   /* Textbox in allen vier Slides. gap braucht flex - als display:block
