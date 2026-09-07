@@ -394,3 +394,103 @@ height: 545px;
     top: 50%;
   }
 }
+
+/* ===== Tablet: Hero =====
+   Bereich 377-1439px. Der Desktop-Hero funktioniert hier nicht: das
+   Foto steht auf left: 600px, bei 768px Bildschirmbreite waeren
+   davon nur die letzten 168px zu sehen. Stattdessen laeuft der
+   Handy-Entwurf weiter - gelber Grund, Foto bildschirmfuellend,
+   Handy-SVG oben links, Badge darauf.
+
+   Alle Werte sind die des 375px-Entwurfs, umgerechnet in vw und nach
+   oben gedeckelt. 222px Grafikbreite sind bei 375px genau 59.2vw,
+   der Deckel ist das 1.4-fache. Ab rund 525px Bildschirmbreite
+   greifen ueberall die Deckel, die Komposition bleibt dann konstant
+   und das Foto nimmt den zusaetzlichen Platz ein.
+   Die Deckelfaktoren sind MEINE Werte, nicht aus Figma. */
+
+@media (min-width: 377px) and (max-width: 1439px) {
+  .hero {
+    height: clamp(512px, 136.5vw, 717px);
+    background-color: var(--color-yellow);
+  }
+
+  /* Die beiden Desktop-Grafiken mit der Laufanimation entfallen. */
+  .hero_landing__images {
+    display: none;
+  }
+
+  .hero_height {
+    height: 100%;
+  }
+
+  /* Gleiches Element wie am Desktop, <picture> tauscht nur die
+     Datei. Die Handy-SVG ist natuerlich 444x598, also exakt das
+     Doppelte von 222x299 - sie skaliert verlustfrei mit. */
+  .landing-yellow-graphic-3 {
+    inset: 0 auto auto 0;
+    width: clamp(222px, 59.2vw, 311px);
+    height: clamp(299px, 79.7vw, 419px);
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  /* Zoomfahrt wie im Handy-Entwurf, aber in Prozent statt in Pixeln.
+     Die Pixelwerte des 375px-Blocks waeren hier falsch, weil sie an
+     der Rahmenbreite haengen:
+       -123px waren 31% des damaligen Spielraums von 393px
+       80px waren 15.6% der damaligen Rahmenhoehe von 512px
+     Als Prozentwerte ergeben sie bei jeder Rahmengroesse denselben
+     Ausschnitt - bei 375px gerechnet kommen exakt die -123px und
+     80px wieder heraus.
+     Ab rund 1075px Breite ist der Rahmen breiter als das auf Hoehe
+     skalierte Foto. object-fit: cover skaliert dann auf Breite und
+     schneidet oben und unten statt links und rechts; die 31% haben
+     dort keine Wirkung mehr, was richtig ist. */
+  .hero__background {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-position: 31% center;
+    transform: translateY(15.6%) scale(1.35);
+    animation: none;
+  }
+
+  /* Titel und Text stehen im Entwurf in der Grafik. Sie bleiben fuer
+     Screenreader und Suchmaschinen im Dokument, sind aber nicht
+     sichtbar - wie im Handy-Block. */
+  .hero__content {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    animation: none;
+  }
+
+  /* left/top zeigen auf die MITTE des Badges, weil ihn
+     transform: translate(-50%, -50%) zurueckzieht. */
+  .hero__badge {
+    left: clamp(148px, 39.5vw, 207px);
+    top: clamp(214px, 57.1vw, 300px);
+    width: clamp(150px, 40vw, 210px);
+    height: clamp(150px, 40vw, 210px);
+    animation-delay: 0.3s;
+  }
+
+  .hero__badge-bg {
+    top: 50%;
+    width: clamp(150px, 40vw, 210px);
+    height: clamp(150px, 40vw, 210px);
+  }
+
+  .hero__badge-text {
+    top: 50%;
+    width: clamp(124px, 33.1vw, 174px);
+    height: clamp(124px, 33.1vw, 174px);
+  }
+
+  .hero__badge-flag {
+    top: 50%;
+  }
+}
