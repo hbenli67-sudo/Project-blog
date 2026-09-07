@@ -370,7 +370,11 @@
     flex-direction: column;
     gap: 8px;
     width: 307px;
-    height: 190px;
+    /* Statt fester Hoehe: 190px sind die Untergrenze aus dem Entwurf,
+       die Box waechst aber mit, wenn Titel + 3 Absatzzeilen mehr
+       brauchen. Sonst schneidet overflow: hidden die letzte Zeile an
+       (Slide 1 braucht rund 195px). */
+    min-height: 190px;
     margin: 93px 0 0 14px;
     padding: 16px;
     opacity: 1;
@@ -385,12 +389,10 @@
   .slider_a_element_element_four > h3 {
     font-size: 28px;
     padding: 0;
-    /* max. 2 Zeilen, Rest als '...' */
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    overflow: hidden;
+    /* Kein line-clamp: der Titel wird immer vollstaendig gezeigt,
+       egal wie viele Zeilen er braucht. flex-shrink: 0 verhindert,
+       dass die Box ihn zusammenstaucht. */
+    flex-shrink: 0;
   }
 
   .slider_a_element_element_one > p,
@@ -404,8 +406,12 @@
     line-height: 1.1;
     letter-spacing: normal;
     padding: 0;
-    /* max. 3 Zeilen, Rest als '...'. 2x29 (h3) + 8 (gap) + 3x22 = 133px,
-       passt damit sicher in die 158px Innenhoehe der Box. */
+    /* Der Absatz nimmt den verbleibenden Platz der Box ein und wird
+       darin gekappt - hoechstens 3 Zeilen, Rest als '...'.
+       min-height: 0 erlaubt dem Flex-Element, kleiner zu werden als
+       sein Inhalt; ohne das wuerde langer Text die Box aufdruecken. */
+    flex: 1 1 auto;
+    min-height: 0;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;

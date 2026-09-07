@@ -354,3 +354,124 @@ header {
     height: 24px;
   }
 }
+
+/* ===== Mobile: Artikel-Header =====
+   Gilt fuer article01/02/03 - die drei Seiten haben identisches
+   Markup. index.html und imprint.html haben keinen .article-header,
+   sind hier also nicht betroffen.
+   Die Schriftgroessen folgen dem Muster von index.html (Titel
+   52 -> 40, Fliesstext 24 -> 18) und sind noch NICHT gegen Figma
+   geprueft - die vier Werte unten sind die Stellschrauben. */
+
+@media (max-width: 376px) {
+  /* Desktop ist eine Flex-Zeile mit 64px gap. Auf 375px blieben dem
+     Textblock neben der 280px-Autorenbox keine 100px - daher
+     untereinander. */
+  .article-header {
+    flex-direction: column;
+    gap: 32px;
+    /* unten 0 - der Abstand zum naechsten Block kommt von dessen
+       padding-top, damit er sich nicht aus zwei Werten summiert. */
+    padding: 40px 16px 0;
+  }
+
+  /* Figma-Werte. Der Desktop nutzt hier Arima - auf dem Handy ist es
+     laut Entwurf Palanquin. font-style bleibt normal: das "SemiBold"
+     aus Figma ist der Name des Schnitts, also font-weight: 600.
+     leading-trim hat keine Browser-Entsprechung und entfaellt. */
+  .article-header__eyebrow {
+    font-family: 'Palanquin', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: normal;
+  }
+
+  /* Figma-Werte. Familie und Schnitt sind dieselben wie am Desktop,
+     stehen hier aber vollstaendig, damit der Block fuer sich lesbar
+     bleibt. Abweichung: line-height 100% statt 120%. */
+  .article-header__title {
+    font-family: 'Arima', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: normal;
+    /* nowrap muss weg: in einer Zeile waere der Titel rund 900px
+       breit und wuerde das Dokument ueber den Viewport ziehen. */
+    white-space: normal;
+  }
+
+  /* Figma-Werte. Familie und Schnitt wie am Desktop, Abweichungen:
+     18px statt 28px und line-height 120% statt 140%. */
+  .article-header__description {
+    font-family: 'Palanquin', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: normal;
+    /* nowrap muss weg - in einer Zeile waeren es rund 640px. */
+    white-space: normal;
+  }
+
+  /* Die <br> im HTML sind Desktop-Umbrueche. Ohne nowrap bricht der
+     Text von selbst um, die <br> wuerden nur mitten im Satz
+     zusaetzliche Zeilen erzwingen. */
+  .article-header br {
+    display: none;
+  }
+
+  /* Vier Eintraege mit je 32px gap passen nicht in eine Zeile. */
+  .article-header__meta {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+
+  .article-header__meta-item {
+    font-size: 16px;
+  }
+
+  /* Die vier SVG haben verschiedene Seitenverhaeltnisse (32x36,
+     40x14, 40x28, 32x36). Die Desktop-Regel zwingt alle in 16x18 und
+     quetscht damit Brille und Auge. Hier stattdessen jedes Icon auf
+     genau 50% seiner natuerlichen Groesse - die Brille ergibt so die
+     20x7 aus Figma, die anderen behalten ihre Form.
+     Reihenfolge im HTML: Kalender, Brille, Auge, Share. */
+  .article-header__meta-item img {
+    opacity: 1;
+  }
+
+  .article-header__meta-item:nth-child(1) img,
+  .article-header__meta-item:nth-child(4) img {
+    width: 16px;
+    height: 18px;
+  }
+
+  .article-header__meta-item:nth-child(2) img {
+    width: 20px;
+    height: 7px;
+  }
+
+  .article-header__meta-item:nth-child(3) img {
+    width: 20px;
+    height: 14px;
+  }
+
+  /* Feste 280px plus 100px margin-right ergaben 380px - breiter als
+     der Bildschirm. Jetzt ueber die volle Breite. */
+  .article-header__author {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  /* Figma-Werte fuer den Biografietext. Familie, Schnitt und Groesse
+     wie am Desktop, Abweichungen: line-height 120% statt 150% und
+     zentriert statt linksbuendig. */
+  .article-header__author-bio {
+    font-family: 'Palanquin', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: normal;
+    text-align: center;
+  }
+}

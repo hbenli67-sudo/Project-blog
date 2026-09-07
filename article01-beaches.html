@@ -94,6 +94,14 @@ I’m fascinated by snakes, love sharks, would happily spend weeks deep in the j
       <div class="beach-carousel__container">
         <h2 class="beach-carousel__title">TOP 5 beach destinations for 2026</h2>
 
+        <!-- Handy-Slider: die fuenf Radios steuern die Karten im Track
+             und die Punkte darunter. Am Desktop sind Radios und Punkte
+             ausgeblendet, dort bleibt der Faecher. -->
+        <input class="beach-carousel__radio" type="radio" name="beach-slider" id="beach-slide-1" checked>
+        <input class="beach-carousel__radio" type="radio" name="beach-slider" id="beach-slide-2">
+        <input class="beach-carousel__radio" type="radio" name="beach-slider" id="beach-slide-3">
+        <input class="beach-carousel__radio" type="radio" name="beach-slider" id="beach-slide-4">
+        <input class="beach-carousel__radio" type="radio" name="beach-slider" id="beach-slide-5">
         <div class="beach-carousel__track">
           <figure class="beach-carousel__card">
             <img class="beach-carousel__image" src="assets/images/carousel02-beach1.png" alt="Snorkeling scene with tropical fish and palm trees">
@@ -110,6 +118,14 @@ I’m fascinated by snakes, love sharks, would happily spend weeks deep in the j
           <figure class="beach-carousel__card">
             <img class="beach-carousel__image" src="assets/images/carousel01-02-beach5.png" alt="Woman in a yellow dress walking along the beach with boats in the background">
           </figure>
+        </div>
+
+        <div class="beach-carousel__dots">
+          <label for="beach-slide-1" aria-label="Bild 1"></label>
+          <label for="beach-slide-2" aria-label="Bild 2"></label>
+          <label for="beach-slide-3" aria-label="Bild 3"></label>
+          <label for="beach-slide-4" aria-label="Bild 4"></label>
+          <label for="beach-slide-5" aria-label="Bild 5"></label>
         </div>
       </div>
     </section>
@@ -173,7 +189,14 @@ Egestas a enim vestibulum malesuada. Ante in commodo porta scelerisque turpis gr
 <p class="share_text">Follow me for more content like this, and<br>share the article with your friends!</p>
 
 <div class="share_button">
-<img class="share_pfeil" src="./assets/icons/mobile-shareline.png">
+<!-- Bis 376px laedt der Browser die Handy-SVG (32x53, die Drehung um
+     100.35deg steckt schon in der Datei), darueber die bisherige
+     Grafik. Es wird nur eine Datei geladen - gleiches Vorgehen wie
+     beim Hero auf index.html. -->
+<picture>
+<source media="(max-width: 376px)" srcset="./assets/icons/mobile-shareline.svg">
+<img class="share_pfeil" src="./assets/icons/mobile-shareline.png" alt="">
+</picture>
 <input type="checkbox" id="share-toggle" class="share_toggle_input">
 <label for="share-toggle" class="share_btn"><img class="share_icon" src="assets/icons/share-yellow.svg" alt="" class="share-icon">SHARE</label>
 
