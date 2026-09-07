@@ -111,9 +111,6 @@ header {
   line-height: 150%;
   text-align: left;
 }
-/* ===== Navbar + Footer: gemeinsame Basis fuer alle Seiten =====
-   Einzige Quelle fuer diese Regeln - nicht in style.css oder den
-   article*.css duplizieren, sonst laufen die Seiten wieder auseinander. */
 
 .navbar {
   background-color: #4ea988;
@@ -186,9 +183,9 @@ header {
 
 .navbar__nav-underline {
   position: absolute;
-  left: -5%;      /* links größe */
-  bottom: 15px;    /* abstand */
-  width: 115%;    /* länge linie */
+  left: -5%;
+  bottom: 15px;
+  width: 115%;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.7s ease;
@@ -226,8 +223,6 @@ header {
   gap: 4px;
 }
 
-/* 75px zwischen den drei Footer-Texten: 4px gap aus .footer_log + 71px.
-   Deckt beide Klassen ab, seit der Imprint-Link .footer-imprint heisst. */
 .footer-title + .footer-title,
 .footer-title + .footer-imprint,
 .footer-imprint + .footer-title {
@@ -237,8 +232,7 @@ header {
 .footer-imprint {
   color: #ffffff;
   text-decoration: none;
-  /* neutralisiert das 'palanquin regular' aus imprint.css - diese
-     Schriftfamilie ist in styles/font.css gar nicht definiert. */
+  
   font-family: inherit;
 }
 
@@ -270,8 +264,6 @@ header {
   color: #F1C953;
 }
 
-/* ===== Mobile: Handy-Ansicht =====
-   Bis 376px verschwindet das Menue, das Logo steht allein mittig. */
 
 @media (max-width: 376px) {
   .navbar__nav {
@@ -284,9 +276,6 @@ header {
   }
 }
 
-/* Footer: die drei Texte passen nebeneinander nicht in 376px.
-   Ohne Umbruch wird das Dokument breiter als der Viewport - dann
-   reissen beim Rechtsscrollen beide gruenen Streifen ab. */
 
 @media (max-width: 376px) {
   .footer {
@@ -294,7 +283,6 @@ header {
     padding: 24px 0;
   }
 
-  /* Textblock links, Icons rechts auf gleicher Unterkante. */
   .footer_inner {
     flex-direction: row;
     align-items: flex-end;
@@ -303,9 +291,6 @@ header {
     padding: 0 16px;
   }
 
-  /* Drei Zeilen: Imprint / Cookie Preferences / Logo + Travel Blog.
-     Im HTML stehen sie in anderer Reihenfolge (Logo, Travel Blog,
-     Imprint, Cookie), darum die Rasterplaetze explizit vergeben. */
   .footer_log {
     display: grid;
     grid-template-columns: auto auto;
@@ -319,7 +304,6 @@ header {
     grid-column: 1 / -1;
   }
 
-  /* 4. Kind = 'Cookie Preferences' */
   .footer_log > :nth-child(4) {
     grid-row: 2;
     grid-column: 1 / -1;
@@ -330,7 +314,6 @@ header {
     grid-column: 1;
   }
 
-  /* 2. Kind = 'Travel Blog 2026' */
   .footer_log > :nth-child(2) {
     grid-row: 3;
     grid-column: 2;
@@ -341,8 +324,6 @@ header {
     font-size: 16px;
   }
 
-  /* Die 71px Abstaende galten fuer die einzeilige Desktop-Variante.
-     Spezifischer als .footer-title, darum eigene Regel. */
   .footer-title + .footer-title,
   .footer-title + .footer-imprint,
   .footer-imprint + .footer-title {
@@ -355,30 +336,14 @@ header {
   }
 }
 
-/* ===== Mobile: Artikel-Header =====
-   Gilt fuer article01/02/03 - die drei Seiten haben identisches
-   Markup. index.html und imprint.html haben keinen .article-header,
-   sind hier also nicht betroffen.
-   Die Schriftgroessen folgen dem Muster von index.html (Titel
-   52 -> 40, Fliesstext 24 -> 18) und sind noch NICHT gegen Figma
-   geprueft - die vier Werte unten sind die Stellschrauben. */
 
 @media (max-width: 376px) {
-  /* Desktop ist eine Flex-Zeile mit 64px gap. Auf 375px blieben dem
-     Textblock neben der 280px-Autorenbox keine 100px - daher
-     untereinander. */
   .article-header {
     flex-direction: column;
     gap: 32px;
-    /* unten 0 - der Abstand zum naechsten Block kommt von dessen
-       padding-top, damit er sich nicht aus zwei Werten summiert. */
     padding: 40px 16px 0;
   }
 
-  /* Figma-Werte. Der Desktop nutzt hier Arima - auf dem Handy ist es
-     laut Entwurf Palanquin. font-style bleibt normal: das "SemiBold"
-     aus Figma ist der Name des Schnitts, also font-weight: 600.
-     leading-trim hat keine Browser-Entsprechung und entfaellt. */
   .article-header__eyebrow {
     font-family: 'Palanquin', sans-serif;
     font-weight: 600;
@@ -387,40 +352,28 @@ header {
     letter-spacing: normal;
   }
 
-  /* Figma-Werte. Familie und Schnitt sind dieselben wie am Desktop,
-     stehen hier aber vollstaendig, damit der Block fuer sich lesbar
-     bleibt. Abweichung: line-height 100% statt 120%. */
   .article-header__title {
     font-family: 'Arima', sans-serif;
     font-weight: 700;
     font-size: 40px;
     line-height: 100%;
     letter-spacing: normal;
-    /* nowrap muss weg: in einer Zeile waere der Titel rund 900px
-       breit und wuerde das Dokument ueber den Viewport ziehen. */
     white-space: normal;
   }
 
-  /* Figma-Werte. Familie und Schnitt wie am Desktop, Abweichungen:
-     18px statt 28px und line-height 120% statt 140%. */
   .article-header__description {
     font-family: 'Palanquin', sans-serif;
     font-weight: 400;
     font-size: 18px;
     line-height: 120%;
     letter-spacing: normal;
-    /* nowrap muss weg - in einer Zeile waeren es rund 640px. */
     white-space: normal;
   }
 
-  /* Die <br> im HTML sind Desktop-Umbrueche. Ohne nowrap bricht der
-     Text von selbst um, die <br> wuerden nur mitten im Satz
-     zusaetzliche Zeilen erzwingen. */
   .article-header br {
     display: none;
   }
 
-  /* Vier Eintraege mit je 32px gap passen nicht in eine Zeile. */
   .article-header__meta {
     flex-wrap: wrap;
     gap: 12px 20px;
@@ -430,12 +383,6 @@ header {
     font-size: 16px;
   }
 
-  /* Die vier SVG haben verschiedene Seitenverhaeltnisse (32x36,
-     40x14, 40x28, 32x36). Die Desktop-Regel zwingt alle in 16x18 und
-     quetscht damit Brille und Auge. Hier stattdessen jedes Icon auf
-     genau 50% seiner natuerlichen Groesse - die Brille ergibt so die
-     20x7 aus Figma, die anderen behalten ihre Form.
-     Reihenfolge im HTML: Kalender, Brille, Auge, Share. */
   .article-header__meta-item img {
     opacity: 1;
   }
@@ -456,16 +403,11 @@ header {
     height: 14px;
   }
 
-  /* Feste 280px plus 100px margin-right ergaben 380px - breiter als
-     der Bildschirm. Jetzt ueber die volle Breite. */
   .article-header__author {
     width: 100%;
     margin-right: 0;
   }
 
-  /* Figma-Werte fuer den Biografietext. Familie, Schnitt und Groesse
-     wie am Desktop, Abweichungen: line-height 120% statt 150% und
-     zentriert statt linksbuendig. */
   .article-header__author-bio {
     font-family: 'Palanquin', sans-serif;
     font-weight: 400;
@@ -476,17 +418,6 @@ header {
   }
 }
 
-/* ===== Tablet: Artikel-Header =====
-   Bereich 377-1439px. Die Untergrenze schliesst direkt an den
-   Handy-Block (bis 376px) an, die Obergrenze ist die Breite, ab der
-   das Desktop-Layout wirklich passt: der nowrap-Titel braucht mit
-   Autorenbox rund 1424px.
-   Beide Grenzen stehen ausdruecklich da, damit dieser Block den
-   375px-Entwurf unter keinen Umstaenden beeinflussen kann - egal in
-   welcher Reihenfolge die Dateien geladen werden.
-   Statt eines festen Umbruchpunkts arbeitet der Block mit flex-wrap
-   und clamp(): der Header ist zweispaltig solange Platz ist und
-   klappt von selbst untereinander, wenn es eng wird. */
 
 @media (min-width: 377px) and (max-width: 1439px) {
   .article-header {
@@ -495,15 +426,10 @@ header {
     padding: 48px 24px;
   }
 
-  /* 340px ist die Breite, ab der die Autorenbox daneben passt.
-     Darunter rutscht sie automatisch in die naechste Zeile. */
   .article-header__content {
     flex: 1 1 340px;
   }
 
-  /* Die eigentliche Sperre: ohne nowrap braucht der Titel keine
-     900px mehr in einer Zeile. clamp waechst mit der Breite mit -
-     32px unten, 64px (Desktop-Wert) als Deckel. */
   .article-header__title {
     white-space: normal;
     font-size: clamp(32px, 5vw, 64px);
@@ -518,15 +444,11 @@ header {
     font-size: clamp(22px, 3vw, 40px);
   }
 
-  /* Vier Eintraege mit 32px gap passen erst ab rund 700px in eine
-     Zeile. */
   .article-header__meta {
     flex-wrap: wrap;
     gap: 12px 24px;
   }
 
-  /* margin-right: 100px vom Desktop wuerde die Box aus dem
-     Flex-Container schieben. */
   .article-header__author {
     flex: 1 1 280px;
     max-width: 100%;
@@ -534,15 +456,6 @@ header {
   }
 }
 
-/* ===== Tablet: Navbar und Footer =====
-   Bereich 377-1439px, gilt auf allen Seiten.
-   Die Navbar braucht mit Desktop-Werten 656px, der Footer sogar
-   754px. Beide sind width: 100% (= Viewport), ihr Inhalt schiebt das
-   Dokument aber breiter - dadurch endet der gruene Streifen beim
-   Rechtsscrollen und es bleibt Weiss stehen.
-   Statt das Menue auszublenden wie am Handy skalieren hier alle
-   Abstaende und Schriftgroessen mit; die Desktop-Werte bleiben als
-   Obergrenze der clamp() erhalten. */
 
 @media (min-width: 377px) and (max-width: 1439px) {
   .navbar__inner {
@@ -563,11 +476,7 @@ header {
     font-size: clamp(16px, 2vw, 24px);
   }
 
-  /* Die Unterstrich-Grafik ist an die Textbreite gekoppelt (115%),
-     skaliert also von selbst mit. */
 
-  /* Footer: feste Hoehe weg, damit die Icons in eine zweite Zeile
-     rutschen koennen, wenn der Textblock die Breite braucht. */
   .footer {
     height: auto;
     padding: 24px 0;
@@ -583,8 +492,6 @@ header {
     flex-wrap: wrap;
   }
 
-  /* Die drei Texte standen mit 71px Abstand nebeneinander - das
-     allein sind 142px. */
   .footer-title + .footer-title,
   .footer-title + .footer-imprint,
   .footer-imprint + .footer-title {

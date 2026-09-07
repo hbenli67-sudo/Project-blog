@@ -21,7 +21,6 @@ html {
   scrollbar-gutter: stable;
 }
 
-/* Aus style_index.css übernommen */
 
 * {
   margin: 0;
@@ -44,7 +43,6 @@ body {
 }
 
 
-/*Hero-Section START*/
 
 .hero {
   position: relative;
@@ -287,18 +285,11 @@ height: 545px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
 }
-/* <picture> selbst soll keine Box erzeugen - das Bild darin ist
-   absolut positioniert, der Wrapper wuerde sonst eine leere Zeilenbox
-   in den Hero legen. So bleibt das Desktop-Layout exakt wie zuvor. */
 .hero picture {
   display: contents;
 }
 
-/*Hero-Section END*/
 
-/* ===== Mobile: Hero =====
-   Handy-Entwurf: Foto links, darueber oben links die eigene
-   Handy-SVG. Alle drei Desktop-Grafiken sind ausgeblendet. */
 
 @media (max-width: 376px) {
   .hero {
@@ -306,15 +297,10 @@ height: 545px;
     background-color: var(--color-yellow);
   }
 
-  /* Grafik 1 + 2 (Desktop-Laufanimation) faellt weg. */
   .hero_landing__images {
     display: none;
   }
 
-  /* Gleiches Element wie am Desktop - <picture> tauscht nur die Datei.
-     Die Desktop-Regel setzt inset: 0, opacity: 0 und eine Einblend-
-     animation; hier stattdessen feste Groesse, oben links buendig.
-     top hochsetzen (z.B. 40px) schiebt die Grafik nach unten. */
   .landing-yellow-graphic-3 {
     inset: 0 auto auto 0;
     width: 222px;
@@ -328,35 +314,15 @@ height: 545px;
     height: 100%;
   }
 
-  /* Rahmen bildschirmfuellend (statt left: 600px vom Desktop).
-     Das Foto ist 4096x2731 quer, der Rahmen 375x512 hoch - es sind also
-     nur rund 49% der Bildbreite zu sehen. object-position zieht das Foto
-     im Rahmen nach links, dadurch wird der rechte Bildteil sichtbar.
-     Skaliert ist das Foto 768px breit, der Rahmen 375px - also 393px
-     Spielraum. -393px ist der Anschlag links, davon 270px nach rechts.
-     Zahl kleiner (-250px) = Foto nach links,
-     Zahl groesser (-100px, 0) = Foto nach rechts. 0 = Anschlag rechts. */
   .hero__background {
     inset: 0;
     width: 100%;
     height: 100%;
     object-position: -123px center;
-    /* Zoom: 1.35 = 35% groesser. Skaliert um die Mitte, der Ueberstand
-       wird von overflow: hidden am .hero abgeschnitten. Groesser = naeher
-       ran (1.4), 1 = kein Zoom. Achtung: der Zoom vergroessert auch die
-       object-position-Verschiebung, ggf. -123px nachziehen. */
-    /* Reihenfolge wichtig: translateY steht vorn, wird also NACH dem
-       scale angewendet - 80px sind dann echte 80px. Andersherum waeren
-       es 80 x 1.35 = 108px. Der Zoom haengt oben und unten je 90px ueber,
-       ab ca. 90px Verschiebung wird oben also Gelb sichtbar. */
     transform: translateY(80px) scale(1.35);
-    /* Die Desktop-Zoomfahrt laeuft hier nicht - sonst ueberschreibt
-       sie das scale oben. */
     animation: none;
   }
 
-  /* Titel + Text bleiben fuer Screenreader und Suchmaschinen im
-     Dokument, sind im Entwurf aber nicht zu sehen. */
   .hero__content {
     width: 1px;
     height: 1px;
@@ -365,16 +331,11 @@ height: 545px;
     animation: none;
   }
 
-  /* left/top zeigen auf die MITTE des Badges, weil ihn
-     transform: translate(-50%, -50%) um seine halbe Groesse zurueckzieht.
-     Ausgangspunkt war 26% / 32% = 98px / 164px, seitdem schrittweise
-     nach rechts unten geschoben. */
   .hero__badge {
     left: 148px;
     top: 214px;
     width: 150px;
     height: 150px;
-    /* Verzoegerung war auf die Laufanimation getaktet, die hier weg ist. */
     animation-delay: 0.3s;
   }
 
@@ -395,19 +356,6 @@ height: 545px;
   }
 }
 
-/* ===== Tablet: Hero =====
-   Bereich 377-1439px. Der Desktop-Hero funktioniert hier nicht: das
-   Foto steht auf left: 600px, bei 768px Bildschirmbreite waeren
-   davon nur die letzten 168px zu sehen. Stattdessen laeuft der
-   Handy-Entwurf weiter - gelber Grund, Foto bildschirmfuellend,
-   Handy-SVG oben links, Badge darauf.
-
-   Alle Werte sind die des 375px-Entwurfs, umgerechnet in vw und nach
-   oben gedeckelt. 222px Grafikbreite sind bei 375px genau 59.2vw,
-   der Deckel ist das 1.4-fache. Ab rund 525px Bildschirmbreite
-   greifen ueberall die Deckel, die Komposition bleibt dann konstant
-   und das Foto nimmt den zusaetzlichen Platz ein.
-   Die Deckelfaktoren sind MEINE Werte, nicht aus Figma. */
 
 @media (min-width: 377px) and (max-width: 1439px) {
   .hero {
@@ -415,7 +363,6 @@ height: 545px;
     background-color: var(--color-yellow);
   }
 
-  /* Die beiden Desktop-Grafiken mit der Laufanimation entfallen. */
   .hero_landing__images {
     display: none;
   }
@@ -424,9 +371,6 @@ height: 545px;
     height: 100%;
   }
 
-  /* Gleiches Element wie am Desktop, <picture> tauscht nur die
-     Datei. Die Handy-SVG ist natuerlich 444x598, also exakt das
-     Doppelte von 222x299 - sie skaliert verlustfrei mit. */
   .landing-yellow-graphic-3 {
     inset: 0 auto auto 0;
     width: clamp(222px, 59.2vw, 311px);
@@ -436,18 +380,6 @@ height: 545px;
     animation: none;
   }
 
-  /* Zoomfahrt wie im Handy-Entwurf, aber in Prozent statt in Pixeln.
-     Die Pixelwerte des 375px-Blocks waeren hier falsch, weil sie an
-     der Rahmenbreite haengen:
-       -123px waren 31% des damaligen Spielraums von 393px
-       80px waren 15.6% der damaligen Rahmenhoehe von 512px
-     Als Prozentwerte ergeben sie bei jeder Rahmengroesse denselben
-     Ausschnitt - bei 375px gerechnet kommen exakt die -123px und
-     80px wieder heraus.
-     Ab rund 1075px Breite ist der Rahmen breiter als das auf Hoehe
-     skalierte Foto. object-fit: cover skaliert dann auf Breite und
-     schneidet oben und unten statt links und rechts; die 31% haben
-     dort keine Wirkung mehr, was richtig ist. */
   .hero__background {
     inset: 0;
     width: 100%;
@@ -457,9 +389,6 @@ height: 545px;
     animation: none;
   }
 
-  /* Titel und Text stehen im Entwurf in der Grafik. Sie bleiben fuer
-     Screenreader und Suchmaschinen im Dokument, sind aber nicht
-     sichtbar - wie im Handy-Block. */
   .hero__content {
     width: 1px;
     height: 1px;
@@ -468,8 +397,6 @@ height: 545px;
     animation: none;
   }
 
-  /* left/top zeigen auf die MITTE des Badges, weil ihn
-     transform: translate(-50%, -50%) zurueckzieht. */
   .hero__badge {
     left: clamp(148px, 39.5vw, 207px);
     top: clamp(214px, 57.1vw, 300px);

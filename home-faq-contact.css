@@ -1,4 +1,3 @@
-/* FAQ START */
 
 .faq {
   padding: 96px 24px 48px;
@@ -118,7 +117,6 @@
   line-height: 120%;
 }
 
-/* Antwort öffnen */
 
 .faq__toggle:checked+.faq__question+.faq__answer {
   grid-template-rows: 1fr;
@@ -137,16 +135,13 @@
     transform 450ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Sichtbare Tastatursteuerung */
 
 .faq__toggle:focus-visible+.faq__question {
   outline: 3px solid var(--color-green);
   outline-offset: 3px;
 }
 
-/* FAQ END */
 
-/* Contact form START */
 
 .contact {
   padding: 72px 24px 96px;
@@ -369,8 +364,6 @@
   cursor: default;
 }
 
-/* Contact form END */
-/* ===== Mobile: FAQ ===== */
 
 @media (max-width: 376px) {
   .faq__title {
@@ -383,8 +376,6 @@
     text-align: center;
   }
 
-  /* Quelle ist 36x42, hier 30x34.33 - Verhaeltnis weicht um gut 1%
-     ab, das faellt nicht auf. top 3.33px als margin-top (Basis 1px). */
   .faq__icon {
     width: 30px;
     height: 34.33px;
@@ -393,23 +384,17 @@
     transform: none;
   }
 
-  /* Fragezeile in den Kaestchen - Platzhalterwert, bis die echten
-     Figma-Angaben da sind (Desktop: 24px). */
   .faq__question {
     font-size: 18px;
   }
 }
 
-/* ===== Mobile: Contact form ===== */
 
 @media (max-width: 376px) {
   .contact__title {
     font-size: 40px;
   }
 
-  /* Im HTML steht das Icon hinter dem Titel - order: -1 zieht es in
-     der Flexzeile nach vorn, ohne das Markup zu aendern.
-     Quelle 36x42, hier 30x34.29 (rund 1% Abweichung, faellt nicht auf). */
   .contact__icon {
     order: -1;
     width: 30px;
@@ -419,23 +404,15 @@
     transform: none;
   }
 
-  /* Einleitungstext ueber dem Formular ausblenden. */
   .contact__intro {
     display: none;
   }
 
-  /* Name und E-Mail untereinander statt nebeneinander - zwei Spalten
-     waeren auf 375px nur je rund 139px breit. */
   .contact__row {
     grid-template-columns: 1fr;
   }
 }
 
-/* ===== Mobile: einheitliche 32px zwischen den Bloecken =====
-   Wie auf den Artikelseiten traegt jeder Block seinen Abstand nur
-   oben, unten 0 - so kann sich ein Abstand nicht aus zwei Werten
-   summieren (Desktop: 48px unten + 72px oben ergaben 120px).
-   Das seitliche Polster von 24px bleibt unveraendert. */
 
 @media (max-width: 376px) {
   .faq {
@@ -443,15 +420,12 @@
     padding-bottom: 0;
   }
 
-  /* Letzter Block vor dem Footer, daher auch unten 32px. */
   .contact {
     padding-top: 32px;
     padding-bottom: 32px;
   }
 }
 
-/* ===== Tablet: 377-1439px =====
-   Grenzen wie auf den Artikelseiten. */
 
 @media (min-width: 377px) and (max-width: 1439px) {
   .faq,
@@ -473,9 +447,6 @@
     font-size: clamp(18px, 2vw, 24px);
   }
 
-  /* Zwei feste Spalten mit 48px gap ergaeben bei 377px je 140px.
-     auto-fit stellt Name und E-Mail untereinander, sobald weniger
-     als 260px pro Spalte bleiben - ohne zweiten Umbruchpunkt. */
   .contact__row {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
     gap: 32px;
