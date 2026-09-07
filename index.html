@@ -70,7 +70,13 @@
       <img class="hero__background" src="./assets/images/landing-header-turkey.jpg" alt="">
     </div>
 
-    <img class="landing-yellow-graphic-3" src="./assets/graphics/landig-yellow-graphic-3.svg" alt="">
+    <!-- Bis 376px laedt der Browser die Handy-SVG, darueber die grosse.
+         Es wird nur eine Datei geladen, das Element bleibt dasselbe. -->
+    <picture>
+      <source media="(max-width: 376px)" srcset="./assets/graphics/landig-yellow-graphic-Handy-3.svg">
+      <img class="landing-yellow-graphic-3" src="./assets/graphics/landig-yellow-graphic-3.svg" alt="">
+    </picture>
+
     <div class="hero__content">
       <h1 class="einblend-title-hero">Cappadocia</h1>
       <p class="erscheinen-text-hero">From sunrise balloons to <br> hidden cave dwellings,<br> every moment feels

@@ -357,3 +357,87 @@
 .slider_a input[value="four"]:checked ~ .slider_a_wrapper {
   transform: translateX(calc(-300% / 4));
 }
+
+/* ===== Mobile: Highlights ===== */
+
+@media (max-width: 376px) {
+  .highlights_title {
+    font-size: 40px;
+  }
+
+  /* Quelle ist 40x40 quadratisch, daher keine Verzerrung.
+     top 4.24px aus Figma = Feinausrichtung zur Grundlinie der
+     Ueberschrift, hier als margin-top (Basis war 1px). */
+  .highlights_icon {
+    width: 32.59px;
+    height: 32.59px;
+    margin-top: 4.24px;
+    opacity: 1;
+    transform: none;
+  }
+
+  .highlights_intro {
+    font-size: 18px;
+  }
+
+  /* Textbox in allen vier Slides. gap braucht flex - als display:block
+     (Desktop) haette es keine Wirkung. box-sizing: border-box gilt
+     projektweit, 307x190 schliesst padding und border also ein. */
+  .slider_a_element_element_one,
+  .slider_a_element_element_two,
+  .slider_a_element_element_three,
+  .slider_a_element_element_four {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 307px;
+    height: 190px;
+    margin: 93px 0 0 14px;
+    padding: 16px;
+    opacity: 1;
+    transform: none;
+  }
+
+  /* padding raus: die Abstaende kommen jetzt vom Container (16px)
+     und vom gap (8px), sonst zaehlt beides doppelt. */
+  .slider_a_element_element_one > h3,
+  .slider_a_element_element_two > h3,
+  .slider_a_element_element_three > h3,
+  .slider_a_element_element_four > h3 {
+    font-size: 28px;
+    padding: 0;
+    /* max. 2 Zeilen, Rest als '...' */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .slider_a_element_element_one > p,
+  .slider_a_element_element_two > p,
+  .slider_a_element_element_three > p,
+  .slider_a_element_element_four > p {
+    font-family: 'Palanquin', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1.1;
+    letter-spacing: normal;
+    padding: 0;
+    /* max. 3 Zeilen, Rest als '...'. 2x29 (h3) + 8 (gap) + 3x22 = 133px,
+       passt damit sicher in die 158px Innenhoehe der Box. */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+  }
+
+  /* Die <br> im HTML sind Desktop-Umbrueche. Auf 375px erzwingen sie
+     mitten im Satz zusaetzliche Zeilen - Slide 1 braucht damit 7 statt
+     5 Zeilen und laeuft aus der 190px-Box. */
+  .slider_a br {
+    display: none;
+  }
+}

@@ -270,3 +270,88 @@ header {
   text-underline-offset: 4px;
   color: #F1C953;
 }
+
+/* ===== Mobile: Handy-Ansicht =====
+   Bis 376px verschwindet das Menue, das Logo steht allein mittig. */
+
+@media (max-width: 376px) {
+  .navbar__nav {
+    display: none;
+  }
+
+  .navbar__inner {
+    justify-content: center;
+    gap: 0;
+  }
+}
+
+/* Footer: die drei Texte passen nebeneinander nicht in 376px.
+   Ohne Umbruch wird das Dokument breiter als der Viewport - dann
+   reissen beim Rechtsscrollen beide gruenen Streifen ab. */
+
+@media (max-width: 376px) {
+  .footer {
+    height: auto;
+    padding: 24px 0;
+  }
+
+  /* Textblock links, Icons rechts auf gleicher Unterkante. */
+  .footer_inner {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  /* Drei Zeilen: Imprint / Cookie Preferences / Logo + Travel Blog.
+     Im HTML stehen sie in anderer Reihenfolge (Logo, Travel Blog,
+     Imprint, Cookie), darum die Rasterplaetze explizit vergeben. */
+  .footer_log {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: start;
+    align-items: center;
+    gap: 4px 8px;
+  }
+
+  .footer-imprint {
+    grid-row: 1;
+    grid-column: 1 / -1;
+  }
+
+  /* 4. Kind = 'Cookie Preferences' */
+  .footer_log > :nth-child(4) {
+    grid-row: 2;
+    grid-column: 1 / -1;
+  }
+
+  .footer-logo {
+    grid-row: 3;
+    grid-column: 1;
+  }
+
+  /* 2. Kind = 'Travel Blog 2026' */
+  .footer_log > :nth-child(2) {
+    grid-row: 3;
+    grid-column: 2;
+  }
+
+  .footer-title,
+  .footer-imprint {
+    font-size: 16px;
+  }
+
+  /* Die 71px Abstaende galten fuer die einzeilige Desktop-Variante.
+     Spezifischer als .footer-title, darum eigene Regel. */
+  .footer-title + .footer-title,
+  .footer-title + .footer-imprint,
+  .footer-imprint + .footer-title {
+    margin-left: 0;
+  }
+
+  .footer_icons img {
+    width: 24px;
+    height: 24px;
+  }
+}
