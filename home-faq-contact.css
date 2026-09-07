@@ -430,3 +430,22 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== Mobile: einheitliche 32px zwischen den Bloecken =====
+   Wie auf den Artikelseiten traegt jeder Block seinen Abstand nur
+   oben, unten 0 - so kann sich ein Abstand nicht aus zwei Werten
+   summieren (Desktop: 48px unten + 72px oben ergaben 120px).
+   Das seitliche Polster von 24px bleibt unveraendert. */
+
+@media (max-width: 376px) {
+  .faq {
+    padding-top: 32px;
+    padding-bottom: 0;
+  }
+
+  /* Letzter Block vor dem Footer, daher auch unten 32px. */
+  .contact {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}

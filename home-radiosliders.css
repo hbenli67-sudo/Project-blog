@@ -352,6 +352,7 @@
      unten schiebt. Letzteres wird hier aufgehoben, sonst waeren es
      32 + 24 = 56px. */
   .highlights_heading {
+    margin-top: 32px;
     margin-bottom: 32px;
   }
 
