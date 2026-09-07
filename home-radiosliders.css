@@ -3,7 +3,6 @@
   margin: 0;
 }
 
-/* highlights stylen start*/
 
 
 .highlights_heading {
@@ -34,11 +33,11 @@
 .highlights_intro {
   margin-top: 0;
   text-align: center;
- 
- 
- 
- 
-  
+  color: var(--color-text-brown);
+  font-family: "Palanquin", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 110%;
   margin: 0px 00px 72px 0px;
 }
 
@@ -50,7 +49,6 @@
   color: var(--color-text-brown);
 }
 
-/* highlights stylen end*/
 
 
 .slider_a {
@@ -74,7 +72,6 @@
   z-index: 2;
 }
 
-/* radio button stylen start*/
 
 [type="radio"] {
   display: none;
@@ -134,7 +131,6 @@
   padding: 0px 0px 0px 40px;
 }
 
-/* radio button stylen end*/
 
 .slider_a_wrapper {
   z-index: 1;
@@ -148,7 +144,12 @@
   left: 0;
 }
 
+
+
+
 .slider_a_element {
+  display: block;
+  text-decoration: none;
   width: calc(100% / 4);
   height: 100%;
 }
@@ -328,16 +329,13 @@
   transform: translateX(calc(-300% / 4));
 }
 
-/* ===== Mobile: Highlights ===== */
 
 @media (max-width: 376px) {
   .highlights_title {
     font-size: 40px;
   }
 
-  /* Quelle ist 40x40 quadratisch, daher keine Verzerrung.
-     top 4.24px aus Figma = Feinausrichtung zur Grundlinie der
-     Ueberschrift, hier als margin-top (Basis war 1px). */
+
   .highlights_icon {
     width: 32.59px;
     height: 32.59px;
@@ -346,19 +344,12 @@
     transform: none;
   }
 
-  /* Einleitungstext unter der Ueberschrift ausblenden - wie beim
-     Kontaktformular. Achtung: mit ihm faellt auch sein
-     margin-bottom: 72px weg, der Slider rueckt also naeher an die
-     Ueberschrift heran. */
+  
   .highlights_intro {
     display: none;
   }
 
-  /* 32px zwischen Ueberschrift und Slider. Zwei Dinge bestimmen den
-     Abstand: das margin-bottom der Ueberschrift (Desktop: 40px) und
-     das top: 24px, mit dem der Desktop den Slider zusaetzlich nach
-     unten schiebt. Letzteres wird hier aufgehoben, sonst waeren es
-     32 + 24 = 56px. */
+
   .highlights_heading {
     margin-top: 32px;
     margin-bottom: 32px;
@@ -368,9 +359,6 @@
     top: 0;
   }
 
-  /* Textbox in allen vier Slides. gap braucht flex - als display:block
-     (Desktop) haette es keine Wirkung. box-sizing: border-box gilt
-     projektweit, 307x190 schliesst padding und border also ein. */
   .slider_a_element_element_one,
   .slider_a_element_element_two,
   .slider_a_element_element_three,
@@ -379,10 +367,6 @@
     flex-direction: column;
     gap: 8px;
     width: 307px;
-    /* Statt fester Hoehe: 190px sind die Untergrenze aus dem Entwurf,
-       die Box waechst aber mit, wenn Titel + 3 Absatzzeilen mehr
-       brauchen. Sonst schneidet overflow: hidden die letzte Zeile an
-       (Slide 1 braucht rund 195px). */
     min-height: 190px;
     margin: 93px 0 0 14px;
     padding: 16px;
@@ -390,17 +374,12 @@
     transform: none;
   }
 
-  /* padding raus: die Abstaende kommen jetzt vom Container (16px)
-     und vom gap (8px), sonst zaehlt beides doppelt. */
   .slider_a_element_element_one > h3,
   .slider_a_element_element_two > h3,
   .slider_a_element_element_three > h3,
   .slider_a_element_element_four > h3 {
     font-size: 28px;
     padding: 0;
-    /* Kein line-clamp: der Titel wird immer vollstaendig gezeigt,
-       egal wie viele Zeilen er braucht. flex-shrink: 0 verhindert,
-       dass die Box ihn zusammenstaucht. */
     flex-shrink: 0;
   }
 
@@ -415,10 +394,6 @@
     line-height: 1.1;
     letter-spacing: normal;
     padding: 0;
-    /* Der Absatz nimmt den verbleibenden Platz der Box ein und wird
-       darin gekappt - hoechstens 3 Zeilen, Rest als '...'.
-       min-height: 0 erlaubt dem Flex-Element, kleiner zu werden als
-       sein Inhalt; ohne das wuerde langer Text die Box aufdruecken. */
     flex: 1 1 auto;
     min-height: 0;
     display: -webkit-box;
@@ -428,18 +403,12 @@
     overflow: hidden;
   }
 
-  /* Die <br> im HTML sind Desktop-Umbrueche. Auf 375px erzwingen sie
-     mitten im Satz zusaetzliche Zeilen - Slide 1 braucht damit 7 statt
-     5 Zeilen und laeuft aus der 190px-Box. */
+ 
   .slider_a br {
     display: none;
   }
 }
 
-/* ===== Tablet: 377-1439px =====
-   Der Slider selbst hat schon max-width: 100% und Prozentbreiten,
-   laeuft also nicht ueber. Angepasst werden nur die Schriftgroessen,
-   die sonst in den schmalen Textboxen umbrechen. */
 
 @media (min-width: 377px) and (max-width: 1439px) {
   .highlights_title {

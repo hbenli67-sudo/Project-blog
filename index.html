@@ -12,10 +12,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="styles/font.css">
   <link rel="stylesheet" href="imprint.css">
-  <!-- Gemeinsamer Header und Footer -->
   <link rel="stylesheet" href="header-footer.css">
 
-  <!-- CSS-Dateien der Landingpage -->
   <link rel="stylesheet" href="home-hero.css">
   <link rel="stylesheet" href="home-sliders.css">
   <link rel="stylesheet" href="home-faq-contact.css">
@@ -25,7 +23,6 @@
 <body>
 
 
-  <!-- Navbar start -->
   <nav class="navbar">
     <div class="navbar__inner">
       <div class="navbar__logo">
@@ -52,9 +49,7 @@
     </div>
   </nav>
 
-  <!-- Navbar End -->
 
-  <!-- Hero Start -->
 
   <section class="hero">
 
@@ -69,8 +64,6 @@
       <img class="hero__background" src="./assets/images/landing-header-turkey.jpg" alt="">
     </div>
 
-    <!-- Bis 1439px laedt der Browser die Handy-SVG, darueber die grosse.
-         Es wird nur eine Datei geladen, das Element bleibt dasselbe. -->
     <picture>
       <source media="(max-width: 1439px)" srcset="./assets/graphics/landig-yellow-graphic-Handy-3.svg">
       <img class="landing-yellow-graphic-3" src="./assets/graphics/landig-yellow-graphic-3.svg" alt="">
@@ -91,10 +84,8 @@
 
   </section>
 
-  <!-- Hero End -->
 
 
-  <!-- Radio Slider Start -->
 
   <div class="highlights_heading">
     <img class="highlights_icon" src="assets/icons/highlights-yellow.svg" alt="Rocket Icon">
@@ -123,8 +114,9 @@
     <label for="mounten"></label>
 
     <div class="slider_a_wrapper">
-      <div class="slider_a_element element_one">
-        <a class="slider_a_element_element_one" href="article01-beaches.html">
+    
+      <a class="slider_a_element element_one" href="article01-beaches.html">
+        <div class="slider_a_element_element_one">
           <h3>
             The World’s Most Breathtaking Beaches
           </h3>
@@ -133,10 +125,10 @@
             coastlines kissed by <br> turquoise waves,
             these beaches are more than destinations — they’re <br> feelings.
           </p>
-        </a>
-      </div>
-      <div class="slider_a_element element_two">
-        <a class="slider_a_element_element_two" href="article02-scandinavia.html">
+        </div>
+      </a>
+      <a class="slider_a_element element_two" href="article02-scandinavia.html">
+        <div class="slider_a_element_element_two">
           <h3>
             Copenhagen in 3 Days: Big <br> Experiences, Smart Spending
           </h3>
@@ -144,10 +136,10 @@
             Discover Copenhagen, where historic charm meets modern design,
             vibrant cycling culture and waterfront living.
           </p>
-        </a>
-      </div>
-      <div class="slider_a_element element_three">
-        <a class="slider_a_element_element_three" href="article03-pattaya.html">
+        </div>
+      </a>
+      <a class="slider_a_element element_three" href="article03-pattaya.html">
+        <div class="slider_a_element_element_three">
           <h3>
             Pattaya Pulse: <br> Food, Sun and Neon Nights
           </h3>
@@ -156,8 +148,8 @@
             the city offers an <br> energetic and diverse escape.
             Discover Pattaya City, with vibrant <br> nightlife and rich cultural landmarks.
           </p>
-        </a>
-      </div>
+        </div>
+      </a>
       <div class="slider_a_element element_four">
         <div class="slider_a_element_element_four">
           <h3>
@@ -175,8 +167,6 @@
   </section>
 
 
-  <!-- Radio Slider End-->
-  <!-- FAQ START -->
 
 
   <section class="faq" id="faq">
@@ -286,9 +276,7 @@
     </div>
   </section>
 
-  <!-- FAQ END -->
 
-  <!-- Contact form START -->
 
   <section class="contact" id="contact">
     <div class="contact__container">
@@ -355,14 +343,13 @@
         </button>
 
       </form>
+    </div>
 
   </section>
 
 
 
-  <!-- Contact form END -->
 
-  <!-- Footer Start -->
   <footer class="footer">
     <div class="footer_inner">
 
@@ -395,7 +382,6 @@
   </footer>
 
 
-  <!-- Footer END -->
 
 
 </body>

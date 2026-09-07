@@ -3,7 +3,6 @@ margin: 0;
 box-sizing: border-box;
 }
 
-/* Beach Carousel */
 
 .beach-carousel {
   width: 1440px;
@@ -33,7 +32,6 @@ box-sizing: border-box;
   justify-content: center;
   align-items: center;
   padding: 48px 40px;
-  /* Fluchtpunkt fuer die 3D-Neigung der Karten */
   perspective: 1400px;
 }
 
@@ -45,7 +43,6 @@ box-sizing: border-box;
   overflow: hidden;
   background-color: #ffffff;
   box-shadow: 0 24px 48px rgb(0 0 0 / 28%);
-  /* Alle Karten gleich geneigt: die linke Kante kippt zum Betrachter */
   transform: rotateY(30deg);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   cursor: pointer;
@@ -55,32 +52,22 @@ box-sizing: border-box;
   margin-left: -170px;
 }
 
-/* Jede Karte liegt ueber ihrer linken Nachbarin */
 .beach-carousel__card:nth-child(1) { z-index: 1; }
 .beach-carousel__card:nth-child(2) { z-index: 2; }
 .beach-carousel__card:nth-child(3) { z-index: 3; }
 .beach-carousel__card:nth-child(4) { z-index: 4; }
 .beach-carousel__card:nth-child(5) { z-index: 5; }
 
-/* Hover: die Karte richtet sich auf und kommt nach vorne.
-   Kein translateY - im Entwurf bleibt sie auf gleicher Hoehe,
-   scaleX(0.866) = cos(30deg): macht die Verbreiterung durch das
-   Aufrichten wieder rueckgaengig. Nur scaleY laesst die Karte wachsen. */
 .beach-carousel__card:hover {
   transform: rotateY(0deg) scaleX(0.866) scaleY(1.08);
   box-shadow: 0 32px 60px rgb(0 0 0 / 38%);
   z-index: 10;
 }
 
-/* Die Karten links der gehoverten ruecken nach links weg und geben sie frei.
-   :has(~ ...) waehlt alle Karten, nach denen eine gehoverte Karte folgt.
-   142px statt 164px, weil hier die schmalere ferne Kante anliegt. */
 .beach-carousel__card:has(~ .beach-carousel__card:hover) {
   transform: translateX(-142px) rotateY(30deg);
 }
 
-/* Die Karten rechts davon ruecken nach rechts - untereinander
-   behalten sie ihre Ueberlappung, weil alle gleich weit wandern. */
 .beach-carousel__card:hover ~ .beach-carousel__card {
   transform: translateX(164px) rotateY(30deg);
 }
@@ -137,7 +124,6 @@ box-sizing: border-box;
   font-weight: 400;
 }
 
-/* Pro Tip */
 
 .pro-tip {
   width: 1440px;
@@ -247,7 +233,6 @@ box-sizing: border-box;
   text-align: center;
 }
 
-/* Oberer Rain-Graph */
 
 .pattaya-graphs__rain {
   margin-top: 64px;
@@ -272,7 +257,6 @@ box-sizing: border-box;
   margin-top: 64px;
 }
 
-/* Zweispaltiger Bereich */
 
 .pattaya-graphs__grid {
   display: grid;
@@ -282,10 +266,6 @@ box-sizing: border-box;
   margin: 88px auto 0;
 }
 
-/*
-  Kein 1fr mehr:
-  Beide Karten laufen normal von oben nach unten.
-*/
 .pattaya-graphs__card {
   display: flex;
   flex-direction: column;
@@ -302,7 +282,6 @@ box-sizing: border-box;
   line-height: 120%;
 }
 
-/* Gleich große weiße Boxen */
 
 .pattaya-graphs__card-figure {
   display: grid;
@@ -316,10 +295,6 @@ box-sizing: border-box;
   box-shadow: -2px 4px 11.6px 0 rgb(0 0 0 / 25%);
 }
 
-/*
-  Die PNG bleibt proportional und wird mittig
-  innerhalb der 519 × 471 px großen Box angezeigt.
-*/
 .pattaya-graphs__card-figure .pattaya-graphs__image {
   display: block;
   width: auto;
@@ -334,7 +309,6 @@ box-sizing: border-box;
   margin-top: 88px;
 }
 
-/* Aus article01-beaches.css übernommen: Share */
 
 
 .share {
@@ -453,12 +427,6 @@ cursor: pointer;
 
 }
 
-/* ===== Beach-Karussell: Handy-Slider =====
-   Am Desktop bleibt der Faecher aus fuenf gedrehten Karten. Auf dem
-   Handy wird daraus ein Slider: eine Karte sichtbar, die naechste
-   lugt rechts herein, darunter fuenf Punkte zum Anklicken. Gesteuert
-   rein ueber CSS von den fuenf Radios im HTML - dasselbe Prinzip wie
-   beim Slider auf index.html. */
 
 .beach-carousel__radio,
 .beach-carousel__dots {
@@ -466,24 +434,16 @@ cursor: pointer;
 }
 
 @media (max-width: 376px) {
-  /* Diese Zahlen steuern den ganzen Slider, alles andere
-     rechnet sich daraus. Noch Schaetzwerte aus dem Screenshot -
-     hier die Figma-Masse eintragen. */
   .beach-carousel__container {
     --card-w: 216px;
     --card-h: 335px;
     --card-h-small: 280px;
     --gap: 16px;
-    /* Linker Vorlauf, damit die AKTIVE Karte mittig steht:
-       (Bildschirmbreite - Kartenbreite) / 2. Dadurch lugt rechts die
-       naechste Karte herein und ab Slide 2 links die vorherige. */
     --inset: calc((100% - var(--card-w)) / 2);
 
     width: 100%;
   }
 
-  /* Seitenpolster raus: der Track laeuft bis an den rechten Rand,
-     damit die naechste Karte angeschnitten sichtbar bleibt. */
   .beach-carousel {
     padding: 32px 0 0;
   }
@@ -494,9 +454,6 @@ cursor: pointer;
     padding: 0 16px;
   }
 
-  /* Der Track ist jetzt das Sichtfenster. overflow: hidden schneidet
-     rechts ab; das vertikale padding laesst Platz fuer den
-     Schlagschatten, der sonst mit weggeschnitten wuerde. */
   .beach-carousel__track {
     display: flex;
     justify-content: flex-start;
@@ -507,10 +464,6 @@ cursor: pointer;
     overflow: hidden;
   }
 
-  /* Neigung und die -170px Ueberlappung des Desktops fallen weg. */
-  /* Grundzustand = nicht aktive Karte, also die kleinere Hoehe.
-     Die Breite bleibt fuer alle gleich, sonst stimmt die
-     Schiebe-Rechnung unten nicht mehr. */
   .beach-carousel__card {
     width: var(--card-w);
     height: var(--card-h-small);
@@ -523,8 +476,6 @@ cursor: pointer;
     margin-left: 0;
   }
 
-  /* Auf dem Handy gibt es keinen Hover. Die drei Desktop-Regeln
-     wuerden die Karten beim Antippen sonst auseinanderschieben. */
   .beach-carousel__card:hover,
   .beach-carousel__card:has(~ .beach-carousel__card:hover),
   .beach-carousel__card:hover ~ .beach-carousel__card {
@@ -533,9 +484,6 @@ cursor: pointer;
     z-index: auto;
   }
 
-  /* Alle fuenf Karten wandern gemeinsam nach links, je Schritt eine
-     Kartenbreite plus gap. Die ID-Selektoren stechen die
-     Hover-Regeln oben sicher aus. */
   #beach-slide-1:checked ~ .beach-carousel__track .beach-carousel__card {
     transform: translateX(0);
   }
@@ -556,9 +504,6 @@ cursor: pointer;
     transform: translateX(calc(-4 * (var(--card-w) + var(--gap))));
   }
 
-  /* Nur die aktive Karte bekommt die volle Hoehe und hebt sich
-     dadurch von der angeschnittenen Nachbarin ab. align-items:
-     center am Track haelt beide auf gleicher Mittelachse. */
   #beach-slide-1:checked ~ .beach-carousel__track .beach-carousel__card:nth-child(1),
   #beach-slide-2:checked ~ .beach-carousel__track .beach-carousel__card:nth-child(2),
   #beach-slide-3:checked ~ .beach-carousel__track .beach-carousel__card:nth-child(3),
@@ -567,7 +512,6 @@ cursor: pointer;
     height: var(--card-h);
   }
 
-  /* Punkte unter dem Slider */
   .beach-carousel__dots {
     display: flex;
     justify-content: center;
@@ -586,7 +530,6 @@ cursor: pointer;
     transition: width 0.3s ease, opacity 0.3s ease;
   }
 
-  /* Aktiver Punkt: breitere Pille in vollem Gruen. */
   #beach-slide-1:checked ~ .beach-carousel__dots label:nth-child(1),
   #beach-slide-2:checked ~ .beach-carousel__dots label:nth-child(2),
   #beach-slide-3:checked ~ .beach-carousel__dots label:nth-child(3),
@@ -597,10 +540,6 @@ cursor: pointer;
   }
 }
 
-/* ===== Mobile: Fliesstext und Liste zwischen Karussell und Pro Tip =====
-   Achtung: .beach-carousel_text steht im HTML zweimal - einmal hier
-   (Zeile 136) und einmal als Outro nach Pro Tip (Zeile 177). Beide
-   teilen sich die Klasse, die 16px gelten also fuer beide. */
 
 @media (max-width: 376px) {
   .beach-carousel_text,
@@ -608,10 +547,6 @@ cursor: pointer;
     font-size: 16px;
   }
 
-  /* Seitenpolster 16px wie beim Karussell-Titel. Der Abstand nach
-     oben sind die einheitlichen 32px, nach unten 0 - der naechste
-     Block bringt seine eigenen 32px mit. Die margins vom Desktop
-     (24px bzw. 64px) muessen dafuer explizit auf 0. */
   .beach-carousel_text {
     margin: 0 auto;
     padding: 32px 16px 0;
@@ -622,34 +557,23 @@ cursor: pointer;
     padding: 32px 16px 0;
   }
 
-  /* Die <br> sind Desktop-Umbrueche und wuerden auf 375px mitten im
-     Satz zusaetzliche Zeilen erzwingen - wie beim Slider auf
-     index.html und im Artikel-Header. */
   .beach-carousel_text br,
   .beach_list br {
     display: none;
   }
 }
 
-/* ===== Mobile: Pro Tip ===== */
 
 @media (max-width: 376px) {
   .pro-tip {
     padding: 32px 16px 0;
   }
 
-  /* Der Kasten waechst 20px nach oben, der Text bleibt stehen:
-     margin-top 20 -> 0 zieht die Oberkante hoch, padding-top
-     26 -> 46 gibt die 20px innen wieder zurueck. Der Kasten wird
-     dadurch 20px hoeher, der Textanfang bleibt an derselben
-     Stelle. Am Desktop: margin 65px, padding-top 26px. */
   .pro-tip__box {
     margin-top: 0;
     padding-top: 46px;
   }
 
-  /* Figma: Schrift 28px (wie am Desktop), Icon 50x50.
-     Das SVG ist natuerlich 43x42, wird also minimal breitgezogen. */
   .pro-tip__badge {
     font-size: 28px;
   }
@@ -659,21 +583,12 @@ cursor: pointer;
     height: 50px;
   }
 
-  /* Mit dem groesseren Icon ist die Badge rund 235px breit. Am
-     Desktop haengt sie mit left: -45px aus der Box - auf 375px ragte
-     sie damit 29px ueber den Bildschirmrand und wuerde die Seite
-     bleibt aber im Bild. top: -32px statt -40px, weil ueber der Box
-     nur noch die einheitlichen 32px Abstand stehen - bei -40px wuerde
-     die Badge 8px in den Text darueber ragen. */
      50px-Icon von 44px auf rund 66px Hoehe waechst. */
   .pro-tip__badge {
     top: -32px;
     left: -8px;
   }
 
-  /* Figma-Werte. Familie, Schnitt und line-height wie am Desktop,
-     Abweichung nur die Groesse: 24px -> 16px. Damit ist die Liste
-     genauso gross wie der Fliesstext daneben. */
   .pro-tip__list li {
     font-family: 'Palanquin', sans-serif;
     font-weight: 400;
@@ -682,8 +597,6 @@ cursor: pointer;
     letter-spacing: normal;
   }
 
-  /* Die hervorgehobene Spanne "Useful link." - gleiche Groesse,
-     nur fett. Die gruene Farbe kommt unveraendert vom Desktop. */
   .pro-tip__link {
     font-family: 'Palanquin', sans-serif;
     font-weight: 700;
@@ -692,21 +605,13 @@ cursor: pointer;
     letter-spacing: normal;
   }
 
-  /* Die beiden <br> in der Liste sind Desktop-Umbrueche. */
   .pro-tip__list br {
     display: none;
   }
 }
 
-/* ===== Mobile: Share ===== */
 
 @media (max-width: 376px) {
-  /* Figma-Werte. Familie, Schnitt und Ausrichtung wie am Desktop,
-     Abweichung nur die Groesse: 24px -> 18px.
-     ACHTUNG: Arima 500 (Medium) liegt nicht in assets/fonts - nur
-     400, 600 und 700. Der Browser nimmt bei 500 den naechsten
-     kleineren vorhandenen Schnitt, hier also 400 Regular. Das gilt
-     genauso schon am Desktop. */
   .share_text {
     font-family: 'Arima', sans-serif;
     font-weight: 500;
@@ -716,11 +621,6 @@ cursor: pointer;
     text-align: center;
   }
 
-  /* Figma-Werte fuer den gruenen Button. border-radius 40px ist
-     schon der Desktop-Wert, 40 > halbe Hoehe (24) ergibt weiterhin
-     die volle Ovalform. gap ist der Abstand zwischen Share-Icon und
-     dem Wort SHARE im Button (Desktop: 4px).
-     angle 0deg braucht keine Regel - der Button ist nicht gedreht. */
   .share_btn {
     width: 158px;
     height: 48px;
@@ -729,16 +629,6 @@ cursor: pointer;
     opacity: 1;
   }
 
-  /* Figma: 50 x 30.415 um 100.35deg gedreht. Genau dieses Ergebnis
-     liegt fertig als mobile-shareline.svg vor - 32x53, Drehung schon
-     eingebaut. Deshalb KEIN rotate im CSS, sondern die natuerliche
-     Groesse der Datei; das <picture> im HTML tauscht sie unter 376px.
-     border-width: 3px ist die Strichstaerke des Pfades in Figma. Die
-     steckt bereits in der SVG und laesst sich an einem <img> von
-     aussen nicht setzen - eine CSS-border waere ein Rahmen um das
-     Bild, nicht die Linienstaerke.
-     Verschiebung: vom Ausgangspunkt (rechte Kante am Button) 64px
-     nach links, vertikal buendig mit der Buttonoberkante. */
   .share_pfeil {
     width: 32px;
     height: 53px;
@@ -750,17 +640,10 @@ cursor: pointer;
     padding: 32px 0;
   }
 
-  /* Abstand zwischen dem Text und dem gruenen Button. Desktop: 16px. */
   .share_btn {
     margin-top: 32px;
   }
 
-  /* Aufklapp-Animation faehrt auf dem Handy 20px kuerzer.
-     Beide Werte muessen um denselben Betrag zurueck, sonst aendert
-     sich der Abstand zwischen Button und Links: der Button wandert
-     nach links, die Links folgen ihm. Waere nur einer geaendert,
-     wuerden sie sich um 20px ueberlappen.
-     Desktop: -72px und -64px. */
   .share_toggle_input:checked ~ .share_btn {
     transform: translateX(-52px);
   }
@@ -769,17 +652,10 @@ cursor: pointer;
     transform: translateX(-44px);
   }
 
-  /* 24px ist schon der Desktop-Wert, steht hier nur zur
-     Vollstaendigkeit des Blocks. */
   .share_btn {
     font-size: 24px;
   }
 
-  /* Das SVG ist natuerlich 24x27, also hochformatig. Auf 32x32
-     gezwungen wuerde es rund 12% in die Breite gezogen. Die Box ist
-     deshalb 32x32 wie in Figma, object-fit: contain haelt die
-     Grafik darin proportional. Soll das Icon wirklich verzerrt
-     32x32 fuellen, muss contain durch fill ersetzt werden. */
   .share_icon {
     width: 32px;
     height: 32px;
@@ -788,30 +664,12 @@ cursor: pointer;
   }
 }
 
-/* <picture> selbst soll keine Box erzeugen - das Bild darin ist
-   absolut positioniert, der Wrapper wuerde sonst ein leeres
-   Flex-Element in .share_button legen. Wie beim Hero auf index.html. */
 .share_button picture {
   display: contents;
 }
 
-/* ===== Tablet: 377-1439px =====
-   Untergrenze schliesst an den Handy-Block (bis 376px) an,
-   Obergrenze ist die Breite, ab der das Desktop-Layout passt.
-   Beide Grenzen stehen ausdruecklich da, damit dieser Block den
-   375px-Entwurf nicht beeinflussen kann. */
 
 @media (min-width: 377px) and (max-width: 1439px) {
-  /* Der Faecher braucht am Desktop 1380px:
-     380 Karte + 4 x 210 Versatz + 2 x 40 Track- + 2 x 40 Sektionspolster.
-     Alle sechs Werte als Anteil davon in vw umgerechnet, dadurch
-     bleibt die Faecher-Optik ueber den ganzen Bereich erhalten und
-     die Summe bleibt immer unter 100vw:
-       380/1380 = 27.5   170/1380 = 12.3   40/1380 = 2.9   48/1380 = 3.5
-     Danach alles mit 0.96 skaliert: style.css setzt
-     scrollbar-gutter: stable, die Scrollleiste belegt also dauerhaft
-     rund 15px - und 100vw rechnet sie mit. Bei voller Ausnutzung
-     waere der Faecher damit breiter als der sichtbare Bereich. */
   .beach-carousel {
     padding: 48px 2.8vw 64px;
   }
@@ -830,8 +688,6 @@ cursor: pointer;
     margin-left: -11.8vw;
   }
 
-  /* Die Verschiebungen der Hover-Regeln haengen an der Kartenbreite
-     und muessen mitskalieren: 142/1380 = 10.3, 164/1380 = 11.9. */
   .beach-carousel__card:has(~ .beach-carousel__card:hover) {
     transform: translateX(-9.9vw) rotateY(30deg);
   }
@@ -844,24 +700,15 @@ cursor: pointer;
     font-size: clamp(22px, 2.5vw, 32px);
   }
 
-  /* Beide Textbloecke haben kein Seitenpolster - ohne das klebt der
-     Text an den Bildschirmkanten. */
   .beach-carousel_text,
   .beach_list {
     padding: 0 24px;
   }
 
-  /* Die Badge haengt mit left: -45px aus dem Kasten. Bei den 40px
-     Sektionspolster des Desktops ragte sie 5px ueber den Rand -
-     48px geben ihr die noetigen 3px Luft. */
   .pro-tip {
     padding: 48px 48px 96px;
   }
 
-  /* Desktop: 106.9px breit, right: 100% und dann nochmal 80px nach
-     links. Bei mittigem 140px-Button liegt die linke Kante bei
-     Breite/2 - 256.9 - der Pfeil ist also erst ab 514px im Bild.
-     8px statt 80px halten ihn ueber den ganzen Bereich sichtbar. */
   .share_pfeil {
     transform: translate(-8px, -15px);
   }

@@ -28,7 +28,6 @@
   text-align: center;
 }
 
-/* Oberer Rain-Graph */
 
 .pattaya-graphs__rain {
   margin-top: 64px;
@@ -53,7 +52,6 @@
   margin-top: 64px;
 }
 
-/* Zweispaltiger Bereich */
 
 .pattaya-graphs__grid {
   display: grid;
@@ -63,10 +61,6 @@
   margin: 88px auto 0;
 }
 
-/*
-  Kein 1fr mehr:
-  Beide Karten laufen normal von oben nach unten.
-*/
 .pattaya-graphs__card {
   display: flex;
   flex-direction: column;
@@ -83,7 +77,6 @@
   line-height: 120%;
 }
 
-/* Gleich große weiße Boxen */
 
 .pattaya-graphs__card-figure {
   display: grid;
@@ -97,10 +90,6 @@
   box-shadow: -2px 4px 11.6px 0 rgb(0 0 0 / 25%);
 }
 
-/*
-  Die PNG bleibt proportional und wird mittig
-  innerhalb der 519 × 471 px großen Box angezeigt.
-*/
 .pattaya-graphs__card-figure .pattaya-graphs__image {
   display: block;
   width: auto;
@@ -115,7 +104,6 @@
   margin-top: 88px;
 }
 
-/* Aus article01-beaches.css übernommen: Share */
 
 
 .share {
@@ -233,17 +221,8 @@ cursor: pointer;
   transform: translate(-80px, -15px);
 
 }
-/* ===== Mobile: Pattaya-Grafiken =====
-   Aufgebaut wie article01 und article02: jeder Block traegt seinen
-   Abstand nur oben (32px), unten 0 - so kann sich ein Abstand nicht
-   aus zwei Werten summieren. Seitenpolster 16px.
-   Der Artikel-Header kommt aus header-footer.css und gilt bereits
-   fuer alle drei Artikelseiten. */
 
 @media (max-width: 376px) {
-  /* Desktop: padding 64px 24px 80px. Seitlich 16px wie auf den
-     anderen beiden Seiten, vertikal uebernehmen die Bloecke selbst
-     den 32px-Rhythmus. */
   .pattaya-graphs {
     padding: 0 16px;
   }
@@ -255,7 +234,6 @@ cursor: pointer;
     font-size: 16px;
   }
 
-  /* Die Desktop-Abstaende (64px bzw. 88px) auf einheitlich 32px. */
   .pattaya-graphs__intro {
     padding-top: 32px;
   }
@@ -266,15 +244,10 @@ cursor: pointer;
     margin-top: 32px;
   }
 
-  /* Desktop 32px - Schaetzwert, wie der Karussell-Titel auf
-     article01. Hier die Figma-Groesse eintragen. */
   .pattaya-graphs__title {
     font-size: 20px;
   }
 
-  /* Zwei feste Spalten a 519px (Raster 1118px breit) passen auf
-     375px nicht - die Karten laufen jetzt untereinander.
-     gap 80px -> 32px wie der uebrige Rhythmus. */
   .pattaya-graphs__grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -286,32 +259,22 @@ cursor: pointer;
     width: 100%;
   }
 
-  /* min-height: 173px hielt am Desktop beide Spalten auf gleicher
-     Hoehe. Untereinander braucht der Text keine Mindesthoehe mehr,
-     sonst entstuenden Luecken unter kurzen Texten. */
   .pattaya-graphs__card-text {
     min-height: 0;
     margin-top: 16px;
   }
 
-  /* Feste 519x471 -> volle Breite, Hoehe richtet sich nach dem Bild. */
   .pattaya-graphs__card-figure {
     width: 100%;
     height: auto;
     margin-top: 16px;
   }
 
-  /* Die <br> sind Desktop-Umbrueche und wuerden auf 375px mitten im
-     Satz zusaetzliche Zeilen erzwingen. */
   .pattaya-graphs br {
     display: none;
   }
 }
 
-/* ===== Mobile: Share =====
-   Gleiche Werte wie in article01 und article02.
-   <picture> selbst soll keine Box erzeugen - das Bild darin ist
-   absolut positioniert. */
 
 .share_button picture {
   display: contents;
@@ -322,9 +285,6 @@ cursor: pointer;
     padding: 32px 0;
   }
 
-  /* ACHTUNG: Arima 500 (Medium) liegt nicht in assets/fonts - nur
-     400, 600 und 700. Der Browser nimmt bei 500 den naechsten
-     kleineren Schnitt, hier also 400 Regular. */
   .share_text {
     font-family: 'Arima', sans-serif;
     font-weight: 500;
@@ -334,9 +294,6 @@ cursor: pointer;
     text-align: center;
   }
 
-  /* Figma: 50 x 30.415 um 100.35deg gedreht - genau dieses Ergebnis
-     liegt fertig als mobile-shareline.svg vor (32x53, Drehung schon
-     eingebaut). Deshalb KEIN rotate im CSS. */
   .share_pfeil {
     width: 32px;
     height: 53px;
@@ -354,8 +311,6 @@ cursor: pointer;
     margin-top: 32px;
   }
 
-  /* Das SVG ist natuerlich 24x27. Die Box ist 32x32 wie in Figma,
-     object-fit: contain haelt die Grafik darin proportional. */
   .share_icon {
     width: 32px;
     height: 32px;
@@ -363,8 +318,6 @@ cursor: pointer;
     flex-shrink: 0;
   }
 
-  /* Aufklapp-Animation faehrt 20px kuerzer. Beide Werte muessen um
-     denselben Betrag zurueck, sonst ueberlappen Button und Links. */
   .share_toggle_input:checked ~ .share_btn {
     transform: translateX(-52px);
   }
@@ -374,17 +327,12 @@ cursor: pointer;
   }
 }
 
-/* ===== Tablet: 377-1439px =====
-   Grenzen wie in article01 und article02. */
 
 @media (min-width: 377px) and (max-width: 1439px) {
   .pattaya-graphs {
     padding: 48px 24px 64px;
   }
 
-  /* Das feste Raster aus 2 x 519px braucht 1118px. auto-fit legt so
-     viele Spalten nebeneinander wie hineinpassen: bis rund 950px
-     eine, darueber zwei. Damit gibt es keinen zweiten Umbruchpunkt. */
   .pattaya-graphs__grid {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr));
     gap: 48px;
@@ -396,14 +344,11 @@ cursor: pointer;
     width: 100%;
   }
 
-  /* Feste 519x471 -> volle Spaltenbreite, Hoehe aus dem Bild. */
   .pattaya-graphs__card-figure {
     width: 100%;
     height: auto;
   }
 
-  /* min-height hielt am Desktop beide Spalten gleich hoch. Sobald
-     nur eine Spalte da ist, entstuenden darunter leere Flaechen. */
   .pattaya-graphs__card-text {
     min-height: 0;
   }
@@ -425,8 +370,6 @@ cursor: pointer;
     margin-top: 48px;
   }
 
-  /* Pfeil waere mit dem Desktop-Versatz von 80px erst ab 514px
-     Bildschirmbreite im Bild. */
   .share_pfeil {
     transform: translate(-8px, -15px);
   }
