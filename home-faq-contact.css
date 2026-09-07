@@ -370,3 +370,63 @@
 }
 
 /* Contact form END */
+/* ===== Mobile: FAQ ===== */
+
+@media (max-width: 376px) {
+  .faq__title {
+    font-family: 'Arima', serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+  }
+
+  /* Quelle ist 36x42, hier 30x34.33 - Verhaeltnis weicht um gut 1%
+     ab, das faellt nicht auf. top 3.33px als margin-top (Basis 1px). */
+  .faq__icon {
+    width: 30px;
+    height: 34.33px;
+    margin-top: 3.33px;
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Fragezeile in den Kaestchen - Platzhalterwert, bis die echten
+     Figma-Angaben da sind (Desktop: 24px). */
+  .faq__question {
+    font-size: 18px;
+  }
+}
+
+/* ===== Mobile: Contact form ===== */
+
+@media (max-width: 376px) {
+  .contact__title {
+    font-size: 40px;
+  }
+
+  /* Im HTML steht das Icon hinter dem Titel - order: -1 zieht es in
+     der Flexzeile nach vorn, ohne das Markup zu aendern.
+     Quelle 36x42, hier 30x34.29 (rund 1% Abweichung, faellt nicht auf). */
+  .contact__icon {
+    order: -1;
+    width: 30px;
+    height: 34.29px;
+    margin-top: 3.33px;
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Einleitungstext ueber dem Formular ausblenden. */
+  .contact__intro {
+    display: none;
+  }
+
+  /* Name und E-Mail untereinander statt nebeneinander - zwei Spalten
+     waeren auf 375px nur je rund 139px breit. */
+  .contact__row {
+    grid-template-columns: 1fr;
+  }
+}

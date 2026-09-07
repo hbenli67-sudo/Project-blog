@@ -287,4 +287,110 @@ height: 545px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
 }
+/* <picture> selbst soll keine Box erzeugen - das Bild darin ist
+   absolut positioniert, der Wrapper wuerde sonst eine leere Zeilenbox
+   in den Hero legen. So bleibt das Desktop-Layout exakt wie zuvor. */
+.hero picture {
+  display: contents;
+}
+
 /*Hero-Section END*/
+
+/* ===== Mobile: Hero =====
+   Handy-Entwurf: Foto links, darueber oben links die eigene
+   Handy-SVG. Alle drei Desktop-Grafiken sind ausgeblendet. */
+
+@media (max-width: 376px) {
+  .hero {
+    height: 512px;
+    background-color: var(--color-yellow);
+  }
+
+  /* Grafik 1 + 2 (Desktop-Laufanimation) faellt weg. */
+  .hero_landing__images {
+    display: none;
+  }
+
+  /* Gleiches Element wie am Desktop - <picture> tauscht nur die Datei.
+     Die Desktop-Regel setzt inset: 0, opacity: 0 und eine Einblend-
+     animation; hier stattdessen feste Groesse, oben links buendig.
+     top hochsetzen (z.B. 40px) schiebt die Grafik nach unten. */
+  .landing-yellow-graphic-3 {
+    inset: 0 auto auto 0;
+    width: 222px;
+    height: 299px;
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .hero_height {
+    height: 100%;
+  }
+
+  /* Rahmen bildschirmfuellend (statt left: 600px vom Desktop).
+     Das Foto ist 4096x2731 quer, der Rahmen 375x512 hoch - es sind also
+     nur rund 49% der Bildbreite zu sehen. object-position zieht das Foto
+     im Rahmen nach links, dadurch wird der rechte Bildteil sichtbar.
+     Skaliert ist das Foto 768px breit, der Rahmen 375px - also 393px
+     Spielraum. -393px ist der Anschlag links, davon 270px nach rechts.
+     Zahl kleiner (-250px) = Foto nach links,
+     Zahl groesser (-100px, 0) = Foto nach rechts. 0 = Anschlag rechts. */
+  .hero__background {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-position: -123px center;
+    /* Zoom: 1.35 = 35% groesser. Skaliert um die Mitte, der Ueberstand
+       wird von overflow: hidden am .hero abgeschnitten. Groesser = naeher
+       ran (1.4), 1 = kein Zoom. Achtung: der Zoom vergroessert auch die
+       object-position-Verschiebung, ggf. -123px nachziehen. */
+    /* Reihenfolge wichtig: translateY steht vorn, wird also NACH dem
+       scale angewendet - 80px sind dann echte 80px. Andersherum waeren
+       es 80 x 1.35 = 108px. Der Zoom haengt oben und unten je 90px ueber,
+       ab ca. 90px Verschiebung wird oben also Gelb sichtbar. */
+    transform: translateY(80px) scale(1.35);
+    /* Die Desktop-Zoomfahrt laeuft hier nicht - sonst ueberschreibt
+       sie das scale oben. */
+    animation: none;
+  }
+
+  /* Titel + Text bleiben fuer Screenreader und Suchmaschinen im
+     Dokument, sind im Entwurf aber nicht zu sehen. */
+  .hero__content {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    animation: none;
+  }
+
+  /* left/top zeigen auf die MITTE des Badges, weil ihn
+     transform: translate(-50%, -50%) um seine halbe Groesse zurueckzieht.
+     Ausgangspunkt war 26% / 32% = 98px / 164px, seitdem schrittweise
+     nach rechts unten geschoben. */
+  .hero__badge {
+    left: 148px;
+    top: 214px;
+    width: 150px;
+    height: 150px;
+    /* Verzoegerung war auf die Laufanimation getaktet, die hier weg ist. */
+    animation-delay: 0.3s;
+  }
+
+  .hero__badge-bg {
+    top: 50%;
+    width: 150px;
+    height: 150px;
+  }
+
+  .hero__badge-text {
+    top: 50%;
+    width: 124px;
+    height: 124px;
+  }
+
+  .hero__badge-flag {
+    top: 50%;
+  }
+}
