@@ -233,3 +233,143 @@ cursor: pointer;
   transform: translate(-80px, -15px);
 
 }
+/* ===== Mobile: Pattaya-Grafiken =====
+   Aufgebaut wie article01 und article02: jeder Block traegt seinen
+   Abstand nur oben (32px), unten 0 - so kann sich ein Abstand nicht
+   aus zwei Werten summieren. Seitenpolster 16px.
+   Der Artikel-Header kommt aus header-footer.css und gilt bereits
+   fuer alle drei Artikelseiten. */
+
+@media (max-width: 376px) {
+  /* Desktop: padding 64px 24px 80px. Seitlich 16px wie auf den
+     anderen beiden Seiten, vertikal uebernehmen die Bloecke selbst
+     den 32px-Rhythmus. */
+  .pattaya-graphs {
+    padding: 0 16px;
+  }
+
+  .pattaya-graphs__intro,
+  .pattaya-graphs__description,
+  .pattaya-graphs__outro,
+  .pattaya-graphs__card-text {
+    font-size: 16px;
+  }
+
+  /* Die Desktop-Abstaende (64px bzw. 88px) auf einheitlich 32px. */
+  .pattaya-graphs__intro {
+    padding-top: 32px;
+  }
+
+  .pattaya-graphs__rain,
+  .pattaya-graphs__description,
+  .pattaya-graphs__outro {
+    margin-top: 32px;
+  }
+
+  /* Desktop 32px - Schaetzwert, wie der Karussell-Titel auf
+     article01. Hier die Figma-Groesse eintragen. */
+  .pattaya-graphs__title {
+    font-size: 20px;
+  }
+
+  /* Zwei feste Spalten a 519px (Raster 1118px breit) passen auf
+     375px nicht - die Karten laufen jetzt untereinander.
+     gap 80px -> 32px wie der uebrige Rhythmus. */
+  .pattaya-graphs__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    width: 100%;
+    margin: 32px auto 0;
+  }
+
+  .pattaya-graphs__card {
+    width: 100%;
+  }
+
+  /* min-height: 173px hielt am Desktop beide Spalten auf gleicher
+     Hoehe. Untereinander braucht der Text keine Mindesthoehe mehr,
+     sonst entstuenden Luecken unter kurzen Texten. */
+  .pattaya-graphs__card-text {
+    min-height: 0;
+    margin-top: 16px;
+  }
+
+  /* Feste 519x471 -> volle Breite, Hoehe richtet sich nach dem Bild. */
+  .pattaya-graphs__card-figure {
+    width: 100%;
+    height: auto;
+    margin-top: 16px;
+  }
+
+  /* Die <br> sind Desktop-Umbrueche und wuerden auf 375px mitten im
+     Satz zusaetzliche Zeilen erzwingen. */
+  .pattaya-graphs br {
+    display: none;
+  }
+}
+
+/* ===== Mobile: Share =====
+   Gleiche Werte wie in article01 und article02.
+   <picture> selbst soll keine Box erzeugen - das Bild darin ist
+   absolut positioniert. */
+
+.share_button picture {
+  display: contents;
+}
+
+@media (max-width: 376px) {
+  .share {
+    padding: 32px 0;
+  }
+
+  /* ACHTUNG: Arima 500 (Medium) liegt nicht in assets/fonts - nur
+     400, 600 und 700. Der Browser nimmt bei 500 den naechsten
+     kleineren Schnitt, hier also 400 Regular. */
+  .share_text {
+    font-family: 'Arima', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: normal;
+    text-align: center;
+  }
+
+  /* Figma: 50 x 30.415 um 100.35deg gedreht - genau dieses Ergebnis
+     liegt fertig als mobile-shareline.svg vor (32x53, Drehung schon
+     eingebaut). Deshalb KEIN rotate im CSS. */
+  .share_pfeil {
+    width: 32px;
+    height: 53px;
+    opacity: 1;
+    transform: translate(-64px, 0);
+  }
+
+  .share_btn {
+    width: 158px;
+    height: 48px;
+    gap: 10px;
+    border-radius: 40px;
+    opacity: 1;
+    font-size: 24px;
+    margin-top: 32px;
+  }
+
+  /* Das SVG ist natuerlich 24x27. Die Box ist 32x32 wie in Figma,
+     object-fit: contain haelt die Grafik darin proportional. */
+  .share_icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  /* Aufklapp-Animation faehrt 20px kuerzer. Beide Werte muessen um
+     denselben Betrag zurueck, sonst ueberlappen Button und Links. */
+  .share_toggle_input:checked ~ .share_btn {
+    transform: translateX(-52px);
+  }
+
+  .share_toggle_input:checked ~ .share_reveal {
+    transform: translateX(-44px);
+  }
+}

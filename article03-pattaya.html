@@ -195,6 +195,7 @@
                         Ante in comm odo porta scelerisque turpis gravida semper.
                     </p>
                 </div>
+            </div>
         </section>
 
         <!-- PATTAYA GRAPH SECTION END -->
@@ -205,7 +206,12 @@
 <p class="share_text">Follow me for more content like this, and<br>share the article with your friends!</p>
 
 <div class="share_button">
-<img class="share_pfeil" src="./assets/icons/mobile-shareline.png">
+<!-- Bis 376px laedt der Browser die Handy-SVG (32x53, Drehung schon
+     in der Datei), darueber die bisherige Grafik. -->
+<picture>
+<source media="(max-width: 376px)" srcset="./assets/icons/mobile-shareline.svg">
+<img class="share_pfeil" src="./assets/icons/mobile-shareline.png" alt="">
+</picture>
 <input type="checkbox" id="share-toggle" class="share_toggle_input">
 <label for="share-toggle" class="share_btn"><img class="share_icon" src="assets/icons/share-yellow.svg" alt="" class="share-icon">SHARE</label>
 
