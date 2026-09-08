@@ -335,13 +335,16 @@ cursor: pointer;
 
   .pro-tip__box {
     margin-top: 0;
-    padding-top: 46px;
+    padding-top: 52px;
   }
 
   .pro-tip__badge {
     font-size: 28px;
     top: -32px;
     left: -8px;
+    width: 195.92px;
+    height: 66px;
+    justify-content: center;
   }
 
   .pro-tip__badge-icon {

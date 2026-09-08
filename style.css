@@ -421,3 +421,23 @@ height: 545px;
     top: 50%;
   }
 }
+
+@media (min-width: 1440px) and (max-width: 1760px) {
+  .hero__badge {
+    left: calc(40% + 100px);
+  }
+}
+
+@media (min-width: 1950px) {
+  .hero__content {
+    margin-left: -80px;
+  }
+
+  .hero__badge {
+    left: calc(40% - 50px);
+  }
+
+  .landing-yellow-graphic-3 {
+    left: 220px;
+  }
+}
