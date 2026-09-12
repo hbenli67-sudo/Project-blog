@@ -302,7 +302,7 @@ cursor: pointer;
   }
 
   .share_btn {
-    width: 158px;
+    width: 138px;
     height: 48px;
     gap: 10px;
     border-radius: 40px;
@@ -323,7 +323,7 @@ cursor: pointer;
   }
 
   .share_toggle_input:checked ~ .share_reveal {
-    transform: translateX(-44px);
+    transform: translate(-44px, 10px);
   }
 }
 
@@ -371,6 +371,25 @@ cursor: pointer;
   }
 
   .share_pfeil {
-    transform: translate(-8px, -15px);
+    transform: translate(-48px, -15px);
+  }
+}
+
+
+@media (max-width: 360px) {
+  .share_pfeil {
+    transform: translate(-44px, 0);
+  }
+}
+
+@media (min-width: 465px) and (max-width: 1439px) {
+  .share_pfeil {
+    transform: translate(-64px, 0);
+  }
+}
+
+@media (min-width: 377px) and (max-width: 460px) {
+  .share_pfeil {
+    transform: translate(-13px, -5px);
   }
 }
