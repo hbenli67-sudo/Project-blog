@@ -1,16 +1,62 @@
-.impresum_container {
-  font-family: "Arima";
-  max-width: 800px;
-  margin: 3.3% auto;
+* {
+  margin: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-  font-family: "Arima";
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.impressum_container {
+  width: 100%;
+  max-width: 800px;
+  margin: 48px auto;
+  padding: 0 24px;
+
+  color: var(--color-text-brown);
+  font-family: "Palanquin", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.impressum_container h1 {
+  margin-bottom: 32px;
+
+  font-family: "Arima", serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 120%;
 }
 
 .footer-imprint {
   color: #ffffff;
   text-decoration: none;
-  font-family: 'Palanquin', sans-serif;
+  font-family: "Palanquin", sans-serif;
   margin-left: 40px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 376px) {
+
+  .impresum_container {
+    margin: 32px auto;
+    padding: 0 16px;
+
+    font-size: 16px;
+  }
+
+  .impresum_container h1 {
+    margin-bottom: 24px;
+    font-size: 32px;
+  }
+
 }
