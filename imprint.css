@@ -47,14 +47,14 @@ main {
 
 @media (max-width: 376px) {
 
-  .impresum_container {
+  .impressum_container {
     margin: 32px auto;
     padding: 0 16px;
 
     font-size: 16px;
   }
 
-  .impresum_container h1 {
+  .impressum_container h1 {
     margin-bottom: 24px;
     font-size: 32px;
   }

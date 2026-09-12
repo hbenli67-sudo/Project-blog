@@ -1,8 +1,3 @@
-*{
-margin: 0;
-box-sizing: border-box;
-}
-
 :root {
   --color-green: #4ea487;
   --color-yellow: #f1c953;
@@ -14,13 +9,7 @@ box-sizing: border-box;
   --color-white: #ffffff;
   --color-send-button-text: #737373;
   --color-send-button-border: rgb(48 48 48 / 50%);
-;
 }
-
-html {
-  scrollbar-gutter: stable;
-}
-
 
 * {
   margin: 0;
@@ -28,21 +17,29 @@ html {
   box-sizing: border-box;
 }
 
-body {
-   font-family: "Palanquin", sans-serif;
+html {
+  scrollbar-gutter: stable;
 }
-
-body {
-  margin: 0;
-}
-
 
 body {
   margin: 0;
   padding: 0;
+  font-family: "Palanquin", sans-serif;
 }
 
+/* Respektiert die Systemeinstellung "Bewegung reduzieren".
+   Animationen springen auf ihren Endzustand, statt zu laufen. */
+@media (prefers-reduced-motion: reduce) {
 
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 
 .hero {
   position: relative;
