@@ -227,7 +227,6 @@
   border: 0;
   border-bottom: 1px solid var(--color-text-brown);
   background-color: transparent;
-  outline: none;
 
   color: var(--color-green);
   caret-color: var(--color-green);
@@ -240,6 +239,13 @@
 
 .contact__input {
   height: 56px;
+}
+
+.contact__input:focus-visible,
+.contact__textarea:focus-visible {
+  outline: 3px solid var(--color-green);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 .contact__field--message {
