@@ -1,25 +1,13 @@
-
-
-
-
-
-
-
-
-
 header {
- 
   padding: 88px 40px 48px 40px;
 }
 
-
-
-.scandinavia{
+.scandinavia {
   padding: 0px 64px 24px 80px;
   background-color: var(--color-white);
 }
 
-.scandinavia_main_container{
+.scandinavia_main_container {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
@@ -36,48 +24,33 @@ header {
   padding-top: 48px;
 }
 
-
-
-
-.scandinavia_video_attrappe{
-  display:block;
-  
-  
-  padding: 88px 180px 25px 180px; 
+.scandinavia_video_attrappe {
+  display: block;
+  padding: 88px 180px 25px 180px;
 }
 
 .scandinavia_video_attrappe_container {
-  
-max-width: 930px;
-max-height: 520px;
-  
-  
-  
-  
+  max-width: 930px;
+  max-height: 520px;
 }
 
-.scandinavia_video_attrappe__image{
+.scandinavia_video_attrappe__image {
   display: block;
   width: 100%;
- border-radius: 50px;
-
+  border-radius: 50px;
 }
 
-.scandinavia-video_attrape__description{
+.scandinavia-video_attrape__description {
   margin-top: 64px;
 }
 
-
-
-
-
-.viedeo_unorded_list{
+.viedeo_unorded_list {
   display: block;
   width: min(100%, 1040px);
   margin: 0 auto 64px;
   margin-top: 64px;
   color: #3d3d3d;
-  font-family: 'Palanquin', sans-serif;
+  font-family: "Palanquin", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 24px;
@@ -96,19 +69,16 @@ max-height: 520px;
 
 .viedeo_unorded_list li {
   padding-left: 8px;
-  
 }
 
 .viedeo_unorded_list li::marker {
   font-weight: 400;
 }
 
-
-.scandinavian__last_discription{
+.scandinavian__last_discription {
   width: 100%;
   margin-top: 88px;
 }
-
 
 .pro-tip {
   width: 1440px;
@@ -125,7 +95,7 @@ max-height: 520px;
   min-height: 195px;
   margin: 65px auto 0;
   padding: 26px 16px 24px 16px;
-  background: #4EA48733;
+  background: #4ea48733;
   border-radius: 30px;
   opacity: 1;
   box-sizing: border-box;
@@ -138,15 +108,15 @@ max-height: 520px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #4EA487;
-  color: #F1C953;
+  background-color: #4ea487;
+  color: #f1c953;
   padding: 8px 20px;
   border-radius: 50px;
   white-space: nowrap;
   transform: rotate(-13.67deg);
   box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
 
-  font-family: 'Palanquin', sans-serif;
+  font-family: "Palanquin", sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 28px;
@@ -165,7 +135,7 @@ max-height: 520px;
 }
 
 .pro-tip__list li {
-  font-family: 'Palanquin', sans-serif;
+  font-family: "Palanquin", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 24px;
@@ -178,8 +148,8 @@ max-height: 520px;
 }
 
 .pro-tip__link {
-  color: #4EA487;
-  font-family: 'Palanquin', sans-serif;
+  color: #4ea487;
+  font-family: "Palanquin", sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 24px;
@@ -187,33 +157,27 @@ max-height: 520px;
   letter-spacing: 0%;
 }
 
-
-
-
 .share {
-padding-bottom: 88px;
-padding-top: 88px;
-
+  padding-bottom: 88px;
+  padding-top: 88px;
 }
-.share_button{display: flex;
+.share_button {
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
   width: fit-content;
   margin: 0 auto;
-
 }
 
-
-.share_text{
+.share_text {
   flex-basis: 100%;
   text-align: center;
-    font-family: 'Arima';
-  font-style:normal;
+  font-family: "Arima";
+  font-style: normal;
   font-weight: 500;
   font-size: 24px;
-  color: #54370D;
-
+  color: #54370d;
 }
 
 .share_toggle_input {
@@ -221,18 +185,17 @@ padding-top: 88px;
 }
 
 .share_btn {
-background-color: #4ea988;
-color: #F1C953;
-border: 0;
-border-radius: 40px;
-height: 56px;
-width: 140px;
-margin-top: 16px;
-transition: transform 0.6s ease;
-cursor: pointer;
+  background-color: #4ea988;
+  color: #f1c953;
+  border: 0;
+  border-radius: 40px;
+  height: 56px;
+  width: 140px;
+  margin-top: 16px;
+  transition: transform 0.6s ease;
+  cursor: pointer;
 
-
-  font-family: 'Arima';
+  font-family: "Arima";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -243,8 +206,6 @@ cursor: pointer;
   align-items: center;
   justify-content: center;
   gap: 4px;
-
-
 }
 
 .share_toggle_input:checked ~ .share_btn {
@@ -282,28 +243,25 @@ cursor: pointer;
 
 .share_link {
   text-decoration: underline;
-  color: #4EA487;
-  font-family: 'Arima';
+  color: #4ea487;
+  font-family: "Arima";
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
 }
 
 .share_icon {
-    width: 24px;
-    height: 27px;
-    display: flex;
-
-
+  width: 24px;
+  height: 27px;
+  display: flex;
 }
 
 .share_pfeil {
-    height: 65.03px;
-    width: 106.9px;
+  height: 65.03px;
+  width: 106.9px;
   position: absolute;
   right: 100%;
   transform: translate(-80px, -15px);
-
 }
 
 @media (max-width: 376px) {
@@ -328,7 +286,6 @@ cursor: pointer;
     display: none;
   }
 }
-
 
 @media (max-width: 376px) {
   .pro-tip {
@@ -355,7 +312,7 @@ cursor: pointer;
   }
 
   .pro-tip__list li {
-    font-family: 'Palanquin', sans-serif;
+    font-family: "Palanquin", sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 120%;
@@ -363,7 +320,7 @@ cursor: pointer;
   }
 
   .pro-tip__link {
-    font-family: 'Palanquin', sans-serif;
+    font-family: "Palanquin", sans-serif;
     font-weight: 700;
     font-size: 16px;
     line-height: 120%;
@@ -375,7 +332,6 @@ cursor: pointer;
   }
 }
 
-
 .share_button picture {
   display: contents;
 }
@@ -386,7 +342,7 @@ cursor: pointer;
   }
 
   .share_text {
-    font-family: 'Arima', sans-serif;
+    font-family: "Arima", sans-serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 120%;
@@ -427,10 +383,9 @@ cursor: pointer;
   }
 }
 
-
 @media (min-width: 377px) and (max-width: 1439px) {
   .scandinavia {
-    padding: 0 24px 24px;
+    padding: 88px 180px 25px 180px;
   }
 
   .scandinavia_video_attrappe {
@@ -461,7 +416,6 @@ cursor: pointer;
     transform: translate(-48px, -15px);
   }
 }
-
 
 @media (max-width: 360px) {
   .share_pfeil {
