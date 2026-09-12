@@ -40,10 +40,10 @@ header {
 
 
 .scandinavia_video_attrappe{
-  display: flex;
-  justify-content: center;
+  display:block;
   
-  padding: 88px 0px 25px 0px; 
+  
+  padding: 88px 150px 25px 150px; 
 }
 
 .scandinavia_video_attrappe_container {
@@ -59,7 +59,8 @@ max-height: 520px;
 .scandinavia_video_attrappe__image{
   display: block;
   width: 100%;
- 
+ border-radius: 50px;
+
 }
 
 .scandinavia-video_attrape__description{
