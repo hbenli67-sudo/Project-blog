@@ -1,14 +1,14 @@
 .pattaya-graphs {
-  padding: 64px 24px 80px;
+  padding: 64px 0 80px;
   background-color: var(--color-white);
 }
 
 .pattaya-graphs__container {
-  width: 100%;
-  max-width: 1360px;
+  width: 1440px;
+  max-width: 100%;
   margin: 0 auto;
+  padding: 0 100px 0 40px;
 }
-
 .pattaya-graphs__intro,
 .pattaya-graphs__description,
 .pattaya-graphs__outro {
