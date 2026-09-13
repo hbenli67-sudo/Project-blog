@@ -249,11 +249,18 @@ header {
   display: flex;
   align-items: center;
   gap: 16px;
+  width: 188px;
+  height: 32px;
 }
 
 .footer_icons img {
   display: block;
   width: 32px;
+  height: 32px;
+}
+
+.footer_icons img[src*="footer-youtube"] {
+  width: 44px;
   height: 32px;
 }
 
@@ -334,8 +341,18 @@ header {
     margin-left: 0;
   }
 
+  .footer_icons {
+    width: auto;
+    height: auto;
+  }
+
   .footer_icons img {
     width: 24px;
+    height: 24px;
+  }
+
+  .footer_icons img[src*="footer-youtube"] {
+    width: 33px;
     height: 24px;
   }
 }
@@ -509,10 +526,17 @@ header {
 
   .footer_icons {
     gap: clamp(8px, 1.5vw, 16px);
+    width: auto;
+    height: auto;
   }
 
   .footer_icons img {
     width: clamp(20px, 2.5vw, 32px);
+    height: auto;
+  }
+
+  .footer_icons img[src*="footer-youtube"] {
+    width: calc(clamp(20px, 2.5vw, 32px) * 1.375);
     height: auto;
   }
 }
