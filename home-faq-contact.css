@@ -81,6 +81,9 @@
   transition: transform 300ms ease;
 }
 
+.faq__toggle:checked + .faq__question .faq__arrow {
+  transform: rotate(225deg);
+}
 .faq__answer {
   display: grid;
   width: 100%;
