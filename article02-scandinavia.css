@@ -26,12 +26,12 @@ header {
 
 .scandinavia_video_attrappe {
   display: block;
-  padding: 88px 180px 25px 180px;
+  padding: 88px 90px;
 }
 
 .scandinavia_video_attrappe_container {
-  max-width: 930px;
-  max-height: 520px;
+  max-width: none;
+  max-height: none;
 }
 
 .scandinavia_video_attrappe__image {
@@ -384,13 +384,21 @@ header {
 }
 
 @media (min-width: 377px) and (max-width: 1439px) {
-  .scandinavia {
-    padding: 88px 180px 25px 180px;
-  }
 
-  .scandinavia_video_attrappe {
-    padding: 48px 0 24px;
-  }
+.scandinavia {
+    padding: 0px 15px;
+    background-color: var(--color-white);
+}
+
+.scandinavia_video_attrappe {
+    display: block;
+    padding: 88px 15px;
+}
+
+ .scandinavia_video_attrappe_container {
+     max-width: none; 
+     max-height: none;
+}
 
   .scandinavia-video_attrape__description,
   .viedeo_unorded_list {
