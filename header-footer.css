@@ -277,11 +277,6 @@ header {
 }
 
 .footer_icons img[src*="footer-youtube"] {
-  width: auto;
-  height: 32px;
-}
-
-.footer_icons img[src*="footer-youtube"] {
   width: 44px;
   height: 32px;
 }
@@ -310,7 +305,7 @@ header {
 }
 
 
-@media (max-width: 440px) {
+@media (max-width: 480px) {
   .footer {
     height: auto;
     padding: 24px 0;
@@ -568,16 +563,6 @@ header {
   width: auto;
   height: clamp(20px, 2.5vw, 32px);
 }
-
-  .footer_icons img {
-    width: clamp(20px, 2.5vw, 32px);
-    height: auto;
-  }
-
-  .footer_icons img[src*="footer-youtube"] {
-    width: calc(clamp(20px, 2.5vw, 32px) * 1.375);
-    height: auto;
-  }
 }
 
 
@@ -585,7 +570,7 @@ header {
   display: none;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 480px) {
   body {
     padding-bottom: 88px;
   }
