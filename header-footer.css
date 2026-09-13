@@ -261,19 +261,16 @@ header {
 
 .footer_icons {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
   align-items: center;
   gap: 16px;
-  width: auto;
+  width: 188px;
   height: 32px;
 }
 
 .footer_icons img {
   display: block;
-  width: auto;
+  width: 32px;
   height: 32px;
-  flex-shrink: 0;
 }
 
 .footer_icons img[src*="footer-youtube"] {
@@ -366,23 +363,19 @@ header {
   }
 
   .footer_icons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
     gap: 16px;
-    width: auto;
-    height: 24px;
-  }
-
-  .footer_icons img {
-    width: auto;
+    width: 153px;
     height: 24px;
     flex-shrink: 0;
   }
 
+  .footer_icons img {
+    width: 24px;
+    height: 24px;
+  }
+
   .footer_icons img[src*="footer-youtube"] {
-    width: auto;
+    width: 33px;
     height: 24px;
   }
 }
@@ -546,23 +539,21 @@ header {
     font-size: clamp(12px, 1.5vw, 16px);
   }
 
-.footer_icons {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  width: auto;
-}
+  .footer_icons {
+    gap: clamp(8px, 1.5vw, 16px);
+    width: auto;
+    height: auto;
+  }
 
-.footer_icons img {
-  width: auto;
-  height: clamp(20px, 2.5vw, 32px);
-  flex-shrink: 0;
-}
+  .footer_icons img {
+    width: clamp(20px, 2.5vw, 32px);
+    height: auto;
+  }
 
-.footer_icons img[src*="footer-youtube"] {
-  width: auto;
-  height: clamp(20px, 2.5vw, 32px);
-}
+  .footer_icons img[src*="footer-youtube"] {
+    width: calc(clamp(20px, 2.5vw, 32px) * 1.375);
+    height: auto;
+  }
 }
 
 
