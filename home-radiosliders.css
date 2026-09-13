@@ -355,8 +355,6 @@
     margin-bottom: 32px;
   }
 
-  /* Referenz: 335 x 533px (Design-Breite 375px). min() deckelt bei
-     335px, darunter skaliert alles proportional mit --slider-w mit. */
   .slider_a {
     --slider-w: min(335px, 89.1vw);
 

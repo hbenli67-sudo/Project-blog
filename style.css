@@ -295,7 +295,12 @@ body {
   }
 
   .hero_landing__images {
-    display: none;
+    display: flex;
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    z-index: 6;
+    animation: heroIntroOut 0s linear 2.2s forwards;
   }
 
   .hero_height {
@@ -303,11 +308,28 @@ body {
   }
 
   .hero__content {
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    animation: none;
+    top: calc(clamp(512px, 136.5vw, 717px) / 3);
+    left: clamp(16px, 5vw, 48px);
+    z-index: 7;
+    width: max-content;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
+    transform: none;
+    animation: heroIntroTextOut 0.3s ease-in 2.2s forwards;
+  }
+
+  .einblend-title-hero {
+    font-size: clamp(40px, 6vw, 60px);
+    margin-bottom: clamp(16px, 2.2vw, 32px);
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+  }
+
+  .erscheinen-text-hero {
+    font-size: clamp(18px, 2.5vw, 28px);
+    animation-delay: 0.8s;
+    animation-fill-mode: both;
   }
 
   .hero__graphic-group {
@@ -316,8 +338,34 @@ body {
   }
 
   .landing-yellow-graphic-3 {
+    --hero-shrink-from: 4.5;
+
     opacity: 1;
-    animation: none;
+    transform-origin: top left;
+    animation: heroGraphicShrink 1s ease-in-out 2.2s both;
+  }
+
+  @keyframes heroIntroOut {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes heroIntroTextOut {
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes heroGraphicShrink {
+    from {
+      transform: scale(var(--hero-shrink-from));
+    }
+
+    to {
+      transform: scale(1);
+    }
   }
 
   .hero__badge {
@@ -328,7 +376,7 @@ body {
     width: 67.6%;
     height: auto;
     aspect-ratio: 1;
-    animation-delay: 0.3s;
+    animation-delay: 3s;
   }
 
   .hero__badge-bg {
@@ -359,6 +407,10 @@ body {
     height: 299px;
   }
 
+  .landing-yellow-graphic-3 {
+    --hero-shrink-from: 3.5;
+  }
+
   .hero__background {
     inset: 0;
     width: 100%;
@@ -366,6 +418,12 @@ body {
     object-position: -123px center;
     transform: translateY(80px) scale(1.35);
     animation: none;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1439px) {
+  .landing-yellow-graphic-3 {
+    --hero-shrink-from: 7;
   }
 }
 

@@ -65,9 +65,6 @@ header {
   font-size: 16px;
 }
 
-/* Jedes Icon in seinem eigenen Seitenverhaeltnis (jeweils 50% der
-   SVG-Groesse). Ein gemeinsames 16x18 fuer alle vier hat Brille
-   (40x14) und Auge (40x28) verzerrt. */
 .article-header__meta-item:nth-child(1) img,
 .article-header__meta-item:nth-child(4) img {
   width: 16px;
@@ -418,8 +415,6 @@ header {
     display: none;
   }
 
-  /* Immer zweizeilig: 4 Eintraege in 2 Spalten, unabhaengig von der
-     Viewport-Breite - vorher entschied flex-wrap darueber. */
   .article-header__meta {
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -427,9 +422,6 @@ header {
     gap: 12px 20px;
   }
 
-  /* nowrap verhindert den Umbruch mitten im Eintrag ("min" allein
-     in Zeile 2). Damit das bei 320px noch passt, skaliert die Schrift
-     mit: 16px ab ~400px, darunter bis auf 12px herunter. */
   .article-header__meta-item {
     font-size: clamp(12px, 4vw, 16px);
     white-space: nowrap;
@@ -605,9 +597,6 @@ header {
 }
 
 
-/* Sehr schmale Geraete (320px - 340px): Textspalte und Icon-Leiste
-   bleiben nebeneinander. Die Icon-Leiste ist fix (153px), der Platz
-   kommt daher aus Paddings und Abstaenden. */
 @media (max-width: 340px) {
   .footer_inner {
     gap: 8px;
