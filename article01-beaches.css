@@ -392,8 +392,8 @@ cursor: pointer;
 }
 
 .share_reveal_icon {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 27px;
 }
 
 .share_links {
@@ -411,8 +411,8 @@ cursor: pointer;
 }
 
 .share_icon {
-    width: 24px;
-    height: 27px;
+    width: 32px;
+    height: 32px;
     display: flex;
 
 
@@ -670,13 +670,14 @@ cursor: pointer;
     gap: 10px;
     border-radius: 40px;
     opacity: 1;
+    transition: transform 0.6s ease, border-radius 0.6s ease;
   }
 
   .share_pfeil {
     width: 32px;
     height: 53px;
     opacity: 1;
-    transform: translate(-64px, 0);
+    transform: translate(-74px, 0);
   }
 
   .share {
@@ -689,6 +690,7 @@ cursor: pointer;
 
   .share_toggle_input:checked ~ .share_btn {
     transform: translateX(-52px);
+    border-radius: 20px;
   }
 
   .share_toggle_input:checked ~ .share_reveal {
@@ -760,7 +762,7 @@ cursor: pointer;
 
 @media (max-width: 360px) {
   .share_pfeil {
-    transform: translate(-44px, 0);
+    transform: translate(-54px, 0);
   }
 }
 

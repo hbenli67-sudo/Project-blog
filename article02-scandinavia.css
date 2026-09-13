@@ -3,13 +3,16 @@ header {
 }
 
 .scandinavia {
-  padding: 0px 64px 24px 80px;
+  width: 1440px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 64px 40px 96px;
+  box-sizing: border-box;
   background-color: var(--color-white);
 }
 
 .scandinavia_main_container {
-  width: 100%;
-  max-width: 1280px;
+  width: min(100%, 1240px);
   margin: 0 auto;
 }
 
@@ -20,13 +23,12 @@ header {
   font-family: "Palanquin", sans-serif;
   font-size: 24px;
   font-weight: 400;
-  line-height: 120%;
-  padding-top: 48px;
+  line-height: 150%;
 }
 
 .scandinavia_video_attrappe {
   display: block;
-  padding: 88px 90px;
+  padding: 64px 0;
 }
 
 .scandinavia_video_attrappe_container {
@@ -77,7 +79,7 @@ header {
 
 .scandinavian__last_discription {
   width: 100%;
-  margin-top: 88px;
+  margin-top: 64px;
 }
 
 .pro-tip {
@@ -232,8 +234,8 @@ header {
 }
 
 .share_reveal_icon {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 27px;
 }
 
 .share_links {
@@ -251,8 +253,8 @@ header {
 }
 
 .share_icon {
-  width: 24px;
-  height: 27px;
+  width: 32px;
+  height: 32px;
   display: flex;
 }
 
@@ -354,7 +356,7 @@ header {
     width: 32px;
     height: 53px;
     opacity: 1;
-    transform: translate(-64px, 0);
+    transform: translate(-74px, 0);
   }
 
   .share_btn {
@@ -363,6 +365,7 @@ header {
     gap: 10px;
     border-radius: 40px;
     opacity: 1;
+    transition: transform 0.6s ease, border-radius 0.6s ease;
     font-size: 24px;
     margin-top: 32px;
   }
@@ -376,6 +379,7 @@ header {
 
   .share_toggle_input:checked ~ .share_btn {
     transform: translateX(-52px);
+    border-radius: 20px;
   }
 
   .share_toggle_input:checked ~ .share_reveal {
@@ -383,29 +387,20 @@ header {
   }
 }
 
-<<<<<<< HEAD
 @media (min-width: 481px) and (max-width: 1439px) {
   .scandinavia {
-    padding: 88px 180px 25px 180px;
+    padding: 48px 2.8vw 64px;
   }
-=======
-@media (min-width: 377px) and (max-width: 1439px) {
->>>>>>> 13db374b83d321ad078e3bcd818256e1c9b848c9
 
-.scandinavia {
-    padding: 0px 15px;
-    background-color: var(--color-white);
-}
-
-.scandinavia_video_attrappe {
+  .scandinavia_video_attrappe {
     display: block;
-    padding: 88px 15px;
-}
+    padding: 3.4vw 0;
+  }
 
- .scandinavia_video_attrappe_container {
-     max-width: none; 
-     max-height: none;
-}
+  .scandinavia_video_attrappe_container {
+    max-width: none;
+    max-height: none;
+  }
 
   .scandinavia-video_attrape__description,
   .viedeo_unorded_list {
@@ -421,6 +416,7 @@ header {
   .scandinavian__last_discription,
   .viedeo_unorded_list {
     font-size: clamp(18px, 2vw, 24px);
+    padding: 0 24px;
   }
 
   .pro-tip {
@@ -434,7 +430,7 @@ header {
 
 @media (max-width: 360px) {
   .share_pfeil {
-    transform: translate(-44px, 0);
+    transform: translate(-54px, 0);
   }
 }
 
