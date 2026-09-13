@@ -264,7 +264,7 @@ header {
   transform: translate(-80px, -15px);
 }
 
-@media (max-width: 376px) {
+@media (max-width: 480px) {
   .scandinavia {
     padding: 0;
   }
@@ -287,7 +287,7 @@ header {
   }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 480px) {
   .pro-tip {
     padding: 64px 16px 0;
   }
@@ -336,7 +336,7 @@ header {
   display: contents;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 480px) {
   .share {
     padding: 32px 0;
   }
@@ -383,7 +383,7 @@ header {
   }
 }
 
-@media (min-width: 377px) and (max-width: 1439px) {
+@media (min-width: 481px) and (max-width: 1439px) {
   .scandinavia {
     padding: 88px 180px 25px 180px;
   }
@@ -423,14 +423,8 @@ header {
   }
 }
 
-@media (min-width: 465px) and (max-width: 1439px) {
+@media (min-width: 481px) and (max-width: 1439px) {
   .share_pfeil {
     transform: translate(-64px, 0);
-  }
-}
-
-@media (min-width: 377px) and (max-width: 460px) {
-  .share_pfeil {
-    transform: translate(-13px, -5px);
   }
 }

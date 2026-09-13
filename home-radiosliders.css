@@ -330,7 +330,7 @@
 }
 
 
-@media (max-width: 376px) {
+@media (max-width: 480px) {
   .highlights_title {
     font-size: 40px;
   }
@@ -355,8 +355,8 @@
     margin-bottom: 32px;
   }
 
-  /* Referenz: 335 x 533px bei 376px. Darunter skaliert alles
-     proportional mit --slider-w mit. */
+  /* Referenz: 335 x 533px (Design-Breite 375px). min() deckelt bei
+     335px, darunter skaliert alles proportional mit --slider-w mit. */
   .slider_a {
     --slider-w: min(335px, 89.1vw);
 
@@ -417,7 +417,7 @@
 }
 
 
-@media (min-width: 377px) and (max-width: 1439px) {
+@media (min-width: 481px) and (max-width: 1439px) {
   .highlights_title {
     font-size: clamp(34px, 4vw, 52px);
   }

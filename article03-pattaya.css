@@ -222,7 +222,7 @@ cursor: pointer;
 
 }
 
-@media (max-width: 376px) {
+@media (max-width: 480px) {
   .pattaya-graphs {
     padding: 0 16px;
   }
@@ -280,7 +280,7 @@ cursor: pointer;
   display: contents;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 480px) {
   .share {
     padding: 32px 0;
   }
@@ -328,7 +328,7 @@ cursor: pointer;
 }
 
 
-@media (min-width: 377px) and (max-width: 1439px) {
+@media (min-width: 481px) and (max-width: 1439px) {
   .pattaya-graphs {
     padding: 48px 24px 64px;
   }
@@ -382,14 +382,8 @@ cursor: pointer;
   }
 }
 
-@media (min-width: 465px) and (max-width: 1439px) {
+@media (min-width: 481px) and (max-width: 1439px) {
   .share_pfeil {
     transform: translate(-64px, 0);
-  }
-}
-
-@media (min-width: 377px) and (max-width: 460px) {
-  .share_pfeil {
-    transform: translate(-13px, -5px);
   }
 }

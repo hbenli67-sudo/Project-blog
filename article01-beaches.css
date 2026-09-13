@@ -432,7 +432,7 @@ cursor: pointer;
   display: none;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 480px) {
   .beach-carousel__container {
     --card-w: 216px;
     --card-h: 335px;
@@ -585,7 +585,7 @@ cursor: pointer;
 
 
 
-@media (max-width: 376px) {
+@media (max-width: 480px) {
   .beach-carousel_text,
   .beach_list {
     font-size: 16px;
@@ -608,7 +608,7 @@ cursor: pointer;
 }
 
 
-@media (max-width: 376px) {
+@media (max-width: 480px) {
   .pro-tip {
     padding: 32px 16px 0;
   }
@@ -654,7 +654,7 @@ cursor: pointer;
 }
 
 
-@media (max-width: 376px) {
+@media (max-width: 480px) {
   .share_text {
     font-family: 'Arima', sans-serif;
     font-weight: 500;
@@ -712,7 +712,7 @@ cursor: pointer;
 }
 
 
-@media (min-width: 377px) and (max-width: 1439px) {
+@media (min-width: 481px) and (max-width: 1439px) {
   .beach-carousel {
     padding: 48px 2.8vw 64px;
   }
@@ -764,14 +764,8 @@ cursor: pointer;
   }
 }
 
-@media (min-width: 465px) and (max-width: 1439px) {
+@media (min-width: 481px) and (max-width: 1439px) {
   .share_pfeil {
     transform: translate(-64px, 0);
-  }
-}
-
-@media (min-width: 377px) and (max-width: 460px) {
-  .share_pfeil {
-    transform: translate(-13px, -5px);
   }
 }
