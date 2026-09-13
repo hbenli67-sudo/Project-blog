@@ -349,7 +349,7 @@ body {
 }
 
 
-@media (max-width: 376px) {
+@media (max-width: 480px) {
   .hero {
     height: 512px;
   }
@@ -369,7 +369,7 @@ body {
   }
 }
 
-@media (min-width: 377px) and (max-width: 1439px) {
+@media (min-width: 481px) and (max-width: 1439px) {
   .hero {
     height: clamp(512px, 136.5vw, 717px);
   }

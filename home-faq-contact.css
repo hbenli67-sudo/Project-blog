@@ -81,6 +81,9 @@
   transition: transform 300ms ease;
 }
 
+.faq__toggle:checked + .faq__question .faq__arrow {
+  transform: rotate(225deg);
+}
 .faq__answer {
   display: grid;
   width: 100%;
@@ -371,7 +374,7 @@
 }
 
 
-@media (max-width: 376px) {
+@media (max-width: 480px) {
   .faq__title {
     font-family: 'Arima', serif;
     font-weight: 700;
@@ -396,7 +399,7 @@
 }
 
 
-@media (max-width: 376px) {
+@media (max-width: 480px) {
   .contact__title {
     font-size: 40px;
   }
@@ -420,7 +423,7 @@
 }
 
 
-@media (max-width: 376px) {
+@media (max-width: 480px) {
   .faq {
     padding-top: 32px;
     padding-bottom: 0;
@@ -433,7 +436,7 @@
 }
 
 
-@media (min-width: 377px) and (max-width: 1439px) {
+@media (min-width: 481px) and (max-width: 1439px) {
   .faq,
   .contact {
     padding-left: 24px;
