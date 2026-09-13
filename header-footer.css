@@ -261,15 +261,23 @@ header {
 
 .footer_icons {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 16px;
-  width: 188px;
+  width: auto;
   height: 32px;
 }
 
 .footer_icons img {
   display: block;
-  width: 32px;
+  width: auto;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.footer_icons img[src*="footer-youtube"] {
+  width: auto;
   height: 32px;
 }
 
@@ -302,7 +310,7 @@ header {
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 440px) {
   .footer {
     height: auto;
     padding: 24px 0;
@@ -363,19 +371,23 @@ header {
   }
 
   .footer_icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
     gap: 16px;
-    width: 153px;
+    width: auto;
+    height: 24px;
+  }
+
+  .footer_icons img {
+    width: auto;
     height: 24px;
     flex-shrink: 0;
   }
 
-  .footer_icons img {
-    width: 24px;
-    height: 24px;
-  }
-
   .footer_icons img[src*="footer-youtube"] {
-    width: 33px;
+    width: auto;
     height: 24px;
   }
 }
@@ -539,11 +551,23 @@ header {
     font-size: clamp(12px, 1.5vw, 16px);
   }
 
-  .footer_icons {
-    gap: clamp(8px, 1.5vw, 16px);
-    width: auto;
-    height: auto;
-  }
+.footer_icons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: auto;
+}
+
+.footer_icons img {
+  width: auto;
+  height: clamp(20px, 2.5vw, 32px);
+  flex-shrink: 0;
+}
+
+.footer_icons img[src*="footer-youtube"] {
+  width: auto;
+  height: clamp(20px, 2.5vw, 32px);
+}
 
   .footer_icons img {
     width: clamp(20px, 2.5vw, 32px);
@@ -561,7 +585,7 @@ header {
   display: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 376px) {
   body {
     padding-bottom: 88px;
   }
