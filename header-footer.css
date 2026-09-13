@@ -588,3 +588,30 @@ header {
     height: 40px;
   }
 }
+
+
+/* Feinschliff fuer sehr schmale Geraete (320px - 340px) */
+@media (max-width: 340px) {
+  .footer_inner {
+    gap: 12px;
+  }
+
+  .footer-title,
+  .footer-imprint {
+    font-size: 14px;
+  }
+
+  .footer_icons {
+    gap: 10px;
+  }
+
+  .footer_icons img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .footer_icons img[src*="footer-youtube"] {
+    width: 30px;
+    height: 22px;
+  }
+}
