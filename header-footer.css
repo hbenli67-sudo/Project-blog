@@ -288,7 +288,7 @@ header {
 }
 
 
-@media (max-width: 376px) {
+@media (max-width: 440px) {
   .footer {
     height: auto;
     padding: 24px 0;
@@ -555,7 +555,7 @@ header {
   display: none;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 440px) {
   body {
     padding-bottom: 88px;
   }
