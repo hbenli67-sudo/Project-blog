@@ -428,7 +428,6 @@ cursor: pointer;
 }
 
 
-.beach-carousel__radio,
 .beach-carousel__dots {
   display: none;
 }
@@ -437,7 +436,6 @@ cursor: pointer;
   .beach-carousel__container {
     --card-w: 216px;
     --card-h: 335px;
-    --card-h-small: 280px;
     --gap: 16px;
     --inset: calc((100% - var(--card-w)) / 2);
 
@@ -454,22 +452,37 @@ cursor: pointer;
     padding: 0 16px;
   }
 
+  /* Scroll-Snap statt transform: dadurch laesst sich der Track mit
+     Finger/Trackpad ziehen - ganz ohne JavaScript. */
   .beach-carousel__track {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: var(--gap);
-    padding: 16px 0 16px var(--inset);
+    padding: 16px var(--inset);
     perspective: none;
-    overflow: hidden;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+  }
+
+  .beach-carousel__track::-webkit-scrollbar {
+    display: none;
   }
 
   .beach-carousel__card {
     width: var(--card-w);
-    height: var(--card-h-small);
+    height: var(--card-h);
     border-radius: 20px;
     transform: none;
-    transition: height 0.45s ease, transform 0.45s ease;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
   }
 
   .beach-carousel__card + .beach-carousel__card {
@@ -484,34 +497,6 @@ cursor: pointer;
     z-index: auto;
   }
 
-  #beach-slide-1:checked ~ .beach-carousel__track .beach-carousel__card {
-    transform: translateX(0);
-  }
-
-  #beach-slide-2:checked ~ .beach-carousel__track .beach-carousel__card {
-    transform: translateX(calc(-1 * (var(--card-w) + var(--gap))));
-  }
-
-  #beach-slide-3:checked ~ .beach-carousel__track .beach-carousel__card {
-    transform: translateX(calc(-2 * (var(--card-w) + var(--gap))));
-  }
-
-  #beach-slide-4:checked ~ .beach-carousel__track .beach-carousel__card {
-    transform: translateX(calc(-3 * (var(--card-w) + var(--gap))));
-  }
-
-  #beach-slide-5:checked ~ .beach-carousel__track .beach-carousel__card {
-    transform: translateX(calc(-4 * (var(--card-w) + var(--gap))));
-  }
-
-  #beach-slide-1:checked ~ .beach-carousel__track .beach-carousel__card:nth-child(1),
-  #beach-slide-2:checked ~ .beach-carousel__track .beach-carousel__card:nth-child(2),
-  #beach-slide-3:checked ~ .beach-carousel__track .beach-carousel__card:nth-child(3),
-  #beach-slide-4:checked ~ .beach-carousel__track .beach-carousel__card:nth-child(4),
-  #beach-slide-5:checked ~ .beach-carousel__track .beach-carousel__card:nth-child(5) {
-    height: var(--card-h);
-  }
-
   .beach-carousel__dots {
     display: flex;
     justify-content: center;
@@ -520,7 +505,8 @@ cursor: pointer;
     margin-top: 20px;
   }
 
-  .beach-carousel__dots label {
+  .beach-carousel__dots a {
+    display: block;
     width: 12px;
     height: 12px;
     border-radius: 999px;
@@ -530,15 +516,73 @@ cursor: pointer;
     transition: width 0.3s ease, opacity 0.3s ease;
   }
 
-  #beach-slide-1:checked ~ .beach-carousel__dots label:nth-child(1),
-  #beach-slide-2:checked ~ .beach-carousel__dots label:nth-child(2),
-  #beach-slide-3:checked ~ .beach-carousel__dots label:nth-child(3),
-  #beach-slide-4:checked ~ .beach-carousel__dots label:nth-child(4),
-  #beach-slide-5:checked ~ .beach-carousel__dots label:nth-child(5) {
+  /* Ohne JS kann CSS die Scroll-Position nicht lesen. Der aktive Punkt
+     folgt daher nur geklickten Dots (:target), nicht dem Ziehen. */
+  .beach-carousel__container:not(:has(.beach-carousel__card:target)) .beach-carousel__dots a:first-child,
+  .beach-carousel__container:has(#beach-card-1:target) .beach-carousel__dots a:nth-child(1),
+  .beach-carousel__container:has(#beach-card-2:target) .beach-carousel__dots a:nth-child(2),
+  .beach-carousel__container:has(#beach-card-3:target) .beach-carousel__dots a:nth-child(3),
+  .beach-carousel__container:has(#beach-card-4:target) .beach-carousel__dots a:nth-child(4),
+  .beach-carousel__container:has(#beach-card-5:target) .beach-carousel__dots a:nth-child(5) {
     width: 28px;
     opacity: 1;
   }
+
+  /* Scroll-getriebene Animation: die Punkte haengen direkt an der
+     Scroll-Position des Tracks und wandern beim Ziehen parallel mit.
+     Reines CSS, kein JavaScript. Ueberschreibt die :target-Variante
+     oben, weil Animationen in der Kaskade hoeher stehen. */
+  @supports (animation-timeline: view()) {
+    .beach-carousel__container {
+      timeline-scope: --beach-card-1, --beach-card-2, --beach-card-3,
+                      --beach-card-4, --beach-card-5;
+    }
+
+    .beach-carousel__card {
+      view-timeline-axis: inline;
+    }
+
+    .beach-carousel__card:nth-child(1) { view-timeline-name: --beach-card-1; }
+    .beach-carousel__card:nth-child(2) { view-timeline-name: --beach-card-2; }
+    .beach-carousel__card:nth-child(3) { view-timeline-name: --beach-card-3; }
+    .beach-carousel__card:nth-child(4) { view-timeline-name: --beach-card-4; }
+    .beach-carousel__card:nth-child(5) { view-timeline-name: --beach-card-5; }
+
+    .beach-carousel__dots a {
+      animation-name: beach-dot-active;
+      animation-duration: auto;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-range: cover;
+    }
+
+    .beach-carousel__dots a:nth-child(1) { animation-timeline: --beach-card-1; }
+    .beach-carousel__dots a:nth-child(2) { animation-timeline: --beach-card-2; }
+    .beach-carousel__dots a:nth-child(3) { animation-timeline: --beach-card-3; }
+    .beach-carousel__dots a:nth-child(4) { animation-timeline: --beach-card-4; }
+    .beach-carousel__dots a:nth-child(5) { animation-timeline: --beach-card-5; }
+  }
+
+  /* 50% = Karte steht mittig im Track. Die schmale aktive Zone
+     (40%-60%) sorgt dafuer, dass immer nur ein Punkt gross ist. */
+  @keyframes beach-dot-active {
+    0%, 40% {
+      width: 12px;
+      opacity: 0.35;
+    }
+
+    50% {
+      width: 28px;
+      opacity: 1;
+    }
+
+    60%, 100% {
+      width: 12px;
+      opacity: 0.35;
+    }
+  }
 }
+
 
 
 @media (max-width: 376px) {

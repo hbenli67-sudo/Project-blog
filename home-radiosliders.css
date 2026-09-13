@@ -355,8 +355,15 @@
     margin-bottom: 32px;
   }
 
+  /* Referenz: 335 x 533px bei 376px. Darunter skaliert alles
+     proportional mit --slider-w mit. */
   .slider_a {
+    --slider-w: min(335px, 89.1vw);
+
     top: 0;
+    width: var(--slider-w);
+    height: auto;
+    aspect-ratio: 335 / 533;
   }
 
   .slider_a_element_element_one,
@@ -365,11 +372,11 @@
   .slider_a_element_element_four {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    width: 307px;
-    min-height: 190px;
-    margin: 93px 0 0 14px;
-    padding: 16px;
+    gap: calc(var(--slider-w) * 0.0239);
+    width: calc(var(--slider-w) * 0.9164);
+    min-height: calc(var(--slider-w) * 0.5672);
+    margin: calc(var(--slider-w) * 0.2776) 0 0 calc(var(--slider-w) * 0.0418);
+    padding: calc(var(--slider-w) * 0.0478);
     opacity: 1;
     transform: none;
   }
@@ -378,7 +385,7 @@
   .slider_a_element_element_two > h3,
   .slider_a_element_element_three > h3,
   .slider_a_element_element_four > h3 {
-    font-size: 28px;
+    font-size: calc(var(--slider-w) * 0.0836);
     padding: 0;
     flex-shrink: 0;
   }
@@ -390,7 +397,7 @@
     font-family: 'Palanquin', sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 20px;
+    font-size: calc(var(--slider-w) * 0.0597);
     line-height: 1.1;
     letter-spacing: normal;
     padding: 0;
